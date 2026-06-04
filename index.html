@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX CIRCLES — App Design Studio, London</title>
+<meta name="description" content="UX CIRCLES is a London-based app design studio specialising in complex products — marketplaces, fintech platforms, and operations tools. Founded by a designer with 13+ years experience and £9B+ in assets on platforms shipped.">
+<meta property="og:title" content="UX CIRCLES — App Design Studio, London">
+<meta property="og:description" content="We turn complex business logic into products people use. Marketplaces, fintech, operations platforms — the harder the problem, the better.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ux-circles.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UX CIRCLES — App Design Studio, London">
+<meta name="twitter:description" content="We turn complex business logic into products people use.">
+<link rel="canonical" href="https://ux-circles.com">
+<link rel="icon" type="image/png" href="logo-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1021;
+    --bg2: #151729;
+    --bg3: #1c1f35;
+    --purple: #6b7de8;
+    --purple-light: #7b96f2;
+    --text: #f0f0f8;
+    --text-muted: #8b8da8;
+    --text-dim: #555770;
+    --border: rgba(123, 111, 240, 0.15);
+    --border-bright: rgba(123, 111, 240, 0.35);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 16, 33, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: transparent;
+    border: 0.5px solid var(--border-bright);
+    color: var(--purple-light) !important;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: rgba(123, 111, 240, 0.12) !important;
+    color: var(--text) !important;
+  }
+
+  /* SECTIONS */
+  section { padding: 7rem 2rem; max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--purple-light);
+    border: 0.5px solid var(--border-bright);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    font-family: 'Syne', sans-serif;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.1s;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--purple);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .line-wrap {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+  }
+
+  .line-inner {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: lineReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .line-wrap:nth-child(1) .line-inner { animation-delay: 0.2s; }
+  .line-wrap:nth-child(2) .line-inner { animation-delay: 0.35s; }
+  .line-wrap:nth-child(3) .line-inner { animation-delay: 0.5s; }
+
+  @keyframes lineReveal {
+    from { opacity: 1; transform: translateY(100%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--purple-light);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.4s;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.55s;
+  }
+
+  .btn-primary {
+    background: var(--purple);
+    color: #fff;
+    padding: 0.8rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--purple-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    color: var(--text-muted);
+    padding: 0.8rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 0.5px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--border-bright); color: var(--text); }
+
+  .hero-scroll {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.8s;
+  }
+
+  .scroll-line {
+    width: 32px;
+    height: 0.5px;
+    background: var(--text-dim);
+  }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--purple);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 520px;
+    margin-bottom: 3.5rem;
+    font-size: 1rem;
+  }
+
+  /* WORK */
+  #work { border-top: 0.5px solid var(--border); }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .work-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 2.5rem;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-card:hover { border-color: var(--border-bright); }
+
+  .work-card:hover { background: var(--bg3); }
+
+  .work-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--purple);
+    transition: height 0.3s ease;
+  }
+
+  .work-card:hover::before { height: 100%; }
+
+  .work-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .work-card.featured > div:first-child {
+    padding: 2.5rem;
+  }
+
+  .work-card.featured .work-body {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    overflow: hidden;
+  }
+
+  .work-featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .work-card.featured:hover .work-featured-img {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  .work-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.65;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .work-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--purple-light);
+    border: 0.5px solid var(--border-bright);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .work-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+  }
+
+  .work-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .work-meta {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .work-pill {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    border-top: 0.5px solid var(--border);
+    padding: 5rem 0;
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+
+  .marquee-inner {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+  }
+
+  .marquee-inner:hover { animation-play-state: paused; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .testimonial-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    transition: border-color 0.2s;
+  }
+
+  .testimonial-card:hover { border-color: var(--border-bright); }
+
+  .testimonial-quote {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .testimonial-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .testimonial-role {
+    font-size: 0.75rem;
+    color: var(--purple-light);
+    letter-spacing: 0.03em;
+  }
+
+  /* SERVICES */
+  #services { border-top: 0.5px solid var(--border); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem 2rem 1.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .service-card:hover { border-color: var(--border-bright); }
+
+  .service-card.featured {
+    border-color: rgba(123, 111, 240, 0.4);
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .service-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .service-price {
+    margin-top: 1.25rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    color: var(--purple-light);
+  }
+
+  .service-duration {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.2rem;
+  }
+
+  .service-featured-right {
+    border-left: 0.5px solid var(--border);
+    padding-left: 2rem;
+  }
+
+  .service-featured-right p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* ABOUT */
+  #about { border-top: 0.5px solid var(--border); }
+
+  #about h2 { margin-bottom: 2.5rem; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-left p {
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .about-left p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-right { display: flex; flex-direction: column; gap: 1rem; }
+
+  /* WORK IMAGES */
+  .work-card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  .work-card:hover .work-card-img { opacity: 1; }
+
+  .work-card.featured .work-body-img {
+    margin-bottom: 1rem;
+  }
+
+  .work-card.featured .work-body-img img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  .work-card.featured:hover .work-body-img img { opacity: 1; }
+
+  /* PERSON PHOTOS */
+  .person-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .person-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 0%;
+    border: 0.5px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .person-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 1.1rem 1.25rem;
+    transition: border-color 0.2s;
+  }
+
+  .person-card:hover { border-color: var(--border-bright); }
+
+  .person-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .person-role {
+    font-size: 0.78rem;
+    color: var(--purple-light);
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+  }
+
+  .person-bio {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .stat { }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTACT */
+  #contact {
+    border-top: 0.5px solid var(--border);
+    text-align: center;
+  }
+
+  #contact h2 { margin-bottom: 0.75rem; }
+
+  #contact .section-intro {
+    margin: 0 auto 2.5rem;
+  }
+
+  .contact-form {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: var(--text-dim); }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--border-bright); }
+
+  .contact-form textarea { height: 120px; }
+
+  .contact-form button {
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.85rem 1.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    width: 100%;
+  }
+
+  .contact-form button:hover { background: var(--purple-light); transform: translateY(-1px); }
+
+  .contact-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .contact-divider::before,
+  .contact-divider::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  .contact-divider span {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .contact-fallback {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .contact-fallback a {
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .contact-fallback a:hover { color: var(--text); }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .form-success strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-decoration: none;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+
+  /* BG GRAIN */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--text-muted);
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(15, 16, 33, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    z-index: 99;
+  }
+
+  .nav-mobile.open { display: flex; }
+
+  .nav-mobile a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-mobile a:hover { color: var(--text); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    section { padding: 5rem 1.25rem; }
+    #hero { padding: 7rem 1.25rem 4rem; }
+    .work-grid { grid-template-columns: 1fr; }
+    .testimonial-card { width: 260px; }
+    .work-card.featured { grid-column: span 1; grid-template-columns: 1fr; display: flex; flex-direction: column; }
+    .work-card.featured > div:first-child { padding: 1.75rem; }
+    .work-card.featured .work-body { order: -1; min-height: 200px; position: relative; width: 100%; top: auto; right: auto; bottom: auto; left: auto; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .service-featured-right { border-left: none; border-top: 0.5px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="logo-landscape-transparent.png" alt="UX CIRCLES" style="height: 28px; width: auto; filter: brightness(1.4);" onerror="this.style.display='none'; this.nextSibling.style.display='inline'"><span style="display:none">UX CIRCLES</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="mobileMenu">
+  <a href="#work" class="mobile-link">Work</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#contact" class="mobile-link">Get in touch</a>
+</div>
+
+<section id="hero" style="padding-left:2rem;padding-right:2rem;">
+  <div class="hero-tag">London-based App Design Studio</div>
+  <h1>
+    <span class="line-wrap"><span class="line-inner">We turn complex</span></span>
+    <span class="line-wrap"><span class="line-inner">business logic into</span></span>
+    <span class="line-wrap"><span class="line-inner"><em>products people use.</em></span></span>
+  </h1>
+  <p class="hero-sub">Most clients come to us with a design problem. We usually find a product problem underneath it. Marketplaces, operations platforms, transaction-heavy apps — the harder the problem, the better.</p>
+  <div class="hero-actions">
+    <a href="#work" class="btn-primary">View our work</a>
+    <a href="#contact" class="btn-secondary">Start a project</a>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-line"></span>
+    scroll
+  </div>
+</section>
+
+<section id="work">
+  <p class="section-label reveal">Selected Work</p>
+  <h2 class="reveal">Complex problems,<br>clear products.</h2>
+  <p class="section-intro reveal">We design apps where trust, money, and complexity meet. Here's what that looks like in practice.</p>
+
+  <div class="work-grid reveal">
+    <div class="work-card featured">
+      <div>
+        <span class="work-tag">Fintech Platform · £9B in assets</span>
+        <h3>Multi-role platform redesign for UHNW wealth management</h3>
+        <p class="work-desc">A complete redesign of the core platform used by advisors, analysts, and data operations teams — each with different permissions, workflows, and stakes. We untangled years of accumulated complexity into something people could actually use under pressure.</p>
+        <div class="work-meta">
+          <span class="work-pill">Multi-role systems</span>
+          <span class="work-pill">Data visualisation</span>
+          <span class="work-pill">Workflow design</span>
+          <span class="work-pill">Full redesign</span>
+        </div>
+      </div>
+      <div class="work-body">
+        <img src="work-platform-laptop.png" alt="Wealth management platform on laptop" class="work-featured-img">
+      </div>
+    </div>
+    <div class="work-card featured">
+      <div>
+        <span class="work-tag">Fintech Mobile · 89% CSAT</span>
+        <h3>Financial data clarity across iOS & Android</h3>
+        <p class="work-desc">Users weren't making confident decisions — not because the data was wrong, but because it was hard to read. We redesigned navigation, metrics presentation, and information hierarchy across the mobile app, resulting in an 89% customer satisfaction score.</p>
+        <div class="work-meta">
+          <span class="work-pill">iOS & Android</span>
+          <span class="work-pill">Data clarity</span>
+          <span class="work-pill">Navigation redesign</span>
+          <span class="work-pill">CSAT uplift</span>
+        </div>
+      </div>
+      <div class="work-body">
+        <img src="work-mobile-app.png" alt="Investment app on iPhone" class="work-featured-img">
+      </div>
+    </div>
+    <div class="work-card">
+      <span class="work-tag">C2C Marketplace</span>
+      <h3>Second-hand film & camera gear platform</h3>
+      <p>A B2B2C model that evolved mid-build into a C2C structure — shifting responsibility, risk, and trust mechanics entirely. We designed the dispute handling, payment flows, and role-based permissions as the model moved underneath us.</p>
+      <div class="work-meta">
+        <span class="work-pill">Trust & Safety</span>
+        <span class="work-pill">Payment flows</span>
+        <span class="work-pill">Role-based UX</span>
+        <span class="work-pill">MVP → Launch</span>
+      </div>
+    </div>
+    <div class="work-card">
+      <span class="work-tag">Operations Platform</span>
+      <h3>Sports event management MVP</h3>
+      <p>A multi-role platform spanning registration, scheduling, ticketing, donations, and invoicing. The challenge wasn't the individual features — it was designing across a complex operational ecosystem where every role had different needs and permissions.</p>
+      <div class="work-meta">
+        <span class="work-pill">Multi-role systems</span>
+        <span class="work-pill">Ticketing & finance</span>
+        <span class="work-pill">Scheduling</span>
+        <span class="work-pill">MVP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Working with Chun was a pleasure. He played a key role in shaping several of our most important internal tools and the client-facing app."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Arik Peretz</span>
+          <span class="testimonial-role">Co-founder, Y TREE</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Chun was a fantastic UX partner – quickly grasping complex data challenges and translating them into clear, interactive design concepts."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Ciaran McCale</span>
+          <span class="testimonial-role">CMO, ESG Book</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Our product had a lot of moving parts — different user types, evolving requirements, and high expectations. Chun brought calm, clarity, and fast execution."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Paul Smith</span>
+          <span class="testimonial-role">CEO, Global Gains</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"An exceptional UX/UI designer who delivered intuitive web and mobile experiences under tight deadlines."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Isobel Raeside</span>
+          <span class="testimonial-role">Head of Product</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"UX CIRCLES' design and communication are incredibly efficient. They developed an initial website for us within a week, which instantly attracted potential customers."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Rebecca Chung</span>
+          <span class="testimonial-role">General Manager, Han Dian UK</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"His visual direction aligned seamlessly with our premium brand positioning and professionalism made a real impact."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Alel Fahd</span>
+          <span class="testimonial-role">Founder, PowderSpark</span>
+        </div>
+      </div>
+      <!-- duplicate for seamless loop -->
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Working with Chun was a pleasure. He played a key role in shaping several of our most important internal tools and the client-facing app."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Arik Peretz</span>
+          <span class="testimonial-role">Co-founder, Y TREE</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Chun was a fantastic UX partner – quickly grasping complex data challenges and translating them into clear, interactive design concepts."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Ciaran McCale</span>
+          <span class="testimonial-role">CMO, ESG Book</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"Our product had a lot of moving parts — different user types, evolving requirements, and high expectations. Chun brought calm, clarity, and fast execution."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Paul Smith</span>
+          <span class="testimonial-role">CEO, Global Gains</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"An exceptional UX/UI designer who delivered intuitive web and mobile experiences under tight deadlines."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Isobel Raeside</span>
+          <span class="testimonial-role">Head of Product</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"UX CIRCLES' design and communication are incredibly efficient. They developed an initial website for us within a week, which instantly attracted potential customers."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Rebecca Chung</span>
+          <span class="testimonial-role">General Manager, Han Dian UK</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"His visual direction aligned seamlessly with our premium brand positioning and professionalism made a real impact."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Alel Fahd</span>
+          <span class="testimonial-role">Founder, PowderSpark</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <p class="section-label reveal">Services</p>
+  <h2 class="reveal">Two ways to work<br>with us.</h2>
+  <p class="section-intro reveal">We keep it focused. No bloated retainers, no junior handoffs.</p>
+
+  <div class="services-grid">
+    <div class="service-card featured reveal">
+      <div>
+        <p class="service-number">01</p>
+        <h3>App Design Sprint</h3>
+        <p class="service-price">£6,000 – £10,000</p>
+        <p class="service-duration">4–6 weeks</p>
+      </div>
+      <div class="service-featured-right">
+        <p>From concept to a prototype you can show investors, users, or your own team. We start with the hard questions — who owns what, where does money move, what happens when something goes wrong — before we touch a single screen.</p>
+        <p>Ideal for seed-stage teams who have the idea but need the product logic made real.</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <p class="service-number">02</p>
+      <h3>Design Audit & Roadmap</h3>
+      <p>You have a product. Something isn't working. We spend two weeks inside it, identify the real problems (not just the visible ones), and give you a prioritised roadmap.</p>
+      <p class="service-price">£2,000 – £3,000</p>
+      <p class="service-duration">2 weeks</p>
+    </div>
+
+    <div class="service-card reveal">
+      <p class="service-number">03</p>
+      <h3>Brand & Visual Design</h3>
+      <p>Led by Rita Hou, our graphic designer specialising in food, drink, and consumer packaging — plus marketing websites and landing pages for consumer brands. Distinct from app design — deliberately.</p>
+      <p class="service-price">Enquire for pricing</p>
+      <p class="service-duration">Scope-dependent</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="section-label reveal">About</p>
+  <h2 class="reveal">We've seen what happens<br>when complexity is ignored.</h2>
+
+  <div class="about-grid">
+    <div class="about-left reveal">
+      <p>We've designed invoice systems tracking <strong>£3.5B in assets</strong>. We've mapped dispute flows before anyone agreed who owned them. We've watched a platform shift from B2B2C to C2C mid-build — and caught what that meant before it became a product crisis.</p>
+      <p>Complex products aren't just hard to design. They're hard to <em>think through</em>. That's where we come in.</p>
+      <p>UX CIRCLES is a small studio based in London. We work with founders and product teams who are building things that don't fit neatly into a template.</p>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-number">13+</div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">£9B+</div>
+          <div class="stat-label">Assets on platforms designed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100M+</div>
+          <div class="stat-label">Users on products shipped</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right reveal">
+      <div class="person-card">
+        <div class="person-header">
+          <img src="photo-chunchuan.png" alt="Chun-Chuan Lin" class="person-photo">
+          <div>
+            <p class="person-name">Chun-Chuan Lin</p>
+            <p class="person-role">Founder · Product Design Lead</p>
+          </div>
+        </div>
+        <p class="person-bio">13 years in product design. Previously founding designer at a fintech platform scaling from Series A to C, overseeing £9B+ in assets. Before that: Synology (100M+ users), Acer. Based in London for 8 years. Works on the hard stuff — multi-role systems, transaction flows, trust mechanics.</p>
+      </div>
+      <div class="person-card">
+        <div class="person-header">
+          <img src="photo-rita.webp" alt="Rita Hou" class="person-photo">
+          <div>
+            <p class="person-name">Rita Hou</p>
+            <p class="person-role">Graphic, Packaging & Web Design</p>
+          </div>
+        </div>
+        <p class="person-bio">Graphic designer specialising in food and drink brand identity, packaging, and marketing websites for consumer brands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label reveal">Contact</p>
+  <h2 class="reveal">Got a complex product<br>to build?</h2>
+  <p class="section-intro reveal">A 25-minute call to hear what you're building. No pitch, no deck. We'll tell you honestly whether it's the kind of problem we work on.</p>
+
+  <a href="https://cal.com/ux-circles/25-min-consultancy" target="_blank" class="btn-primary" style="display:inline-flex; align-items:center; gap:8px; margin-bottom: 3rem;">
+    Book a call
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <div class="contact-divider reveal">
+    <span>or send a message</span>
+  </div>
+
+  <form class="contact-form reveal" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="bot-field" style="display:none">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="Tell us what you're building — the messier the better." required></textarea>
+    <button type="submit">Send message</button>
+  </form>
+  <div class="form-success" id="formSuccess">
+    <strong>Message sent.</strong>
+    We'll be in touch within one working day.
+  </div>
+  <p class="contact-fallback reveal">Prefer email? <a href="mailto:hello@ux-circles.com">hello@ux-circles.com</a></p>
+</section>
+
+<footer>
+  <a href="#hero" class="footer-logo">
+    <img src="logo-landscape-transparent.png" alt="UX CIRCLES" style="height: 22px; width: auto; opacity: 0.75; filter: brightness(1.4);">
+  </a>
+  <span class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England & Wales</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // STAT COUNT-UP
+  const stats = document.querySelectorAll('.stat-number');
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || entry.target.dataset.animated) return;
+      entry.target.dataset.animated = true;
+
+      const el = entry.target;
+      const raw = el.textContent.trim();
+      const prefix = raw.match(/^[£]/) ? raw.match(/^[£]/)[0] : '';
+      const suffix = raw.match(/[A-Z+]+$/) ? raw.match(/[A-Z+]+$/)[0] : '';
+      const numStr = raw.replace(prefix, '').replace(suffix, '');
+      const target = parseFloat(numStr);
+      const isDecimal = numStr.includes('.');
+      const duration = 1800;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = target * ease;
+        el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      };
+
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.5 });
+
+  stats.forEach(s => statObserver.observe(s));
+
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    contactForm.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
