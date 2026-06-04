@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img, svg { max-width: 100%; }
 
   :root {
     --bg: #0f1021;
@@ -32,7 +33,11 @@
     --border-bright: rgba(123, 111, 240, 0.35);
   }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
 
   body {
     background: var(--bg);
@@ -40,7 +45,6 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    overflow-x: hidden;
   }
 
   /* NAV */
@@ -900,9 +904,9 @@
     #hero { padding: 7rem 1.25rem 4rem; }
     .work-grid { grid-template-columns: 1fr; }
     .testimonial-card { width: 260px; }
-    .work-card.featured { grid-column: span 1; grid-template-columns: 1fr; display: flex; flex-direction: column; }
-    .work-card.featured > div:first-child { padding: 1.75rem; }
-    .work-card.featured .work-body { order: -1; min-height: 200px; position: relative; width: 100%; top: auto; right: auto; bottom: auto; left: auto; }
+    .work-card.featured { grid-column: span 1; grid-template-columns: 1fr; display: flex; flex-direction: column; width: 100%; }
+    .work-card.featured > div:first-child { padding: 1.75rem; width: 100%; }
+    .work-card.featured .work-body { order: -1; min-height: 200px; position: relative !important; width: 100% !important; top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; }
     .services-grid { grid-template-columns: 1fr; }
     .service-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
     .service-featured-right { border-left: none; border-top: 0.5px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
