@@ -871,7 +871,7 @@
   .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
   .nav-mobile {
-    display: none;
+    display: flex;
     position: fixed;
     top: 57px; left: 0; right: 0;
     background: rgba(15, 16, 33, 0.97);
@@ -881,17 +881,34 @@
     flex-direction: column;
     gap: 1.25rem;
     z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
   }
 
-  .nav-mobile.open { display: flex; }
+  .nav-mobile.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 
   .nav-mobile a {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 0.05em;
-    transition: color 0.2s;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: color 0.2s, opacity 0.2s ease, transform 0.2s ease;
   }
+
+  .nav-mobile.open a:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.06s; }
+  .nav-mobile.open a:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
+  .nav-mobile.open a:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.18s; }
+  .nav-mobile.open a:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
 
   .nav-mobile a:hover { color: var(--text); }
 
