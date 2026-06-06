@@ -437,6 +437,7 @@
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="product">Product & App Design</button>
+  <button class="filter-btn" data-filter="web">Brand & Web</button>
   <button class="filter-btn" data-filter="brand">Brand & Visual Identity</button>
 </div>
 
@@ -544,6 +545,29 @@
   </div>
 </div>
 
+<!-- WEB DESIGN -->
+<div class="work-section" id="section-web">
+  <p class="work-section-label">Brand & Web — Chun-Chuan Lin · Rita Hou</p>
+  <div class="work-grid">
+
+    <div class="work-card">
+      <img src="work-handian-web.webp" alt="Han Dian UK website" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag">Web Design</span>
+          <span class="work-tag">UK Market Entry</span>
+        </div>
+        <p class="work-card-title">Han Dian (UK) — Taiwanese food brand website for the UK market</p>
+        <p class="work-card-desc">End-to-end website design for the only Taiwanese food manufacturer in the UK. Positioned the brand for B2B buyers, restaurant chains, and retail partners — covering product catalogue, OEM services, and brand story.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Chun-Chuan Lin · Rita Hou</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- BRAND & VISUAL IDENTITY -->
 <div class="work-section" id="section-brand">
   <p class="work-section-label">Brand & Visual Identity — Rita Hou</p>
@@ -626,7 +650,9 @@
   // Filter
   const filterBtns = document.querySelectorAll('.filter-btn');
   const sectionProduct = document.getElementById('section-product');
+  const sectionWeb = document.getElementById('section-web');
   const sectionBrand = document.getElementById('section-brand');
+  const allSections = [sectionProduct, sectionWeb, sectionBrand];
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -634,13 +660,18 @@
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       if (filter === 'all') {
-        sectionProduct.classList.remove('hidden');
-        sectionBrand.classList.remove('hidden');
+        allSections.forEach(s => s.classList.remove('hidden'));
       } else if (filter === 'product') {
         sectionProduct.classList.remove('hidden');
+        sectionWeb.classList.add('hidden');
+        sectionBrand.classList.add('hidden');
+      } else if (filter === 'web') {
+        sectionProduct.classList.add('hidden');
+        sectionWeb.classList.remove('hidden');
         sectionBrand.classList.add('hidden');
       } else if (filter === 'brand') {
         sectionProduct.classList.add('hidden');
+        sectionWeb.classList.add('hidden');
         sectionBrand.classList.remove('hidden');
       }
     });
