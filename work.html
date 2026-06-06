@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — UX CIRCLES | App Design & Brand Identity, London</title>
+<meta name="description" content="Selected work by UX CIRCLES — product design for fintech and SaaS platforms, and brand & packaging identity for consumer brands.">
+<link rel="canonical" href="https://ux-circles.com/work">
+<link rel="icon" type="image/webp" href="logo-dark.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img, svg { max-width: 100%; }
+
+  :root {
+    --bg: #0f1021;
+    --bg2: #151729;
+    --bg3: #1c1f35;
+    --purple: #6b7de8;
+    --purple-light: #7b96f2;
+    --text: #f0f0f8;
+    --text-muted: #8b8da8;
+    --text-dim: #555770;
+    --border: rgba(123, 111, 240, 0.15);
+    --border-bright: rgba(123, 111, 240, 0.35);
+  }
+
+  html, body { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 16, 33, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark { width: 28px; height: 28px; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+  .nav-cta {
+    background: transparent;
+    border: 0.5px solid var(--border-bright);
+    color: var(--purple-light) !important;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: rgba(123, 111, 240, 0.12) !important;
+    color: var(--text) !important;
+  }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--text-muted);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .nav-mobile {
+    display: flex;
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(15, 16, 33, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+  }
+
+  .nav-mobile.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-mobile a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: color 0.2s, opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav-mobile.open a:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.06s; }
+  .nav-mobile.open a:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
+  .nav-mobile.open a:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.18s; }
+  .nav-mobile.open a:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
+
+  .nav-mobile a:hover { color: var(--text); }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 9rem 2rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--purple);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .page-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 520px;
+    font-weight: 300;
+  }
+
+  /* FILTER TABS */
+  .filter-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover { border-color: var(--border-bright); color: var(--text); }
+
+  .filter-btn.active {
+    background: rgba(107, 125, 232, 0.15);
+    border-color: var(--purple);
+    color: var(--purple-light);
+  }
+
+  /* WORK GRID */
+  .work-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  .work-section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  .work-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .work-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-3px);
+  }
+
+  .work-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .work-card:hover .work-card-img { transform: scale(1.03); }
+
+  .work-card-body { padding: 1.5rem; }
+
+  .work-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .work-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--purple-light);
+    border: 0.5px solid var(--border-bright);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .work-tag.brand { color: #e8c27b; border-color: rgba(232, 194, 123, 0.35); }
+
+  .work-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .work-card-desc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .work-card-meta {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .work-card-author {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  .work-stat {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--purple-light);
+    margin-left: auto;
+  }
+
+  /* HIDDEN state for filter */
+  .work-section.hidden { display: none; }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border);
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo { height: 22px; filter: brightness(1.4); }
+
+  .footer-copy {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text-muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-header { padding: 7rem 1.25rem 3rem; }
+    .filter-bar { padding: 0 1.25rem 2.5rem; }
+    .work-section { padding: 0 1.25rem 4rem; }
+    .work-grid { grid-template-columns: 1fr; gap: 1rem; }
+    footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" style="height:22px; filter:brightness(1.4);">
+  </a>
+  <ul class="nav-links">
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="mobileMenu">
+  <a href="work.html" class="mobile-link">Work</a>
+  <a href="index.html#services" class="mobile-link">Services</a>
+  <a href="index.html#about" class="mobile-link">About</a>
+  <a href="index.html#contact" class="mobile-link">Get in touch</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="section-label">Selected Work</p>
+  <h1>What we've built</h1>
+  <p>Product design for complex digital platforms, and brand identity for consumer brands — each project handled with the same rigour.</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="product">Product & App Design</button>
+  <button class="filter-btn" data-filter="brand">Brand & Visual Identity</button>
+</div>
+
+<!-- PRODUCT & APP DESIGN -->
+<div class="work-section" id="section-product">
+  <p class="work-section-label">Product & App Design — Chun-Chuan Lin</p>
+  <div class="work-grid">
+
+    <div class="work-card">
+      <img src="work-platform-laptop.webp" alt="Wealth management platform" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag">Fintech</span>
+          <span class="work-tag">Platform</span>
+        </div>
+        <p class="work-card-title">Multi-role platform redesign for UHNW wealth management</p>
+        <p class="work-card-desc">Redesigned a complex multi-role platform used by advisers, clients, and operations teams — improving navigation, data hierarchy, and workflow clarity.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Chun-Chuan Lin</span>
+          <span class="work-stat">£9B+ AUM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="work-mobile-app.webp" alt="Investment app on mobile" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag">Mobile App</span>
+          <span class="work-tag">Fintech</span>
+        </div>
+        <p class="work-card-title">Investment app redesign — from confusion to confidence</p>
+        <p class="work-card-desc">Users weren't making confident decisions — not because the data was wrong, but because it was hard to read. Redesigned navigation, metrics, and information hierarchy across the mobile app.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Chun-Chuan Lin</span>
+          <span class="work-stat">89% CSAT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="work-byond-app.webp" alt="Byond app" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag">B2B SaaS</span>
+          <span class="work-tag">Marketplace</span>
+        </div>
+        <p class="work-card-title">Byond — marketplace platform for independent retailers</p>
+        <p class="work-card-desc">End-to-end product design for a marketplace connecting independent retailers with local suppliers. Covered onboarding, inventory management, and order flows.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Chun-Chuan Lin</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="work-dental-system.webp" alt="Dental practice management system" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag">Healthcare</span>
+          <span class="work-tag">Operations</span>
+        </div>
+        <p class="work-card-title">Dental practice management system redesign</p>
+        <p class="work-card-desc">Redesigned a complex practice management system used daily by dental teams — simplifying scheduling, patient records, and billing workflows.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Chun-Chuan Lin</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BRAND & VISUAL IDENTITY -->
+<div class="work-section" id="section-brand">
+  <p class="work-section-label">Brand & Visual Identity — Rita Hou</p>
+  <div class="work-grid">
+
+    <div class="work-card">
+      <img src="rita-shihke-packaging.webp" alt="實刻 Shih Ke tea brand packaging" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag brand">Packaging</span>
+          <span class="work-tag brand">Brand Identity</span>
+        </div>
+        <p class="work-card-title">實刻 Shih Ke — tea brand identity & packaging</p>
+        <p class="work-card-desc">Full brand identity and packaging design for a premium Taiwanese tea brand. Refined typography and muted sage tones to convey calm, quality, and craft.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Rita Hou</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="rita-yow-packaging.webp" alt="Yow Mid-Autumn Festival gift box packaging" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag brand">Packaging</span>
+          <span class="work-tag brand">Illustration</span>
+        </div>
+        <p class="work-card-title">Yow — Mid-Autumn Festival gift packaging</p>
+        <p class="work-card-desc">Seasonal gift box packaging for a Taiwanese food brand. Traditional illustration with a contemporary layout — gold foil printing on deep red.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Rita Hou</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <img src="rita-javex-packaging.webp" alt="Javex electronics packaging design" class="work-card-img">
+      <div class="work-card-body">
+        <div class="work-tags">
+          <span class="work-tag brand">Packaging</span>
+          <span class="work-tag brand">Brand System</span>
+        </div>
+        <p class="work-card-title">Javex — electronics brand packaging system</p>
+        <p class="work-card-desc">Packaging design system for a global electronics brand (Since 1980). Developed across multiple product lines — cables, connectors, and accessories — with a consistent dark, technical aesthetic.</p>
+        <div class="work-card-meta">
+          <span class="work-card-author">Rita Hou</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" class="footer-logo">
+  <span class="footer-copy">© 2025 UX CIRCLES Ltd · Company No. 13955092</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="mailto:hello@ux-circles.com">hello@ux-circles.com</a>
+  </div>
+</footer>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const sectionProduct = document.getElementById('section-product');
+  const sectionBrand = document.getElementById('section-brand');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      if (filter === 'all') {
+        sectionProduct.classList.remove('hidden');
+        sectionBrand.classList.remove('hidden');
+      } else if (filter === 'product') {
+        sectionProduct.classList.remove('hidden');
+        sectionBrand.classList.add('hidden');
+      } else if (filter === 'brand') {
+        sectionProduct.classList.add('hidden');
+        sectionBrand.classList.remove('hidden');
+      }
+    });
+  });
+</script>
+</body>
+</html>
