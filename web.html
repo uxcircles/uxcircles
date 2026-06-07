@@ -176,7 +176,14 @@
 
   .hero-cta:hover { background: var(--purple-dark); transform: translateY(-2px); }
 
-  .hero-bg { display: none; }
+  .hero-bg {
+    position: absolute;
+    top: 0; right: 0;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(ellipse at 100% 40%, rgba(107, 92, 231, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
 
   /* CASES */
   .cases {
