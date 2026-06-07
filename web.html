@@ -109,14 +109,17 @@
 
   .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8rem 2rem 4rem;
-    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 7rem 2rem 3rem;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
   }
+
+  .hero-text { display: flex; flex-direction: column; }
 
   .hero-label {
     font-family: 'Syne', sans-serif;
@@ -124,42 +127,65 @@
     letter-spacing: 0.2em;
     color: var(--purple);
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-title {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: clamp(3rem, 8vw, 7rem);
-    line-height: 1.0;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
     color: var(--text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.6rem;
   }
 
   .hero-title .zh {
     display: block;
-    font-size: clamp(1.5rem, 4vw, 3.5rem);
-    font-weight: 600;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-weight: 400;
     color: var(--purple);
-    letter-spacing: -0.01em;
-    margin-top: 0.5rem;
+    letter-spacing: 0;
+    margin-top: 0.6rem;
+    opacity: 0.85;
   }
 
   .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    max-width: 520px;
+    max-width: 460px;
     font-weight: 300;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     line-height: 1.8;
+    margin-top: 1.25rem;
   }
 
   .hero-sub .zh-sub {
     display: block;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     color: var(--text-dim);
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  /* Hero right: preview image */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+  }
+
+  .hero-mockup {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 30px 80px rgba(45, 31, 110, 0.15);
+    transform: rotateY(-8deg) rotateX(3deg);
+    transition: transform 0.5s ease;
+  }
+
+  .hero-visual:hover .hero-mockup {
+    transform: rotateY(-4deg) rotateX(1deg);
   }
 
   .hero-cta {
@@ -503,6 +529,8 @@
 
   /* MOBILE */
   @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-visual { display: none; }
     .case-section { height: auto; min-height: 100vh; padding: 7rem 1.5rem 4rem; }
     .case-inner { flex-direction: column !important; padding: 0; gap: 2.5rem; }
     .case-content { width: 100%; }
@@ -536,17 +564,22 @@
 <div class="hero-wrap">
 <section class="hero">
   <div class="hero-bg"></div>
-  <p class="hero-label">Web Design & Development</p>
-  <h1 class="hero-title">
-    Websites that<br>mean business.
-    <span class="zh">為你的品牌，打開英國市場的門。</span>
-  </h1>
-  <p class="hero-sub">
-    Brand identity, UX strategy, and full website design & development —
-    for Taiwanese brands entering the UK, and UK businesses ready to grow.
-    <span class="zh-sub">品牌識別、使用者體驗策略、網站設計與開發，一站式服務。</span>
-  </p>
-  <a href="/#contact" class="hero-cta">Start a project →</a>
+  <div class="hero-text">
+    <p class="hero-label">Web Design & Development</p>
+    <h1 class="hero-title">
+      Websites that<br>mean business.
+      <span class="zh">為你的品牌，打開英國市場的門。</span>
+    </h1>
+    <p class="hero-sub">
+      Brand identity, UX strategy, and full website design & development —
+      for Taiwanese brands entering the UK, and UK businesses ready to grow.
+      <span class="zh-sub">品牌識別、使用者體驗策略、網站設計與開發，一站式服務。</span>
+    </p>
+    <a href="/#contact" class="hero-cta">Start a project →</a>
+  </div>
+  <div class="hero-visual">
+    <img src="heatingology-homepage.webp" alt="Heatingology website" class="hero-mockup">
+  </div>
 </section>
 </div>
 
