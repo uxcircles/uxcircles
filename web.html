@@ -200,6 +200,14 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+
+  .dot-nav.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .dot-nav button {
@@ -517,8 +525,7 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">
-    <img src="logo-dark.webp" alt="UX CIRCLES" class="logo-mark">
-    UX CIRCLES
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" class="logo-mark" style="height:28px;width:auto;filter:brightness(0);">
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
@@ -670,8 +677,7 @@
 <!-- FOOTER -->
 <footer>
   <a href="/" class="nav-logo">
-    <img src="logo-dark.webp" alt="UX CIRCLES" style="height:24px;width:auto;filter:brightness(0);">
-    UX CIRCLES
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" style="height:28px;width:auto;filter:brightness(0);">
   </a>
   <span class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England & Wales</span>
 </footer>
@@ -691,6 +697,18 @@
   // Case images: fly in from far (scale + translateZ)
   const cases = document.querySelectorAll('.case-section');
   const dots = document.querySelectorAll('.dot-nav button');
+  const dotNav = document.querySelector('.dot-nav');
+
+  // Show dot nav only when in cases section
+  ScrollTrigger.create({
+    trigger: '.cases',
+    start: 'top 60%',
+    end: 'bottom 40%',
+    onEnter: () => dotNav.classList.add('visible'),
+    onLeave: () => dotNav.classList.remove('visible'),
+    onEnterBack: () => dotNav.classList.add('visible'),
+    onLeaveBack: () => dotNav.classList.remove('visible'),
+  });
 
   cases.forEach((section, i) => {
     const img = section.querySelector('.case-img');
