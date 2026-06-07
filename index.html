@@ -1262,9 +1262,10 @@
     <span>or send a message</span>
   </div>
 
-  <form class="contact-form reveal" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contact">
-    <input type="hidden" name="bot-field" style="display:none">
+  <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="842f1eb6-d651-4407-a5fd-d947b273acf4">
+    <input type="hidden" name="subject" value="New enquiry from UX CIRCLES website">
+    <input type="checkbox" name="botcheck" style="display:none">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email" required>
     <textarea name="message" placeholder="Tell us what you're building — the messier the better." required></textarea>
@@ -1329,10 +1330,20 @@
   stats.forEach(s => statObserver.observe(s));
 
   const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    contactForm.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const data = new FormData(contactForm);
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    });
+    const json = await res.json();
+    if (json.success) {
+      contactForm.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      alert('Something went wrong. Please email us at hello@ux-circles.com');
+    }
   });
 
   const hamburger = document.getElementById('hamburger');
