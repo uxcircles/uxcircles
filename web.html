@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design for UK & Taiwanese Brands — UX CIRCLES</title>
+<meta name="description" content="Brand and website design for Taiwanese businesses entering the UK market, and UK brands ready to grow. Strategy, UX, design and development.">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JNNDRPCD82"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JNNDRPCD82');
+</script>
+<link rel="icon" type="image/webp" href="logo-dark.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { max-width: 100%; }
+
+  :root {
+    --bg: #f7f5f2;
+    --bg2: #f0ecf7;
+    --purple: #6b5ce7;
+    --purple-light: #9b8ef5;
+    --purple-dark: #2d1f6e;
+    --text: #1a1433;
+    --text-muted: #6b6585;
+    --text-dim: #a09cba;
+    --border: rgba(107, 92, 231, 0.12);
+    --border-bright: rgba(107, 92, 231, 0.3);
+  }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(247, 245, 242, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark { height: 28px; width: auto; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--purple) !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--purple-dark) !important; color: #fff !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .zh {
+    display: block;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    font-weight: 600;
+    color: var(--purple);
+    letter-spacing: -0.01em;
+    margin-top: 0.5rem;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .hero-sub .zh-sub {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--purple);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+  }
+
+  .hero-cta:hover { background: var(--purple-dark); transform: translateY(-2px); }
+
+  .hero-bg {
+    position: absolute;
+    top: 0; right: -10%;
+    width: 55%;
+    height: 100%;
+    background: radial-gradient(ellipse at 60% 40%, rgba(107, 92, 231, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* CASES */
+  .cases {
+    padding: 4rem 0;
+  }
+
+  .case-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .case-section:nth-child(even) { background: var(--bg2); }
+
+  .case-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .case-section:nth-child(even) .case-inner { direction: rtl; }
+  .case-section:nth-child(even) .case-inner > * { direction: ltr; }
+
+  .case-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .case-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .case-title-zh {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    color: var(--purple);
+    margin-bottom: 1.5rem;
+  }
+
+  .case-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .case-desc-zh {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .case-tag {
+    font-size: 0.75rem;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 0.08em;
+    color: var(--purple);
+    border: 0.5px solid var(--border-bright);
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    background: rgba(107, 92, 231, 0.05);
+  }
+
+  .case-img-wrap {
+    perspective: 1000px;
+  }
+
+  .case-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(45, 31, 110, 0.15), 0 8px 24px rgba(45, 31, 110, 0.08);
+    transform: rotateY(-8deg) rotateX(3deg);
+    transition: transform 0.6s ease;
+    will-change: transform;
+    opacity: 0;
+    transform: rotateY(-8deg) rotateX(3deg) translateY(60px);
+  }
+
+  .case-img.visible {
+    opacity: 1;
+    transform: rotateY(-5deg) rotateX(2deg) translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .case-section:nth-child(even) .case-img {
+    transform: rotateY(8deg) rotateX(3deg) translateY(60px);
+  }
+
+  .case-section:nth-child(even) .case-img.visible {
+    transform: rotateY(5deg) rotateX(2deg) translateY(0);
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 8rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .services-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .services-title-zh {
+    font-size: 1.1rem;
+    color: var(--purple);
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .service-card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem 1.5rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-3px);
+  }
+
+  .service-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+
+  .service-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+
+  .service-name-zh {
+    font-size: 0.85rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--purple-dark);
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-title-zh {
+    font-size: 1.1rem;
+    color: var(--purple-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    color: var(--purple-dark);
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .cta-btn:hover { background: var(--bg2); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--border);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .case-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      direction: ltr !important;
+    }
+
+    .case-section:nth-child(even) .case-inner { direction: ltr; }
+
+    .services-grid { grid-template-columns: 1fr 1fr; }
+
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="logo-dark.webp" alt="UX CIRCLES" class="logo-mark">
+    UX CIRCLES
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/work">Work</a></li>
+    <li><a href="/#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-label">Web Design & Development</p>
+  <h1 class="hero-title">
+    Websites that<br>mean business.
+    <span class="zh">為你的品牌，打開英國市場的門。</span>
+  </h1>
+  <p class="hero-sub">
+    Brand identity, UX strategy, and full website design & development —
+    for Taiwanese brands entering the UK, and UK businesses ready to grow.
+    <span class="zh-sub">品牌識別、使用者體驗策略、網站設計與開發，一站式服務。</span>
+  </p>
+  <a href="/#contact" class="hero-cta">Start a project →</a>
+</section>
+
+<!-- CASES -->
+<div class="cases">
+
+  <!-- Heatingology -->
+  <section class="case-section">
+    <div class="case-inner">
+      <div class="case-content">
+        <p class="case-label">Brand & Web · UK Market</p>
+        <h2 class="case-title">Heatingology</h2>
+        <p class="case-title-zh">英國暖氣品牌 — 品牌再造與網站重建</p>
+        <p class="case-desc">Full brand overhaul and website rebuild for a UK heating company. Restructured the information architecture, redesigned the end-to-end user journey, and added new service lines — benchmarked against Boxt and Heatable.</p>
+        <p class="case-desc-zh">從品牌識別到網站架構全面重建，新增 EV Charger 等服務線，打造符合市場標準的數位體驗。</p>
+        <div class="case-tags">
+          <span class="case-tag">Brand Redesign</span>
+          <span class="case-tag">UX Strategy</span>
+          <span class="case-tag">Web Development</span>
+          <span class="case-tag">UK Market</span>
+        </div>
+      </div>
+      <div class="case-img-wrap">
+        <img src="heatingology-homepage.webp" alt="Heatingology website" class="case-img" data-tilt>
+      </div>
+    </div>
+  </section>
+
+  <!-- Han Dian -->
+  <section class="case-section">
+    <div class="case-inner">
+      <div class="case-content">
+        <p class="case-label">Brand & Web · Taiwan → UK</p>
+        <h2 class="case-title">Han Dian</h2>
+        <p class="case-title-zh">漢典 — 台灣食品品牌英國市場進入</p>
+        <p class="case-desc">End-to-end website design for the only Taiwanese food manufacturer in the UK. Positioned the brand for B2B buyers, restaurant chains, and retail partners — covering product catalogue, OEM services, and brand story.</p>
+        <p class="case-desc-zh">為英國唯一台灣食品製造商打造官網，面向 B2B 採購商、餐廳連鎖與零售夥伴，完整呈現產品目錄、代工服務與品牌故事。</p>
+        <div class="case-tags">
+          <span class="case-tag">Web Design</span>
+          <span class="case-tag">UK Market Entry</span>
+          <span class="case-tag">B2B</span>
+          <span class="case-tag">台灣品牌</span>
+        </div>
+      </div>
+      <div class="case-img-wrap">
+        <img src="work-handian-web.webp" alt="Han Dian website" class="case-img" data-tilt>
+      </div>
+    </div>
+  </section>
+
+  <!-- CallMeTaiwan -->
+  <section class="case-section">
+    <div class="case-inner">
+      <div class="case-content">
+        <p class="case-label">Web Design · NGO</p>
+        <h2 class="case-title">CallMeTaiwan</h2>
+        <p class="case-title-zh">台灣正名倡議 — NGO 網站設計</p>
+        <p class="case-desc">Editorial-driven website for a Taiwan identity advocacy NGO. Bold typography, data visualisation, and a clear narrative structure designed to engage international audiences and drive action.</p>
+        <p class="case-desc-zh">以 editorial 風格呈現台灣正名倡議，大字排版與資料視覺化設計，讓國際觀眾理解並行動。</p>
+        <div class="case-tags">
+          <span class="case-tag">Editorial Design</span>
+          <span class="case-tag">NGO</span>
+          <span class="case-tag">Data Visualisation</span>
+          <span class="case-tag">International</span>
+        </div>
+      </div>
+      <div class="case-img-wrap">
+        <img src="callmetaiwan-preview.webp" alt="CallMeTaiwan website" class="case-img" data-tilt>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- SERVICES -->
+<section class="services">
+  <p class="services-label">What we do</p>
+  <h2 class="services-title">From strategy to launch.</h2>
+  <p class="services-title-zh">從策略到上線，一站式服務。</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <p class="service-num">01</p>
+      <p class="service-name">Brand Strategy</p>
+      <p class="service-name-zh">品牌策略</p>
+      <p class="service-desc">Positioning, naming, visual identity, and tone of voice — built for the market you're entering.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">02</p>
+      <p class="service-name">UX & Information Architecture</p>
+      <p class="service-name-zh">使用者體驗與網站架構</p>
+      <p class="service-desc">Structure that makes sense. User journeys, wireframes, and content strategy before a pixel is designed.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">03</p>
+      <p class="service-name">Web Design</p>
+      <p class="service-name-zh">網頁設計</p>
+      <p class="service-desc">High-fidelity design that reflects your brand and converts visitors into customers.</p>
+    </div>
+    <div class="service-card">
+      <p class="service-num">04</p>
+      <p class="service-name">Development</p>
+      <p class="service-name-zh">網站開發</p>
+      <p class="service-desc">Clean, fast, and maintainable code. Built to perform and easy to hand over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to build something?</h2>
+    <p class="cta-title-zh">準備好開始了嗎？</p>
+    <p class="cta-sub">Tell us about your brand and where you want to go. We'll take it from there.</p>
+    <a href="/#contact" class="cta-btn">Get in touch →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="nav-logo">
+    <img src="logo-dark.webp" alt="UX CIRCLES" style="height:24px;width:auto;filter:brightness(0);">
+    UX CIRCLES
+  </a>
+  <span class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England & Wales</span>
+</footer>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate case images on scroll
+  document.querySelectorAll('.case-img').forEach((img) => {
+    gsap.fromTo(img,
+      { opacity: 0, y: 60, rotateX: 5 },
+      {
+        opacity: 1, y: 0, rotateX: 2,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: img,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+
+  // Mouse tilt effect
+  document.querySelectorAll('[data-tilt]').forEach((el) => {
+    const wrap = el.parentElement;
+    wrap.addEventListener('mousemove', (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      el.style.transform = `rotateY(${x * 12}deg) rotateX(${-y * 8}deg) translateY(0)`;
+    });
+    wrap.addEventListener('mouseleave', () => {
+      el.style.transform = 'rotateY(-5deg) rotateX(2deg) translateY(0)';
+    });
+  });
+
+  // Hero fade in
+  gsap.from('.hero-label, .hero-title, .hero-sub, .hero-cta', {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: 'power3.out',
+    delay: 0.2
+  });
+</script>
+
+</body>
+</html>
