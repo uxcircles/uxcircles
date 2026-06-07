@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call Me Taiwan — Case Study | UX CIRCLES</title>
+<meta name="description" content="Case study: Editorial website design for Call Me Taiwan, a Taiwan identity advocacy NGO. Bold typography, data visualisation, and interactive storytelling.">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JNNDRPCD82"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JNNDRPCD82');
+</script>
+<link rel="icon" type="image/webp" href="logo-dark.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img, video { max-width: 100%; }
+
+  :root {
+    --bg: #f7f5f2;
+    --bg2: #f0ecf7;
+    --purple: #6b5ce7;
+    --purple-light: #9b8ef5;
+    --purple-dark: #2d1f6e;
+    --text: #1a1433;
+    --text-muted: #6b6585;
+    --text-dim: #a09cba;
+    --border: rgba(107, 92, 231, 0.12);
+    --border-bright: rgba(107, 92, 231, 0.3);
+  }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(247, 245, 242, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo img { height: 28px; width: auto; filter: brightness(0); }
+  .nav-logo { text-decoration: none; }
+
+  .nav-back {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    padding: 9rem 2rem 5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    margin-bottom: 2.5rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--purple); }
+
+  .hero-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title-zh {
+    font-size: 1.1rem;
+    color: var(--purple);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-desc-zh {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .meta-item { }
+  .meta-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .meta-value {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem;
+  }
+
+  /* Full bleed video/image */
+  .full-media {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 5rem;
+    background: #0d0d1a;
+  }
+
+  .full-media video,
+  .full-media img {
+    width: 100%;
+    display: block;
+    max-height: 85vh;
+    object-fit: cover;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 5rem;
+  }
+
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .section h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+
+  .section .zh {
+    font-size: 0.95rem;
+    color: var(--purple);
+    margin-bottom: 1.25rem;
+  }
+
+  .section p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.85;
+    margin-bottom: 0.75rem;
+    max-width: 680px;
+  }
+
+  .section p.zh-p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+
+  /* Two-col media */
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .media-grid video,
+  .media-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(45, 31, 110, 0.12);
+    display: block;
+    background: #0d0d1a;
+  }
+
+  .media-single {
+    margin: 2.5rem 0;
+  }
+
+  .media-single video,
+  .media-single img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(45, 31, 110, 0.12);
+    display: block;
+    background: #0d0d1a;
+  }
+
+  .media-caption {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Highlight quote */
+  .pull-quote {
+    border-left: 3px solid var(--purple);
+    padding: 1.25rem 2rem;
+    margin: 3rem 0;
+    background: var(--bg2);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0 !important;
+  }
+
+  .pull-quote .zh {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--purple);
+    margin-top: 0.5rem !important;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 0.08em;
+    color: var(--purple);
+    border: 0.5px solid var(--border-bright);
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    background: rgba(107, 92, 231, 0.05);
+  }
+
+  /* CTA */
+  .case-cta {
+    background: var(--purple-dark);
+    border-radius: 8px;
+    padding: 4rem 3rem;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .case-cta h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-cta .zh { color: var(--purple-light); font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .case-cta p { color: rgba(255,255,255,0.6); font-size: 0.95rem; font-weight: 300; margin-bottom: 2rem; max-width: none; }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    color: var(--purple-dark);
+    text-decoration: none;
+    padding: 0.85rem 2.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.15s;
+    margin: 0.4rem;
+  }
+  .cta-btn:hover { background: var(--bg2); transform: translateY(-2px); }
+  .cta-btn.secondary {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    border: 0.5px solid rgba(255,255,255,0.3);
+  }
+  .cta-btn.secondary:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+  @media (max-width: 768px) {
+    .media-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .case-cta { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES">
+  </a>
+  <a href="/web" class="nav-back">← Back to Web Design</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <a href="/web" class="back-link">← Web Design</a>
+  <p class="hero-label">Web Design · NGO · Editorial</p>
+  <h1 class="hero-title">Call Me Taiwan</h1>
+  <p class="hero-title-zh">台灣正名倡議 — 互動式倡議網站</p>
+  <p class="hero-desc">
+    A question most people have never had to ask: what if your country couldn't be called by its own name? Call Me Taiwan is an editorial-driven advocacy website designed to help international audiences understand — and feel — Taiwan's naming issue.
+  </p>
+  <p class="hero-desc-zh">
+    大多數人從未思考過：如果你的國家不能被叫做自己的名字，會是什麼感受？這個網站以互動與資料設計，讓國際觀眾真正理解台灣的正名處境。
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <p class="meta-label">Type</p>
+      <p class="meta-value">NGO Website</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Role</p>
+      <p class="meta-value">UX & Web Design</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Audience</p>
+      <p class="meta-value">International</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-label">Website</p>
+      <p class="meta-value"><a href="https://callmetaiwan.org" target="_blank" style="color:var(--purple);text-decoration:none;">callmetaiwan.org ↗</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Full bleed hero video -->
+<div class="full-media">
+  <video autoplay muted loop playsinline poster="callmetaiwan-preview.webp">
+    <source src="callmetaiwan-demo.mp4" type="video/mp4">
+    <img src="callmetaiwan-preview.webp" alt="Call Me Taiwan website">
+  </video>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- The Challenge -->
+  <div class="section">
+    <p class="section-label">The Challenge</p>
+    <h2>Making an invisible injustice visible.</h2>
+    <p class="zh">讓看不見的不公義，變得可見。</p>
+    <p>Taiwan is internationally known as "Taiwan, Province of China" in some UN agencies and forms — a name pushed by Beijing, never chosen by the Taiwanese people. The challenge wasn't just to inform, but to make people feel the absurdity of the situation.</p>
+    <p class="zh-p">如何讓一個從未親身經歷的問題，讓人感同身受？這是這個網站最核心的設計挑戰。</p>
+
+    <div class="pull-quote">
+      <p>"What if the United States competed internationally as 'British Washington D.C.'?"</p>
+      <p class="zh">設計的核心策略：讓觀眾想像，如果換成自己的國家被改名，他們能接受嗎？</p>
+    </div>
+
+    <p>The design strategy: reframe the issue through empathy. Instead of presenting dry facts, we designed interactions that put the audience in Taiwan's shoes.</p>
+  </div>
+
+  <!-- The "Tinder" Feature -->
+  <div class="section">
+    <p class="section-label">Interactive Feature</p>
+    <h2>Would you accept it?</h2>
+    <p class="zh">如果換成你的國家，你能接受嗎？</p>
+    <p>The most distinctive feature: a Tinder-style interactive that shows users how other countries would feel if the same renaming logic were applied to them. Each card presents a country with its hypothetical "renamed" version — users can swipe or vote Acceptable / Ridiculous.</p>
+    <p class="zh-p">最具代表性的互動設計：以 Tinder 刷卡模式，讓使用者逐一判斷每個國家被改名是否合理，讓抽象的政治問題瞬間具體可感。</p>
+    <div class="media-single">
+      <video autoplay muted loop playsinline poster="callmetaiwan-preview.webp">
+        <source src="callmetaiwan-tinder.mp4" type="video/mp4">
+      </video>
+      <p class="media-caption">The "Would you accept it?" interactive — applying Taiwan's naming logic to other countries.</p>
+    </div>
+  </div>
+
+  <!-- Data & Editorial -->
+  <div class="section">
+    <p class="section-label">Data & Editorial Design</p>
+    <h2>Numbers that tell a story.</h2>
+    <p class="zh">用數據說一個讓人無法忽視的故事。</p>
+    <p>The site pairs editorial typography with carefully designed data visualisations — comparing Taiwan and China across press freedom, democracy index, GDP, and global recognition. Dark backgrounds and high-contrast type give the data emotional weight.</p>
+    <p class="zh-p">深色背景搭配高對比排版，讓台灣與中國的各項指標對比清晰可見，數字本身就在說話。</p>
+    <div class="media-grid">
+      <div>
+        <img src="callmetaiwan-preview.webp" alt="Call Me Taiwan homepage">
+        <p class="media-caption">Homepage — editorial hero with data snapshot</p>
+      </div>
+      <div>
+        <img src="callmetaiwan-identity.webp" alt="Call Me Taiwan identity page">
+        <p class="media-caption">Identity page — four names, none chosen by Taiwan</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="section">
+    <p class="section-label">History Feature</p>
+    <h2>A history worth knowing.</h2>
+    <p class="zh">一段值得被認識的歷史。</p>
+    <p>The History section brings Taiwan's complex political timeline to life with scroll-based narrative design — each chapter unfolds as the user reads, guiding them through decades of international pressure and identity.</p>
+    <p class="zh-p">歷史章節以滾動敘事設計呈現，讓使用者跟著時間軸，一步步理解台灣長達數十年的正名處境。</p>
+    <div class="media-single">
+      <video autoplay muted loop playsinline>
+        <source src="callmetaiwan-history.mp4" type="video/mp4">
+      </video>
+      <p class="media-caption">History page — scroll-based narrative timeline</p>
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <div class="tags">
+    <span class="tag">Editorial Design</span>
+    <span class="tag">Interactive UX</span>
+    <span class="tag">Data Visualisation</span>
+    <span class="tag">Advocacy</span>
+    <span class="tag">NGO</span>
+    <span class="tag">International Audience</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="case-cta">
+    <h3>Have a project in mind?</h3>
+    <p class="zh">有想法了嗎？</p>
+    <p>Whether it's a brand entering the UK market or a website that needs to say something that matters — let's talk.</p>
+    <div>
+      <a href="/#contact" class="cta-btn">Get in touch →</a>
+      <a href="/web" class="cta-btn secondary">← Back to Web Design</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
