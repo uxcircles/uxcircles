@@ -717,16 +717,16 @@
     const isEven = i % 2 === 1;
     const endRotY = isEven ? 6 : -6;
 
-    gsap.set(img, { opacity: 0, rotateY: isEven ? 14 : -14, rotateX: 3, scale: 0.85, z: -100 });
-    gsap.set(content, { opacity: 0, x: isEven ? 40 : -40 });
+    gsap.set(img, { opacity: 0, scale: 0.92 });
+    gsap.set(content, { opacity: 0, x: isEven ? 30 : -30 });
 
     // Fly-in on scroll
     ScrollTrigger.create({
       trigger: section,
       start: 'top 75%',
       onEnter: () => {
-        gsap.to(img, { opacity: 1, rotateY: endRotY, rotateX: 2, scale: 1, z: 0, duration: 1.1, ease: 'power3.out' });
-        gsap.to(content, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out', delay: 0.1 });
+        gsap.to(img, { opacity: 1, rotateY: endRotY, rotateX: 2, scale: 1, duration: 1.0, ease: 'power3.out' });
+        gsap.to(content, { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
       }
     });
 
@@ -762,7 +762,7 @@
     });
   });
 
-  // Mouse tilt on images
+  // Mouse tilt — use GSAP to avoid conflicting with scrub
   document.querySelectorAll('.case-img-wrap').forEach((wrap, i) => {
     const img = wrap.querySelector('.case-img');
     const isEven = i % 2 === 1;
@@ -772,11 +772,23 @@
       const rect = wrap.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      img.style.transform = `rotateY(${baseRotY + x * 10}deg) rotateX(${2 - y * 8}deg) scale(1)`;
+      gsap.to(img, {
+        rotateY: baseRotY + x * 8,
+        rotateX: 2 - y * 6,
+        duration: 0.4,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
     });
 
     wrap.addEventListener('mouseleave', () => {
-      img.style.transform = `rotateY(${baseRotY}deg) rotateX(2deg) scale(1)`;
+      gsap.to(img, {
+        rotateY: baseRotY,
+        rotateX: 2,
+        duration: 0.6,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
     });
   });
 </script>
