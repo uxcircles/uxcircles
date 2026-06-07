@@ -229,6 +229,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    clip-path: inset(0);
   }
 
   .case-section:nth-child(even) { background: var(--bg2); }
@@ -720,10 +721,10 @@
     gsap.fromTo(img,
       {
         opacity: 0,
-        rotateY: startRotY,
-        rotateX: 5,
-        scale: 0.7,
-        z: -300
+        rotateY: startRotY * 0.5,
+        rotateX: 3,
+        scale: 0.85,
+        z: -120
       },
       {
         opacity: 1,
@@ -735,7 +736,7 @@
         ease: 'power3.out',
         scrollTrigger: {
           trigger: section,
-          start: 'top 70%',
+          start: 'top 75%',
           toggleActions: 'play none none none'
         }
       }
