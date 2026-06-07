@@ -700,75 +700,56 @@
   const dots = document.querySelectorAll('.dot-nav button');
   const dotNav = document.querySelector('.dot-nav');
 
-  // dot nav handled inside main pin ScrollTrigger
+  // Show dot nav when in cases
+  ScrollTrigger.create({
+    trigger: '.cases',
+    start: 'top center',
+    end: 'bottom center',
+    onEnter: () => dotNav.classList.add('visible'),
+    onLeave: () => dotNav.classList.remove('visible'),
+    onEnterBack: () => dotNav.classList.add('visible'),
+    onLeaveBack: () => dotNav.classList.remove('visible'),
+  });
 
-  const totalCases = cases.length;
-
-  // Set all cases hidden except first
   cases.forEach((section, i) => {
     const img = section.querySelector('.case-img');
     const content = section.querySelector('.case-content');
     const isEven = i % 2 === 1;
-    if (i === 0) {
-      gsap.set(img, { opacity: 1, rotateY: -6, rotateX: 2, scale: 1, z: 0 });
-      gsap.set(content, { opacity: 1, x: 0 });
-    } else {
-      gsap.set(img, { opacity: 0, rotateY: isEven ? 20 : -20, scale: 0.85, z: -100 });
-      gsap.set(content, { opacity: 0, x: isEven ? 50 : -50 });
-    }
-    // Absolute position all sections on top of each other
-    gsap.set(section, { position: 'absolute', top: 0, left: 0, width: '100%' });
-  });
-
-  // Make cases container relative + fixed height
-  const casesEl = document.querySelector('.cases');
-  gsap.set(casesEl, { position: 'relative', height: '100vh' });
-
-  let current = 0;
-
-  function showCase(index) {
-    const prev = current;
-    current = index;
-    updateDot(index);
-
-    const prevImg = cases[prev].querySelector('.case-img');
-    const prevContent = cases[prev].querySelector('.case-content');
-    const nextImg = cases[index].querySelector('.case-img');
-    const nextContent = cases[index].querySelector('.case-content');
-    const isEven = index % 2 === 1;
     const endRotY = isEven ? 6 : -6;
 
-    // Out
-    gsap.to(prevImg, { opacity: 0, scale: 0.9, duration: 0.5, ease: 'power2.in' });
-    gsap.to(prevContent, { opacity: 0, x: index > prev ? -40 : 40, duration: 0.4, ease: 'power2.in' });
+    gsap.set(img, { opacity: 0, rotateY: isEven ? 14 : -14, rotateX: 3, scale: 0.85, z: -100 });
+    gsap.set(content, { opacity: 0, x: isEven ? 40 : -40 });
 
-    // In (with delay)
-    gsap.fromTo(nextImg,
-      { opacity: 0, rotateY: isEven ? 20 : -20, scale: 0.85, z: -100 },
-      { opacity: 1, rotateY: endRotY, rotateX: 2, scale: 1, z: 0, duration: 1.0, ease: 'power3.out', delay: 0.2 }
-    );
-    gsap.fromTo(nextContent,
-      { opacity: 0, x: isEven ? 50 : -50 },
-      { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 }
-    );
-  }
+    // Fly-in on scroll
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 75%',
+      onEnter: () => {
+        gsap.to(img, { opacity: 1, rotateY: endRotY, rotateX: 2, scale: 1, z: 0, duration: 1.1, ease: 'power3.out' });
+        gsap.to(content, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out', delay: 0.1 });
+      }
+    });
 
-  // Pin the whole cases block, divide scroll into 3 segments
-  ScrollTrigger.create({
-    trigger: casesEl,
-    start: 'top top',
-    end: `+=${totalCases * 700}`,
-    pin: true,
-    pinSpacing: true,
-    onEnter: () => { dotNav.classList.add('visible'); updateDot(0); },
-    onLeave: () => dotNav.classList.remove('visible'),
-    onEnterBack: () => { dotNav.classList.add('visible'); },
-    onLeaveBack: () => dotNav.classList.remove('visible'),
-    onUpdate: (self) => {
-      const progress = self.progress;
-      const idx = Math.min(Math.floor(progress * totalCases), totalCases - 1);
-      if (idx !== current) showCase(idx);
-    }
+    // Parallax: image drifts up as you scroll through
+    gsap.to(img, {
+      y: -50,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      }
+    });
+
+    // Dot nav
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 50%',
+      end: 'bottom 50%',
+      onEnter: () => updateDot(i),
+      onEnterBack: () => updateDot(i),
+    });
   });
 
   function updateDot(index) {
