@@ -187,14 +187,41 @@
 
   /* CASES */
   .cases {
-    padding: 4rem 0;
+    position: relative;
+  }
+
+  /* Dot nav */
+  .dot-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dot-nav button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--text-dim);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .dot-nav button.active {
+    background: var(--purple);
+    transform: scale(1.4);
   }
 
   .case-section {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    padding: 6rem 2rem;
     position: relative;
     overflow: hidden;
   }
@@ -202,17 +229,22 @@
   .case-section:nth-child(even) { background: var(--bg2); }
 
   .case-inner {
-    max-width: 1100px;
-    margin: 0 auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    height: 100%;
+    display: flex;
     align-items: center;
+    position: relative;
+    padding: 0 5vw;
+    gap: 0;
   }
 
-  .case-section:nth-child(even) .case-inner { direction: rtl; }
-  .case-section:nth-child(even) .case-inner > * { direction: ltr; }
+  /* Text block — left side, narrow */
+  .case-content {
+    position: relative;
+    z-index: 2;
+    width: 340px;
+    flex-shrink: 0;
+  }
 
   .case-label {
     font-family: 'Syne', sans-serif;
@@ -226,82 +258,89 @@
   .case-title {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
     color: var(--text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .case-title-zh {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 400;
     color: var(--purple);
     margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
 
   .case-desc {
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 0.92rem;
     font-weight: 300;
     line-height: 1.8;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
   }
 
   .case-desc-zh {
     color: var(--text-dim);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     font-weight: 300;
     line-height: 1.8;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .case-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
+    gap: 0.4rem;
   }
 
   .case-tag {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-family: 'Syne', sans-serif;
     letter-spacing: 0.08em;
     color: var(--purple);
     border: 0.5px solid var(--border-bright);
-    padding: 0.3rem 0.75rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 3px;
     background: rgba(107, 92, 231, 0.05);
   }
 
+  /* Image — large, right side, perspective tilt */
   .case-img-wrap {
-    perspective: 1000px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    padding-left: 4vw;
+    height: 80vh;
   }
 
   .case-img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 30px 80px rgba(45, 31, 110, 0.15), 0 8px 24px rgba(45, 31, 110, 0.08);
-    transform: rotateY(-8deg) rotateX(3deg);
-    transition: transform 0.6s ease;
-    will-change: transform;
+    max-height: 75vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 40px 100px rgba(45, 31, 110, 0.18), 0 10px 30px rgba(45, 31, 110, 0.1);
+    will-change: transform, opacity;
+    transform: rotateY(-15deg) rotateX(5deg) scale(0.75) translateZ(-200px);
     opacity: 0;
-    transform: rotateY(-8deg) rotateX(3deg) translateY(60px);
-  }
-
-  .case-img.visible {
-    opacity: 1;
-    transform: rotateY(-5deg) rotateX(2deg) translateY(0);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: box-shadow 0.3s;
   }
 
   .case-section:nth-child(even) .case-img {
-    transform: rotateY(8deg) rotateX(3deg) translateY(60px);
+    transform: rotateY(15deg) rotateX(5deg) scale(0.75) translateZ(-200px);
   }
 
-  .case-section:nth-child(even) .case-img.visible {
-    transform: rotateY(5deg) rotateX(2deg) translateY(0);
+  .case-section:nth-child(even) .case-inner {
+    flex-direction: row-reverse;
+  }
+
+  .case-section:nth-child(even) .case-img-wrap {
+    padding-left: 0;
+    padding-right: 4vw;
   }
 
   /* SERVICES */
@@ -457,17 +496,14 @@
   }
 
   /* MOBILE */
-  @media (max-width: 768px) {
-    .case-inner {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      direction: ltr !important;
-    }
-
-    .case-section:nth-child(even) .case-inner { direction: ltr; }
-
+  @media (max-width: 900px) {
+    .case-section { height: auto; min-height: 100vh; padding: 7rem 1.5rem 4rem; }
+    .case-inner { flex-direction: column !important; padding: 0; gap: 2.5rem; }
+    .case-content { width: 100%; }
+    .case-img-wrap { width: 100%; height: auto; padding: 0 !important; }
+    .case-img { max-height: 50vh; transform: rotateY(-5deg) rotateX(2deg) scale(1) !important; opacity: 1 !important; }
+    .dot-nav { display: none; }
     .services-grid { grid-template-columns: 1fr 1fr; }
-
     .nav-links { display: none; }
   }
 
@@ -506,6 +542,13 @@
   </p>
   <a href="/#contact" class="hero-cta">Start a project →</a>
 </section>
+
+<!-- Dot Nav -->
+<nav class="dot-nav" aria-label="Case navigation">
+  <button class="active" data-index="0" aria-label="Heatingology"></button>
+  <button data-index="1" aria-label="Han Dian"></button>
+  <button data-index="2" aria-label="CallMeTaiwan"></button>
+</nav>
 
 <!-- CASES -->
 <div class="cases">
@@ -636,45 +679,99 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  // Animate case images on scroll
-  document.querySelectorAll('.case-img').forEach((img) => {
+  // Hero fade in
+  gsap.from('.hero-label, .hero-title, .hero-sub, .hero-cta', {
+    opacity: 0, y: 40,
+    duration: 0.9,
+    stagger: 0.15,
+    ease: 'power3.out',
+    delay: 0.3
+  });
+
+  // Case images: fly in from far (scale + translateZ)
+  const cases = document.querySelectorAll('.case-section');
+  const dots = document.querySelectorAll('.dot-nav button');
+
+  cases.forEach((section, i) => {
+    const img = section.querySelector('.case-img');
+    const isEven = i % 2 === 1;
+    const startRotY = isEven ? 15 : -15;
+    const endRotY = isEven ? 6 : -6;
+
+    // Fly-in animation
     gsap.fromTo(img,
-      { opacity: 0, y: 60, rotateX: 5 },
       {
-        opacity: 1, y: 0, rotateX: 2,
-        duration: 1,
+        opacity: 0,
+        rotateY: startRotY,
+        rotateX: 5,
+        scale: 0.7,
+        z: -300
+      },
+      {
+        opacity: 1,
+        rotateY: endRotY,
+        rotateX: 2,
+        scale: 1,
+        z: 0,
+        duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: img,
-          start: 'top 80%',
+          trigger: section,
+          start: 'top 70%',
           toggleActions: 'play none none none'
         }
       }
     );
+
+    // Text fade in
+    gsap.from(section.querySelector('.case-content'), {
+      opacity: 0,
+      x: isEven ? 40 : -40,
+      duration: 0.9,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 70%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    // Dot nav active state
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 50%',
+      end: 'bottom 50%',
+      onEnter: () => updateDot(i),
+      onEnterBack: () => updateDot(i),
+    });
   });
 
-  // Mouse tilt effect
-  document.querySelectorAll('[data-tilt]').forEach((el) => {
-    const wrap = el.parentElement;
+  function updateDot(index) {
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      cases[i].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Mouse tilt on images
+  document.querySelectorAll('.case-img-wrap').forEach((wrap, i) => {
+    const img = wrap.querySelector('.case-img');
+    const isEven = i % 2 === 1;
+    const baseRotY = isEven ? 6 : -6;
+
     wrap.addEventListener('mousemove', (e) => {
       const rect = wrap.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      el.style.transform = `rotateY(${x * 12}deg) rotateX(${-y * 8}deg) translateY(0)`;
+      img.style.transform = `rotateY(${baseRotY + x * 10}deg) rotateX(${2 - y * 8}deg) scale(1)`;
     });
-    wrap.addEventListener('mouseleave', () => {
-      el.style.transform = 'rotateY(-5deg) rotateX(2deg) translateY(0)';
-    });
-  });
 
-  // Hero fade in
-  gsap.from('.hero-label, .hero-title, .hero-sub, .hero-cta', {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power3.out',
-    delay: 0.2
+    wrap.addEventListener('mouseleave', () => {
+      img.style.transform = `rotateY(${baseRotY}deg) rotateX(2deg) scale(1)`;
+    });
   });
 </script>
 
