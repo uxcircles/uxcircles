@@ -267,6 +267,31 @@
     letter-spacing: 0.03em;
   }
 
+  /* Side-by-side: text left, phone right */
+  .section-split {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .section-split .split-text {}
+
+  .section-split .split-media video,
+  .section-split .split-media img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 70px rgba(45, 31, 110, 0.18);
+    display: block;
+    background: #0d0d1a;
+  }
+
+  @media (max-width: 700px) {
+    .section-split { grid-template-columns: 1fr; gap: 2rem; }
+    .section-split .split-media { max-width: 260px; margin: 0 auto; }
+  }
+
   /* Highlight quote */
   .pull-quote {
     border-left: 3px solid var(--purple);
@@ -436,15 +461,19 @@
   <!-- The "Tinder" Feature -->
   <div class="section">
     <p class="section-label">Interactive Feature</p>
-    <h2>Would you accept it?</h2>
-    <p class="zh">如果換成你的國家，你能接受嗎？</p>
-    <p>The most distinctive feature: a Tinder-style interactive that shows users how other countries would feel if the same renaming logic were applied to them. Each card presents a country with its hypothetical "renamed" version — users can swipe or vote Acceptable / Ridiculous.</p>
-    <p class="zh-p">最具代表性的互動設計：以 Tinder 刷卡模式，讓使用者逐一判斷每個國家被改名是否合理，讓抽象的政治問題瞬間具體可感。</p>
-    <div class="media-single">
-      <video autoplay muted loop playsinline poster="callmetaiwan-preview.webp">
-        <source src="callmetaiwan-tinder.mp4" type="video/mp4">
-      </video>
-      <p class="media-caption">The "Would you accept it?" interactive — applying Taiwan's naming logic to other countries.</p>
+    <div class="section-split">
+      <div class="split-text">
+        <h2>Would you accept it?</h2>
+        <p class="zh">如果換成你的國家，你能接受嗎？</p>
+        <p>The most distinctive feature: a Tinder-style interactive that shows users how other countries would feel if the same renaming logic were applied to them. Each card presents a country with its hypothetical "renamed" version — users can swipe or vote Acceptable / Ridiculous.</p>
+        <p class="zh-p">最具代表性的互動設計：以 Tinder 刷卡模式，讓使用者逐一判斷每個國家被改名是否合理，讓抽象的政治問題瞬間具體可感。</p>
+        <p class="media-caption" style="margin-top:1.5rem;">The "Would you accept it?" interactive — applying Taiwan's naming logic to other countries.</p>
+      </div>
+      <div class="split-media">
+        <video autoplay muted loop playsinline poster="callmetaiwan-preview.webp">
+          <source src="callmetaiwan-tinder.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 
