@@ -358,6 +358,13 @@
 
   /* HIDDEN state for filter */
   .work-section.hidden { display: none; }
+  .work-section.animating-in {
+    animation: sectionFadeIn 0.35s ease forwards;
+  }
+  @keyframes sectionFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
   /* FOOTER */
   footer {
@@ -451,7 +458,7 @@
 
 <!-- PRODUCT & APP DESIGN -->
 <div class="work-section" id="section-product">
-  <p class="work-section-label">Product & App Design — Chun-Chuan Lin</p>
+  <p class="work-section-label">Product & App Design</p>
   <div class="work-grid">
 
     <div class="work-card">
@@ -551,7 +558,7 @@
 
 <!-- WEB DESIGN -->
 <div class="work-section" id="section-web">
-  <p class="work-section-label">Brand & Web — Chun-Chuan Lin · Rita Hou</p>
+  <p class="work-section-label">Brand & Web</p>
   <div class="work-grid">
 
     <div class="work-card">
@@ -589,7 +596,7 @@
 
 <!-- BRAND & VISUAL IDENTITY -->
 <div class="work-section" id="section-brand">
-  <p class="work-section-label">Brand & Visual Identity — Rita Hou</p>
+  <p class="work-section-label">Brand & Visual Identity</p>
   <div class="work-grid">
 
     <div class="work-card">
@@ -688,25 +695,35 @@
   const sectionBrand = document.getElementById('section-brand');
   const allSections = [sectionProduct, sectionWeb, sectionBrand];
 
+  function showSections(toShow) {
+    // Hide sections not in toShow
+    allSections.forEach(s => {
+      if (!toShow.includes(s)) s.classList.add('hidden');
+    });
+    // Reveal + animate sections in toShow
+    toShow.forEach(s => {
+      s.classList.remove('hidden');
+      s.classList.remove('animating-in');
+      // Force reflow so animation restarts
+      void s.offsetWidth;
+      s.classList.add('animating-in');
+      s.addEventListener('animationend', () => s.classList.remove('animating-in'), { once: true });
+    });
+  }
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       if (filter === 'all') {
-        allSections.forEach(s => s.classList.remove('hidden'));
+        showSections(allSections);
       } else if (filter === 'product') {
-        sectionProduct.classList.remove('hidden');
-        sectionWeb.classList.add('hidden');
-        sectionBrand.classList.add('hidden');
+        showSections([sectionProduct]);
       } else if (filter === 'web') {
-        sectionProduct.classList.add('hidden');
-        sectionWeb.classList.remove('hidden');
-        sectionBrand.classList.add('hidden');
+        showSections([sectionWeb]);
       } else if (filter === 'brand') {
-        sectionProduct.classList.add('hidden');
-        sectionWeb.classList.add('hidden');
-        sectionBrand.classList.remove('hidden');
+        showSections([sectionBrand]);
       }
     });
   });
