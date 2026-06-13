@@ -433,7 +433,7 @@
 
 <!-- Full bleed hero video -->
 <div class="full-media">
-  <video autoplay muted loop playsinline poster="callmetaiwan-preview.webp">
+  <video muted loop playsinline poster="callmetaiwan-preview.webp">
     <source src="callmetaiwan-demo.mp4" type="video/mp4">
     <img src="callmetaiwan-preview.webp" alt="Call Me Taiwan website">
   </video>
@@ -470,7 +470,7 @@
         <p class="media-caption" style="margin-top:1.5rem;">The "Would you accept it?" interactive — applying Taiwan's naming logic to other countries.</p>
       </div>
       <div class="split-media">
-        <video autoplay muted loop playsinline poster="callmetaiwan-preview.webp">
+        <video muted loop playsinline poster="callmetaiwan-preview.webp">
           <source src="callmetaiwan-tinder.mp4" type="video/mp4">
         </video>
       </div>
@@ -504,7 +504,7 @@
     <p>The History section brings Taiwan's complex political timeline to life with scroll-based narrative design — each chapter unfolds as the user reads, guiding them through decades of international pressure and identity.</p>
     <p class="zh-p">歷史章節以滾動敘事設計呈現，讓使用者跟著時間軸，一步步理解台灣長達數十年的正名處境。</p>
     <div class="media-single">
-      <video autoplay muted loop playsinline>
+      <video muted loop playsinline>
         <source src="callmetaiwan-history.mp4" type="video/mp4">
       </video>
       <p class="media-caption">History page — scroll-based narrative timeline</p>
@@ -535,6 +535,21 @@
   </div>
 
 </div>
+
+<script>
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('video').forEach(v => videoObserver.observe(v));
+</script>
 
 </body>
 </html>
