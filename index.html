@@ -316,6 +316,21 @@
   /* WORK */
   #work { border-top: 0.5px solid var(--border); }
 
+  .work-card-brandweb {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    grid-column: span 2;
+  }
+  .work-card-cta {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--purple-light);
+    letter-spacing: 0.01em;
+  }
+  .work-card-brandweb:hover .work-card-cta { text-decoration: underline; text-underline-offset: 3px; }
+
   .work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1074,6 +1089,18 @@
         <span class="work-pill">MVP</span>
       </div>
     </div>
+    <a href="web.html" class="work-card work-card-brandweb">
+      <span class="work-tag">Brand &amp; Web</span>
+      <h3>Brand identity &amp; marketing websites for consumer brands</h3>
+      <p>Distinct from app design — deliberately. Food and drink brands, product launches, and businesses entering new markets. Brand identity, packaging, and marketing websites that work hard for the brand.</p>
+      <div class="work-meta">
+        <span class="work-pill">Brand identity</span>
+        <span class="work-pill">Landing pages</span>
+        <span class="work-pill">Packaging</span>
+        <span class="work-pill">Consumer brands</span>
+      </div>
+      <span class="work-card-cta">See Brand &amp; Web work →</span>
+    </a>
   </div>
 </section>
 
