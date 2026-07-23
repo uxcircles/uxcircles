@@ -4,3 +4,10 @@ _unused/*.MP4
 _unused/*.png
 _unused/*.jpg
 _unused/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
