@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電子喜帖設計 — UX CIRCLES</title>
+  <meta name="description" content="為你們的婚禮打造獨一無二的電子喜帖。從靜態邀請卡到手繪全客製，附 RSVP 系統與雙語切換。由 UX CIRCLES 設計工作室製作。">
+  <link rel="icon" type="image/webp" href="logo-dark.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF8F5;
+      --bg2: #F3EEE7;
+      --bg3: #EDE6DB;
+      --text: #1C1814;
+      --text-muted: #7A6E63;
+      --gold: #A8895A;
+      --gold-light: #C4A87A;
+      --gold-pale: #F0E8DA;
+      --border: #DDD5C8;
+      --border-bright: #C4A87A;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, nav, .label {
+      font-family: 'Syne', sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    .nav-logo:hover { opacity: 1; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .nav-right a { transition: color 0.2s; }
+    .nav-right a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--text);
+      color: var(--bg) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-weight: 500;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold) !important; }
+
+    /* SECTIONS */
+    section { padding: 6rem 3rem; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* HERO */
+    #hero {
+      padding: 10rem 3rem 6rem;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-deco {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .hero-deco-line {
+      width: 60px;
+      height: 0.5px;
+      background: var(--gold-light);
+    }
+    .hero-deco-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold-light);
+      transform: rotate(45deg);
+    }
+
+    #hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    #hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    #hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--text);
+      color: var(--bg);
+      padding: 0.875rem 2rem;
+      border-radius: 100px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--gold); transform: translateY(-1px); }
+
+    /* DIVIDER */
+    .divider {
+      width: 40px;
+      height: 0.5px;
+      background: var(--border-bright);
+      margin: 0 auto;
+      opacity: 0.6;
+    }
+
+    /* PRICING */
+    #pricing { background: var(--bg); }
+
+    .pricing-intro {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 4rem;
+    }
+
+    .pricing-intro h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-intro p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .plan {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .plan:hover {
+      border-color: var(--border-bright);
+      box-shadow: 0 4px 24px rgba(168, 137, 90, 0.08);
+    }
+
+    .plan.featured {
+      border-color: var(--gold);
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .plan.featured .plan-desc,
+    .plan.featured .feature-item {
+      color: rgba(250, 248, 245, 0.65);
+    }
+
+    .plan.featured .feature-item::before {
+      color: var(--gold-light);
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.875rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .plan.featured .plan-name {
+      color: var(--gold-light);
+    }
+
+    .plan-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .plan-price-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .plan.featured .plan-price-note {
+      color: rgba(250, 248, 245, 0.5);
+    }
+
+    .plan-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .plan.featured .plan-desc {
+      border-bottom-color: rgba(250, 248, 245, 0.15);
+    }
+
+    .feature-list {
+      list-style: none;
+      flex: 1;
+    }
+
+    .feature-item {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      padding: 0.45rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .feature-item::before {
+      content: '✦';
+      font-size: 0.55rem;
+      color: var(--gold);
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    /* ADD-ONS */
+    #addons {
+      background: var(--bg2);
+      padding: 5rem 3rem;
+    }
+
+    .addons-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .addons-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .addons-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .addon-card {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .addon-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .addon-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .addon-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .addon-price {
+      margin-left: auto;
+      flex-shrink: 0;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--gold);
+      padding-left: 1rem;
+    }
+
+    /* HOW IT WORKS */
+    #process { text-align: center; }
+
+    .process-intro {
+      max-width: 480px;
+      margin: 0 auto 4rem;
+    }
+
+    .process-intro h2 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-intro p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      left: calc(16.67% + 1rem);
+      right: calc(16.67% + 1rem);
+      height: 0.5px;
+      background: var(--border);
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      border: 0.5px solid var(--border-bright);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* DEMO */
+    #demo {
+      background: var(--bg2);
+      padding: 5rem 3rem;
+    }
+
+    .demo-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .demo-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .demo-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .demo-card {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .demo-card:hover {
+      border-color: var(--border-bright);
+      box-shadow: 0 4px 20px rgba(168, 137, 90, 0.08);
+    }
+
+    .demo-preview {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .demo-info {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .demo-tier {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .demo-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .demo-link {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .demo-link.coming-soon {
+      font-style: italic;
+      opacity: 0.5;
+    }
+
+    /* CTA */
+    #contact {
+      text-align: center;
+      padding: 7rem 3rem;
+    }
+
+    .contact-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .contact-deco {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    #contact h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    #contact p {
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+      padding: 0.875rem 2rem;
+      border-radius: 100px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+
+    .btn-secondary {
+      border: 0.5px solid var(--border);
+      color: var(--text);
+      padding: 0.875rem 2rem;
+      border-radius: 100px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a:hover { color: var(--text); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-right { gap: 1rem; font-size: 0.8rem; }
+      section { padding: 5rem 1.25rem; }
+      #hero { padding: 8rem 1.25rem 4rem; }
+      #addons, #demo { padding: 4rem 1.25rem; }
+      #contact { padding: 5rem 1.25rem; }
+
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .plan.featured { order: -1; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; gap: 2rem; }
+      .process-steps::before { display: none; }
+      .demo-grid { grid-template-columns: 1fr; max-width: 420px; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">UX CIRCLES</a>
+  <div class="nav-right">
+    <a href="index.html">主網站</a>
+    <a href="web.html">品牌設計</a>
+    <a href="#contact" class="nav-cta">聯絡我們</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="label">電子喜帖</p>
+    <div class="hero-deco">
+      <div class="hero-deco-line"></div>
+      <div class="hero-deco-diamond"></div>
+      <div class="hero-deco-line"></div>
+    </div>
+    <h1>為你們的婚禮，<br>打造<em>獨一無二</em>的邀請</h1>
+    <p>不只是連結，是一份值得收藏的體驗。從簡雅靜態到全客製手繪，我們讓每一份喜帖都說出你們的故事。</p>
+    <a href="#pricing" class="hero-cta">查看方案與定價</a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-intro">
+      <p class="label">方案</p>
+      <h2>選擇適合你們的方案</h2>
+      <p>每個方案都包含完整的設計與上線服務，無隱藏費用。</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Basic -->
+      <div class="plan">
+        <p class="plan-name">基礎版</p>
+        <p class="plan-price">£250</p>
+        <p class="plan-price-note">一次性設計費</p>
+        <p class="plan-desc">適合注重簡雅質感的新人。單頁邀請卡，靜態展示，完整呈現婚禮資訊。</p>
+        <ul class="feature-list">
+          <li class="feature-item">Hero 主視覺設計</li>
+          <li class="feature-item">家族介紹區塊</li>
+          <li class="feature-item">照片牆</li>
+          <li class="feature-item">地點與流程說明</li>
+          <li class="feature-item">加入日曆按鈕</li>
+          <li class="feature-item">手機版優化</li>
+          <li class="feature-item">2 次修改</li>
+        </ul>
+      </div>
+
+      <!-- Animated (featured) -->
+      <div class="plan featured">
+        <div class="plan-badge">最多人選</div>
+        <p class="plan-name">動畫版</p>
+        <p class="plan-price">£500</p>
+        <p class="plan-price-note">一次性設計費</p>
+        <p class="plan-desc">加入動態效果，讓喜帖從被打開的那一刻就令人驚艷。包含基礎版所有功能。</p>
+        <ul class="feature-list">
+          <li class="feature-item">基礎版所有功能</li>
+          <li class="feature-item">拆信封開場動畫</li>
+          <li class="feature-item">照片輪播動畫</li>
+          <li class="feature-item">頁面滾動動態效果</li>
+          <li class="feature-item">結束動畫</li>
+          <li class="feature-item">3 次修改</li>
+        </ul>
+      </div>
+
+      <!-- Full custom -->
+      <div class="plan">
+        <p class="plan-name">全客製版</p>
+        <p class="plan-price">£1,200</p>
+        <p class="plan-price-note">一次性設計費</p>
+        <p class="plan-desc">為你們量身打造，從插圖到功能全面客製。包含動畫版所有功能。</p>
+        <ul class="feature-list">
+          <li class="feature-item">動畫版所有功能</li>
+          <li class="feature-item">手繪插圖設計</li>
+          <li class="feature-item">RSVP 表單系統</li>
+          <li class="feature-item">賓客資料收集與管理</li>
+          <li class="feature-item">高度客製化視覺風格</li>
+          <li class="feature-item">無限次修改</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section id="addons">
+  <div class="addons-inner">
+    <div class="addons-header">
+      <p class="label">加購選項</p>
+      <h2>額外服務</h2>
+    </div>
+    <div class="addons-grid">
+      <div class="addon-card">
+        <div class="addon-icon">🌐</div>
+        <div>
+          <p class="addon-name">雙語切換</p>
+          <p class="addon-desc">為海外賓客或跨國婚禮提供中英文一鍵切換，所有內容同步呈現。</p>
+        </div>
+        <p class="addon-price">+£140</p>
+      </div>
+      <div class="addon-card">
+        <div class="addon-icon">🔗</div>
+        <div>
+          <p class="addon-name">專屬網域</p>
+          <p class="addon-desc">擁有自己的網址，如 <em>emily-james.com</em>。年費視網域而定，由你自行維護。</p>
+        </div>
+        <p class="addon-price">£10–25/yr</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="process-intro">
+      <p class="label">流程</p>
+      <h2>從 Brief 到上線，三個步驟</h2>
+      <p>我們讓整個過程輕鬆愉快，你只需要負責決定喜歡什麼。</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Brief &amp; 風格確認</h3>
+          <p>分享你們的故事、喜好、婚禮調性，我們提出設計方向供確認。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h3>設計與修改</h3>
+          <p>我們製作初稿，根據你的反饋調整，直到你們滿意為止。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h3>上線與交付</h3>
+          <p>網站正式上線，你收到完整連結，準備傳送給每一位賓客。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo">
+  <div class="demo-inner">
+    <div class="demo-header">
+      <p class="label">範例</p>
+      <h2>實際作品預覽</h2>
+      <p>點擊查看每個方案的實際樣貌</p>
+    </div>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="demo-preview">預覽圖</div>
+        <div class="demo-info">
+          <p class="demo-tier">基礎版 · £250</p>
+          <p class="demo-name">簡雅靜態邀請卡</p>
+          <p class="demo-link coming-soon">Demo 即將上線</p>
+        </div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-preview">預覽圖</div>
+        <div class="demo-info">
+          <p class="demo-tier">動畫版 · £500</p>
+          <p class="demo-name">拆信封動態喜帖</p>
+          <p class="demo-link coming-soon">Demo 即將上線</p>
+        </div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-preview">預覽圖</div>
+        <div class="demo-info">
+          <p class="demo-tier">全客製版 · £1,200</p>
+          <p class="demo-name">手繪全客製喜帖</p>
+          <p class="demo-link coming-soon">Demo 即將上線</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="label">開始吧</p>
+    <div class="contact-deco">
+      <div class="hero-deco-line"></div>
+      <div class="hero-deco-diamond"></div>
+      <div class="hero-deco-line"></div>
+    </div>
+    <h2>準備好打造你們的喜帖了嗎？</h2>
+    <p>告訴我們你們的故事和想法，我們一起把它變成賓客難忘的體驗。</p>
+    <div class="contact-btns">
+      <a href="mailto:hello@ux-circles.com" class="btn-primary">hello@ux-circles.com</a>
+      <a href="index.html#contact" class="btn-secondary">預約 25 分鐘諮詢</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 UX CIRCLES</span>
+  <a href="index.html">← 回到主網站</a>
+</footer>
+
+</body>
+</html>
