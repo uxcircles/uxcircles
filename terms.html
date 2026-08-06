@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務條款 — 電子喜帖 · UX CIRCLES</title>
+  <link rel="icon" type="image/webp" href="logo-dark.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF8F5;
+      --bg2: #F3EEE7;
+      --text: #1C1814;
+      --text-muted: #7A6E63;
+      --gold: #A8895A;
+      --gold-light: #C4A87A;
+      --border: #DDD5C8;
+      --white: #FFFFFF;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, nav { font-family: 'Syne', sans-serif; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    .nav-logo:hover { opacity: 1; }
+
+    .nav-back {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    /* CONTENT */
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 9rem 3rem 6rem;
+    }
+
+    .page-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .toc {
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc ol {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .toc a {
+      font-size: 0.875rem;
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--text); }
+
+    /* SECTIONS */
+    .tc-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 6rem;
+    }
+
+    .tc-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .tc-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .tc-section p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .tc-section p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .tc-section ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tc-section li {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      line-height: 1.7;
+    }
+
+    .tc-section li strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .note-box {
+      background: var(--bg2);
+      border-left: 2px solid var(--gold-light);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .page-wrap { padding: 7rem 1.25rem 4rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">UX CIRCLES</a>
+  <a href="wedding.html" class="nav-back">← 返回電子喜帖</a>
+</nav>
+
+<div class="page-wrap">
+  <p class="page-label">電子喜帖服務</p>
+  <h1>服務條款 Terms &amp; Conditions</h1>
+  <p class="page-meta">最後更新：2026 年 8 月 &nbsp;·&nbsp; 適用於所有電子喜帖設計專案</p>
+
+  <div class="toc">
+    <p class="toc-title">目錄</p>
+    <ol>
+      <li><a href="#s1">專案報價與付款</a></li>
+      <li><a href="#s2">設計修改政策</a></li>
+      <li><a href="#s3">交付時間</a></li>
+      <li><a href="#s4">客戶提供內容</a></li>
+      <li><a href="#s5">取消政策</a></li>
+      <li><a href="#s6">網域與主機費用</a></li>
+      <li><a href="#s7">上線後維護</a></li>
+      <li><a href="#s8">智慧財產權</a></li>
+      <li><a href="#s9">聯絡方式</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="tc-section" id="s1">
+    <h2><span class="tc-num">01</span>專案報價與付款</h2>
+    <p>所有報價以英鎊（GBP）計算，含稅。</p>
+    <ul>
+      <li><strong>訂金：</strong>簽約時支付專案總金額的 <strong>50%</strong>，確認開始設計。</li>
+      <li><strong>尾款：</strong>網站正式上線前支付剩餘 <strong>50%</strong>。</li>
+      <li><strong>付款方式：</strong>銀行轉帳（UK Bank Transfer）或 Stripe 信用卡付款。</li>
+    </ul>
+    <p>收到訂金後，專案才正式排入工作排程。未收到訂金前，工作室不保留檔期。</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="tc-section" id="s2">
+    <h2><span class="tc-num">02</span>設計修改政策</h2>
+    <p>修改次數依方案不同：</p>
+    <ul>
+      <li><strong>基礎版（£250）：</strong>設計階段內 2 次修改。</li>
+      <li><strong>動畫版（£500）：</strong>設計階段內 3 次修改。</li>
+      <li><strong>全客製版（£1,200）：</strong>設計階段內不限次數修改。</li>
+    </ul>
+    <p>「設計階段」指從初稿提交至網站正式上線前的期間。網站上線後的修改需另行報價，費率為 <strong>£50/hr</strong>。</p>
+    <div class="note-box">
+      每次修改請盡量集中回饋，以一次完整的意見清單提交，有助於加快修改速度並確保溝通效率。
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="tc-section" id="s3">
+    <h2><span class="tc-num">03</span>交付時間</h2>
+    <p>預估交付時間（從收到訂金及完整 Brief 起算）：</p>
+    <ul>
+      <li><strong>基礎版：</strong>約 2 週</li>
+      <li><strong>動畫版：</strong>約 3 週</li>
+      <li><strong>全客製版：</strong>約 5–6 週</li>
+    </ul>
+    <p>以上為一般情況下的預估時間。若客戶未能在 <strong>5 個工作天</strong>內回覆設計意見，工作室保留調整交期的權利，延遲期間不計入設計工時。</p>
+    <p>如有婚禮日期限制，請在 Brief 時告知，我們會盡力配合排程。</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="tc-section" id="s4">
+    <h2><span class="tc-num">04</span>客戶提供內容</h2>
+    <p>以下內容需由客戶自行提供：</p>
+    <ul>
+      <li>婚禮相關文字（姓名、日期、地點、流程等）</li>
+      <li>照片（建議解析度 72dpi 以上，JPG 或 PNG 格式）</li>
+      <li>全客製版：插圖風格參考、色彩偏好、品牌素材（如有）</li>
+    </ul>
+    <p>客戶保證所提供的文字、圖片內容不侵犯任何第三方版權。如因內容引起的版權糾紛，責任由客戶自負。</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="tc-section" id="s5">
+    <h2><span class="tc-num">05</span>取消政策</h2>
+    <ul>
+      <li><strong>客戶取消：</strong>訂金（50%）不予退還，已覆蓋設計工時成本。若已進入設計階段，視工時比例可能收取額外費用。</li>
+      <li><strong>工作室取消：</strong>因工作室原因取消，全額退款，含訂金。</li>
+      <li><strong>上線後技術問題：</strong>網站上線後 14 天內發現技術性錯誤，免費修正。</li>
+    </ul>
+  </div>
+
+  <!-- 6 -->
+  <div class="tc-section" id="s6">
+    <h2><span class="tc-num">06</span>網域與主機費用</h2>
+    <p>各方案報價<strong>不包含</strong>以下第三方費用：</p>
+    <ul>
+      <li><strong>網域名稱（Domain）：</strong>年費約 £10–25，視網域而定，由客戶自行購買並維護。</li>
+      <li><strong>主機代管（Hosting）：</strong>靜態網站可使用免費服務（如 GitHub Pages），如需自訂網域或進階功能，可能產生額外費用。</li>
+    </ul>
+    <p>工作室可協助設定網域與上線流程，不另收費，但第三方服務費用需由客戶承擔。</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="tc-section" id="s7">
+    <h2><span class="tc-num">07</span>上線後維護</h2>
+    <p>網站正式上線後，工作室不提供長期維護服務，除非另行簽訂維護合約。</p>
+    <p>如需上線後修改內容（文字、照片更新等），費率為 <strong>£50/hr</strong>，以半小時為計費單位。</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="tc-section" id="s8">
+    <h2><span class="tc-num">08</span>智慧財產權</h2>
+    <p>專案尾款結清後，網站設計成品的使用權歸客戶所有。</p>
+    <p>工作室保留將完成作品列為作品集展示的權利（不含客戶個人隱私資訊），如客戶不希望公開，請在簽約前告知。</p>
+    <p>全客製版中的手繪插圖版權歸工作室所有，客戶取得授權於該專案中使用，未經許可不得轉售或另行授權他人使用。</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="tc-section" id="s9">
+    <h2><span class="tc-num">09</span>聯絡方式</h2>
+    <p>如有任何疑問，歡迎透過以下方式聯繫：</p>
+    <ul>
+      <li><strong>Email：</strong><a href="mailto:hello@ux-circles.com" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">hello@ux-circles.com</a></li>
+      <li><strong>諮詢預約：</strong><a href="wedding.html#contact" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">預約 25 分鐘免費諮詢</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 UX CIRCLES</span>
+  <div style="display:flex; gap:1.5rem;">
+    <a href="wedding.html">電子喜帖</a>
+    <a href="index.html">主網站</a>
+  </div>
+</footer>
+
+</body>
+</html>
