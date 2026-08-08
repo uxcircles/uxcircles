@@ -622,6 +622,22 @@
     }
     .btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
 
+    /* SCROLL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      filter: blur(6px);
+      transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
     /* FOOTER */
     footer {
       border-top: 0.5px solid var(--border);
@@ -683,7 +699,7 @@
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
-    <div class="pricing-intro">
+    <div class="pricing-intro reveal">
       <p class="label">方案</p>
       <h2>選擇適合你們的方案</h2>
       <p>每個方案都包含完整的設計與上線服務，無隱藏費用。</p>
@@ -691,7 +707,7 @@
 
     <div class="pricing-grid">
       <!-- Basic -->
-      <div class="plan">
+      <div class="plan reveal">
         <p class="plan-name">基礎版</p>
         <p class="plan-price">£250</p>
         <p class="plan-price-note">一次性設計費</p>
@@ -708,7 +724,7 @@
       </div>
 
       <!-- Animated (featured) -->
-      <div class="plan featured">
+      <div class="plan featured reveal reveal-delay-1">
         <div class="plan-badge">最多人選</div>
         <p class="plan-name">動畫版</p>
         <p class="plan-price">£500</p>
@@ -725,7 +741,7 @@
       </div>
 
       <!-- Full custom -->
-      <div class="plan">
+      <div class="plan reveal reveal-delay-2">
         <p class="plan-name">全客製版</p>
         <p class="plan-price">£1,200</p>
         <p class="plan-price-note">一次性設計費</p>
@@ -747,12 +763,12 @@
 <!-- ADD-ONS -->
 <section id="addons">
   <div class="addons-inner">
-    <div class="addons-header">
+    <div class="addons-header reveal">
       <p class="label">加購選項</p>
       <h2>額外服務</h2>
     </div>
     <div class="addons-grid">
-      <div class="addon-card">
+      <div class="addon-card reveal">
         <div class="addon-icon">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="9"/>
@@ -768,7 +784,7 @@
         </div>
         <p class="addon-price">+£140</p>
       </div>
-      <div class="addon-card">
+      <div class="addon-card reveal reveal-delay-1">
         <div class="addon-icon">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
@@ -788,27 +804,27 @@
 <!-- PROCESS -->
 <section id="process">
   <div class="container">
-    <div class="process-intro">
+    <div class="process-intro reveal">
       <p class="label">流程</p>
       <h2>從 Brief 到上線，三個步驟</h2>
       <p>我們讓整個過程輕鬆愉快，你只需要負責決定喜歡什麼。</p>
     </div>
     <div class="process-steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">01</div>
         <div>
           <h3>Brief &amp; 風格確認</h3>
           <p>分享你們的故事、喜好、婚禮調性，我們提出設計方向供確認。</p>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-1">
         <div class="step-num">02</div>
         <div>
           <h3>設計與修改</h3>
           <p>我們製作初稿，根據你的反饋調整，直到你們滿意為止。</p>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal reveal-delay-2">
         <div class="step-num">03</div>
         <div>
           <h3>上線與交付</h3>
@@ -822,13 +838,13 @@
 <!-- DEMO -->
 <section id="demo">
   <div class="demo-inner">
-    <div class="demo-header">
+    <div class="demo-header reveal">
       <p class="label">範例</p>
       <h2>實際作品預覽</h2>
       <p>點擊查看每個方案的實際樣貌</p>
     </div>
     <div class="demo-grid">
-      <div class="demo-card">
+      <div class="demo-card reveal">
         <video class="demo-preview" muted loop playsinline poster="wedding-demo-v1-poster.jpg">
           <source src="wedding-demo-v1.mp4" type="video/mp4">
         </video>
@@ -838,7 +854,7 @@
           <a href="https://uxcircles.github.io/wedding/" target="_blank" class="demo-link">查看 Demo</a>
         </div>
       </div>
-      <div class="demo-card">
+      <div class="demo-card reveal reveal-delay-1">
         <video class="demo-preview" muted loop playsinline poster="wedding-demo-v2-poster.jpg">
           <source src="wedding-demo-v2.mp4" type="video/mp4">
         </video>
@@ -848,7 +864,7 @@
           <a href="https://uxcircles.github.io/wedding/v2" target="_blank" class="demo-link">查看 Demo</a>
         </div>
       </div>
-      <div class="demo-card">
+      <div class="demo-card reveal reveal-delay-2">
         <video class="demo-preview" muted loop playsinline poster="wedding-demo-v3-poster.jpg">
           <source src="wedding-demo-v3.mp4" type="video/mp4">
         </video>
@@ -866,7 +882,7 @@
 <section id="testimonial" style="padding: 5rem 3rem; text-align:center;">
   <div style="max-width:640px; margin:0 auto;">
     <p class="label">客戶評價</p>
-    <blockquote style="font-size:1.15rem; line-height:1.8; color:var(--text); margin-bottom:1.5rem; font-style:italic;">
+    <blockquote class="reveal" style="font-size:1.15rem; line-height:1.8; color:var(--text); margin-bottom:1.5rem; font-style:italic;">
       「溝通很順暢，電子喜帖做好後，我們看到的當下真的好感動 ❤️ 成品比想像中還要好～我們都很喜歡你們的設計，真的很謝謝你們！」
     </blockquote>
     <div style="display:flex; align-items:center; justify-content:center; gap:0.75rem;">
@@ -879,7 +895,7 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-inner">
+  <div class="contact-inner reveal">
     <p class="label">開始吧</p>
     <div class="contact-deco">
       <div class="hero-deco-line"></div>
@@ -904,6 +920,18 @@
 </footer>
 
 <script>
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Video autoplay on scroll
   const videos = document.querySelectorAll('.demo-preview');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
