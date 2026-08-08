@@ -87,6 +87,7 @@
     }
     .nav-cta:hover { background: var(--gold) !important; }
 
+
     /* SECTIONS */
     section { padding: 6rem 3rem; }
 
@@ -637,7 +638,7 @@
     /* MOBILE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.25rem; }
-      .nav-right { gap: 1rem; font-size: 0.8rem; }
+      .nav-right a:not(.nav-cta) { display: none; }
       section { padding: 5rem 1.25rem; }
       #hero { padding: 8rem 1.25rem 4rem; }
       #addons, #demo { padding: 4rem 1.25rem; }
