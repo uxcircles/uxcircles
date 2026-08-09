@@ -700,7 +700,7 @@
     .compare-col.paper .compare-total { background: var(--bg2); }
     .compare-col.digital .compare-total { background: var(--bg3); }
     .compare-total-label { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
-    .compare-total-value { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; white-space: nowrap; }
+    .compare-total-value { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; }
     .compare-col.paper .compare-total-value { color: var(--text-muted); }
     .compare-col.digital .compare-total-value { color: var(--text); }
 
@@ -709,6 +709,11 @@
     @media (max-width: 768px) {
       #comparison { padding: 4rem 1.25rem; }
       .compare-grid { grid-template-columns: 1fr; }
+      .compare-col { padding: 1.5rem; }
+      .compare-row { flex-wrap: wrap; gap: 0.25rem; }
+      .compare-row-value { margin-left: auto; }
+      .compare-total { flex-wrap: wrap; gap: 0.25rem; }
+      .compare-total-value { margin-left: auto; }
     }
 
     /* SCROLL ANIMATIONS */
