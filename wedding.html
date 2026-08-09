@@ -627,6 +627,90 @@
     }
     .btn-secondary:hover { border-color: var(--gold); transform: translateY(-1px); }
 
+    /* COMPARISON */
+    #comparison { padding: 5rem 3rem; background: var(--bg2); }
+
+    .compare-intro {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+    }
+    .compare-intro h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .compare-intro p { color: var(--text-muted); font-size: 0.925rem; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .compare-col {
+      border-radius: 14px;
+      padding: 2rem;
+      border: 0.5px solid var(--border);
+    }
+    .compare-col.paper { background: var(--bg); }
+    .compare-col.digital { background: var(--bg); border-color: var(--gold-light); position: relative; }
+
+    .compare-col-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .compare-col.paper .compare-col-label { color: var(--text-muted); }
+    .compare-col.digital .compare-col-label { color: var(--gold); }
+
+    .compare-col-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .compare-col.paper .compare-col-title { color: var(--text-muted); }
+
+    .compare-rows { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+
+    .compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.875rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .compare-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .compare-row-label { color: var(--text-muted); }
+    .compare-row-value { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.8rem; }
+    .compare-col.paper .compare-row-value { color: var(--text-muted); }
+    .compare-col.digital .compare-row-value { color: var(--gold); }
+
+    .compare-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .compare-col.paper .compare-total { background: var(--bg2); }
+    .compare-col.digital .compare-total { background: var(--bg3); }
+    .compare-total-label { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+    .compare-total-value { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; white-space: nowrap; }
+    .compare-col.paper .compare-total-value { color: var(--text-muted); }
+    .compare-col.digital .compare-total-value { color: var(--text); }
+
+    .compare-footnote { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      #comparison { padding: 4rem 1.25rem; }
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+
     /* SCROLL ANIMATIONS */
     .reveal {
       opacity: 0;
@@ -698,6 +782,69 @@
     <h1 class="reveal reveal-delay-1" data-i18n="hero-h1">為你們的婚禮，<br>打造<em>獨一無二</em>的邀請</h1>
     <p class="reveal reveal-delay-2" data-i18n="hero-p">不只是連結，是一份值得收藏的體驗。從簡雅靜態到全客製手繪，我們讓每一份喜帖都說出你們的故事。</p>
     <a href="#pricing" class="hero-cta reveal reveal-delay-3" data-i18n="hero-cta">查看方案與定價</a>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="comparison">
+  <div class="container">
+    <div class="compare-intro reveal">
+      <p class="label" data-i18n="compare-label">成本對比</p>
+      <h2 data-i18n="compare-h2">紙本喜帖，比你想像的貴</h2>
+      <p data-i18n="compare-p">以 80 位賓客為例，兩種選擇的真實花費</p>
+    </div>
+
+    <div class="compare-grid reveal reveal-delay-1">
+      <!-- Paper -->
+      <div class="compare-col paper">
+        <p class="compare-col-label" data-i18n="compare-paper-label">傳統紙本</p>
+        <p class="compare-col-title" data-i18n="compare-paper-title">紙本喜帖</p>
+        <div class="compare-rows">
+          <div class="compare-row">
+            <span class="compare-row-label" data-i18n="compare-paper-r1">設計 + 印製</span>
+            <span class="compare-row-value">£250–£450</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-row-label" data-i18n="compare-paper-r2">寄出郵資（80 張）</span>
+            <span class="compare-row-value">£68</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-row-label" data-i18n="compare-paper-r3">RSVP 回函郵資</span>
+            <span class="compare-row-value">£68</span>
+          </div>
+        </div>
+        <div class="compare-total">
+          <span class="compare-total-label" data-i18n="compare-total">合計</span>
+          <span class="compare-total-value">£400–£600+</span>
+        </div>
+        <p class="compare-footnote" data-i18n="compare-paper-note">印錯就沒救。改一個日期，重新設計、重新印、重新寄。</p>
+      </div>
+
+      <!-- Digital -->
+      <div class="compare-col digital">
+        <p class="compare-col-label" data-i18n="compare-digital-label">電子喜帖</p>
+        <p class="compare-col-title" data-i18n="compare-digital-title">UX CIRCLES</p>
+        <div class="compare-rows">
+          <div class="compare-row">
+            <span class="compare-row-label" data-i18n="compare-digital-r1">設計 + 上線</span>
+            <span class="compare-row-value">£250–£500</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-row-label" data-i18n="compare-digital-r2">傳送給賓客</span>
+            <span class="compare-row-value" data-i18n="compare-free">免費</span>
+          </div>
+          <div class="compare-row">
+            <span class="compare-row-label" data-i18n="compare-digital-r3">修改與更新</span>
+            <span class="compare-row-value" data-i18n="compare-included">含在方案內</span>
+          </div>
+        </div>
+        <div class="compare-total">
+          <span class="compare-total-label" data-i18n="compare-total">合計</span>
+          <span class="compare-total-value">£250–£500</span>
+        </div>
+        <p class="compare-footnote" data-i18n="compare-digital-note">即時傳送，隨時修改。地點臨時換了？更新連結，賓客馬上看到。</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -983,6 +1130,24 @@
       'contact-h2': '準備好打造你們的喜帖了嗎？',
       'contact-p': '告訴我們你們的故事和想法，我們一起把它變成賓客難忘的體驗。',
       'contact-secondary': '預約 25 分鐘諮詢',
+      'compare-label': '成本對比',
+      'compare-h2': '紙本喜帖，比你想像的貴',
+      'compare-p': '以 80 位賓客為例，兩種選擇的真實花費',
+      'compare-paper-label': '傳統紙本',
+      'compare-paper-title': '紙本喜帖',
+      'compare-paper-r1': '設計 + 印製',
+      'compare-paper-r2': '寄出郵資（80 張）',
+      'compare-paper-r3': 'RSVP 回函郵資',
+      'compare-total': '合計',
+      'compare-paper-note': '印錯就沒救。改一個日期，重新設計、重新印、重新寄。',
+      'compare-digital-label': '電子喜帖',
+      'compare-digital-title': 'UX CIRCLES',
+      'compare-digital-r1': '設計 + 上線',
+      'compare-digital-r2': '傳送給賓客',
+      'compare-free': '免費',
+      'compare-digital-r3': '修改與更新',
+      'compare-included': '含在方案內',
+      'compare-digital-note': '即時傳送，隨時修改。地點臨時換了？更新連結，賓客馬上看到。',
       'footer-lang': 'English',
       'footer-main': '主網站',
       'footer-web': '網頁設計',
@@ -1042,6 +1207,24 @@
       'contact-h2': 'Ready to create your invitation?',
       'contact-p': 'Tell us your story and vision — we\'ll turn it into an experience your guests will never forget.',
       'contact-secondary': 'Book a 25-min consultation',
+      'compare-label': 'Cost Comparison',
+      'compare-h2': 'Paper invitations cost more than you think',
+      'compare-p': 'A realistic breakdown for 80 guests',
+      'compare-paper-label': 'Traditional Paper',
+      'compare-paper-title': 'Paper Stationery',
+      'compare-paper-r1': 'Design + print',
+      'compare-paper-r2': 'Postage out (80 stamps)',
+      'compare-paper-r3': 'RSVP return postage',
+      'compare-total': 'Total',
+      'compare-paper-note': 'Spot a typo after printing? Redesign, reprint, resend — at full cost.',
+      'compare-digital-label': 'Digital Invitation',
+      'compare-digital-title': 'UX CIRCLES',
+      'compare-digital-r1': 'Design + launch',
+      'compare-digital-r2': 'Delivery to guests',
+      'compare-free': 'Free',
+      'compare-digital-r3': 'Edits & updates',
+      'compare-included': 'Included',
+      'compare-digital-note': 'Send instantly, update anytime. Venue changed last minute? Update the link — guests see it immediately.',
       'footer-lang': '中文',
       'footer-main': 'Main Site',
       'footer-web': 'Web Design',
