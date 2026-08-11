@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — UX CIRCLES</title>
+  <link rel="icon" type="image/webp" href="logo-dark.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF8F5;
+      --bg2: #F3EEE7;
+      --text: #1C1814;
+      --text-muted: #7A6E63;
+      --gold: #A8895A;
+      --gold-light: #C4A87A;
+      --border: #DDD5C8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, nav { font-family: 'Syne', sans-serif; }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+    .nav-logo:hover { opacity: 1; }
+
+    .nav-back {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 9rem 3rem 6rem;
+    }
+
+    .page-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .toc {
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .toc-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc ol {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .toc a {
+      font-size: 0.875rem;
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--text); }
+
+    .tc-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 6rem;
+    }
+
+    .tc-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .tc-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .tc-section p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .tc-section p strong { color: var(--text); font-weight: 500; }
+
+    .tc-section ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+
+    .tc-section li {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      line-height: 1.7;
+    }
+
+    .tc-section li strong { color: var(--text); font-weight: 500; }
+
+    .note-box {
+      background: var(--bg2);
+      border-left: 2px solid var(--gold-light);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .page-wrap { padding: 7rem 1.25rem 4rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">UX CIRCLES</a>
+  <a href="index.html" class="nav-back">← Back to main site</a>
+</nav>
+
+<div class="page-wrap">
+  <p class="page-label">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="page-meta">Last updated: August 2026 &nbsp;·&nbsp; Applies to ux-circles.com and all associated pages</p>
+
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#s1">Who We Are</a></li>
+      <li><a href="#s2">What Data We Collect</a></li>
+      <li><a href="#s3">How We Use Your Data</a></li>
+      <li><a href="#s4">Cookies & Analytics</a></li>
+      <li><a href="#s5">Data Sharing</a></li>
+      <li><a href="#s6">How Long We Keep Your Data</a></li>
+      <li><a href="#s7">Your Rights</a></li>
+      <li><a href="#s8">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="tc-section" id="s1">
+    <h2><span class="tc-num">01</span>Who We Are</h2>
+    <p>UX CIRCLES is an independent design studio based in the United Kingdom, providing brand identity, web design, and digital wedding invitation services.</p>
+    <p>For the purposes of UK GDPR, UX CIRCLES is the data controller for personal information collected through this website. You can contact us at <a href="mailto:hello@ux-circles.com" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">hello@ux-circles.com</a>.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="tc-section" id="s2">
+    <h2><span class="tc-num">02</span>What Data We Collect</h2>
+    <p>We only collect personal data when you actively provide it or when you visit our website:</p>
+    <ul>
+      <li><strong>Contact enquiries:</strong> If you email us or fill in a contact form, we receive your name, email address, and the content of your message.</li>
+      <li><strong>Consultation bookings:</strong> If you book a consultation via cal.com, that platform collects your name, email, and booking details. Please refer to <a href="https://cal.com/privacy" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Cal.com's privacy policy</a> for how they handle your data.</li>
+      <li><strong>Project work:</strong> If you become a client, we may collect additional details necessary to complete your project (wedding details, photos, written content).</li>
+      <li><strong>Analytics data:</strong> We use Google Analytics to understand how visitors use our site. This data is aggregated and does not directly identify you. See section 4 for details.</li>
+    </ul>
+  </div>
+
+  <!-- 3 -->
+  <div class="tc-section" id="s3">
+    <h2><span class="tc-num">03</span>How We Use Your Data</h2>
+    <p>We use your personal data only for the following purposes:</p>
+    <ul>
+      <li>To respond to enquiries and provide quotes</li>
+      <li>To deliver the design services you have commissioned</li>
+      <li>To send project-related communications (drafts, feedback requests, invoices)</li>
+      <li>To improve our website using aggregated analytics</li>
+    </ul>
+    <p>We will never use your data for unsolicited marketing without your explicit consent.</p>
+    <p>Our legal basis for processing your data is <strong>legitimate interests</strong> (responding to business enquiries and delivering contracted services) and, where applicable, <strong>contract performance</strong>.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="tc-section" id="s4">
+    <h2><span class="tc-num">04</span>Cookies &amp; Analytics</h2>
+    <p>We use <strong>Google Analytics 4 (GA4)</strong> to collect anonymised data about how visitors use our website — pages visited, time spent, and general geographic region. No personally identifiable information is included in this data.</p>
+    <p>GA4 sets cookies in your browser to distinguish visits. The main cookies used are:</p>
+    <ul>
+      <li><strong>_ga</strong> — distinguishes users, expires after 2 years</li>
+      <li><strong>_ga_*</strong> — maintains session state, expires after 2 years</li>
+    </ul>
+    <p>You can opt out of Google Analytics tracking at any time using the <a href="https://tools.google.com/dlpage/gaoptout" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Google Analytics opt-out browser add-on</a>, or by adjusting your browser's cookie settings.</p>
+    <div class="note-box">
+      We do not use advertising cookies, tracking pixels, or any third-party marketing tools on this website.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="tc-section" id="s5">
+    <h2><span class="tc-num">05</span>Data Sharing</h2>
+    <p>We do not sell, rent, or trade your personal data. We may share limited data with trusted third parties only where necessary to run our business:</p>
+    <ul>
+      <li><strong>Google Analytics</strong> — anonymised website usage data</li>
+      <li><strong>Cal.com</strong> — booking details for consultation scheduling</li>
+      <li><strong>Stripe</strong> — payment processing for invoices (if applicable); Stripe handles all card data and we never see your full card details</li>
+    </ul>
+    <p>All third-party services used are GDPR-compliant. We do not transfer your data outside the UK or EEA without appropriate safeguards.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="tc-section" id="s6">
+    <h2><span class="tc-num">06</span>How Long We Keep Your Data</h2>
+    <ul>
+      <li><strong>Enquiries that don't become projects:</strong> Deleted after 12 months.</li>
+      <li><strong>Client project data:</strong> Retained for up to 3 years after project completion for legitimate business purposes (invoicing records, portfolio reference), then securely deleted.</li>
+      <li><strong>Analytics data:</strong> Retained for 14 months in Google Analytics (our default setting), after which it is automatically deleted.</li>
+    </ul>
+  </div>
+
+  <!-- 7 -->
+  <div class="tc-section" id="s7">
+    <h2><span class="tc-num">07</span>Your Rights</h2>
+    <p>Under UK GDPR, you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
+      <li><strong>Rectification</strong> — ask us to correct inaccurate or incomplete data</li>
+      <li><strong>Erasure</strong> — ask us to delete your data ("right to be forgotten"), subject to legal obligations</li>
+      <li><strong>Restriction</strong> — ask us to limit how we process your data</li>
+      <li><strong>Portability</strong> — request your data in a machine-readable format</li>
+      <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
+    </ul>
+    <p>To exercise any of these rights, email <a href="mailto:hello@ux-circles.com" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">hello@ux-circles.com</a>. We will respond within 30 days.</p>
+    <p>If you are unsatisfied with how we handle your data, you have the right to lodge a complaint with the <a href="https://ico.org.uk" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Information Commissioner's Office (ICO)</a>.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="tc-section" id="s8">
+    <h2><span class="tc-num">08</span>Contact</h2>
+    <p>For any privacy-related questions or data requests:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:hello@ux-circles.com" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">hello@ux-circles.com</a></li>
+    </ul>
+    <p>We aim to respond to all data-related requests within 30 days, as required by UK GDPR.</p>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 UX CIRCLES</span>
+  <div style="display:flex; gap:1.5rem;">
+    <a href="index.html">Main Site</a>
+    <a href="wedding.html">Digital Invitations</a>
+    <a href="terms.html">T&amp;Cs</a>
+  </div>
+</footer>
+
+</body>
+</html>
