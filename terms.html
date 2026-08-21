@@ -195,12 +195,36 @@
     /* FOOTER */
     footer {
       border-top: 0.5px solid var(--border);
-      padding: 2rem 3rem;
+      padding: 2.5rem 3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .footer-nav a {
       color: var(--text-muted);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .footer-nav a:hover { opacity: 1; }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      opacity: 0.5;
+      border-top: 0.5px solid var(--border);
+      padding-top: 1.25rem;
     }
 
     footer a:hover { color: var(--text); }
@@ -208,7 +232,9 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.25rem; }
       .page-wrap { padding: 7rem 1.25rem 4rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      footer { padding: 2rem 1.25rem; }
+      .footer-top { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      .footer-nav { flex-wrap: wrap; gap: 1rem; }
     }
   </style>
 </head>
@@ -339,12 +365,18 @@
 </div>
 
 <footer>
-  <span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</span>
-  <div style="display:flex; gap:1.5rem; align-items:center;">
-    <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:0.5px solid var(--border);border-radius:100px;padding:0.35rem 0.875rem;font-size:0.8rem;color:var(--text-muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color 0.2s,color 0.2s;" data-i18n="footer-lang">English</button>
-    <a href="wedding.html" data-i18n="footer-wedding">電子喜帖</a>
-    <a href="index.html" data-i18n="footer-main">主網站</a>
+  <div class="footer-top">
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" style="height:20px;width:auto;display:block;opacity:0.5;">
+    <div class="footer-nav">
+      <a href="index.html" data-i18n="footer-home">Home</a>
+      <a href="work.html" data-i18n="footer-work">Work</a>
+      <a href="web.html" data-i18n="footer-websites">Websites</a>
+      <a href="wedding.html" data-i18n="footer-wedding">Wedding</a>
+      <a href="index.html#contact" data-i18n="footer-contact">Contact</a>
+      <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:0.5px solid var(--border);border-radius:100px;padding:0.35rem 0.875rem;font-size:0.75rem;color:var(--text-muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color 0.2s,color 0.2s;" data-i18n="footer-lang">English</button>
+    </div>
   </div>
+  <p class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></p>
 </footer>
 
 <script>
@@ -398,8 +430,11 @@
       's9-p1': '如有任何疑問，歡迎透過以下方式聯繫：',
       's9-ul': '<li><strong>Email：</strong><a href="mailto:hello@ux-circles.com" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">hello@ux-circles.com</a></li><li><strong>諮詢預約：</strong><a href="wedding.html#contact" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">預約 25 分鐘免費諮詢</a></li>',
       'footer-lang': 'English',
-      'footer-wedding': '電子喜帖',
-      'footer-main': '主網站',
+      'footer-home': '首頁',
+      'footer-work': '作品集',
+      'footer-websites': '網頁設計',
+      'footer-wedding': '婚禮請帖',
+      'footer-contact': '聯絡我們',
     },
     en: {
       'nav-back': '← Back to Digital Invitations',
@@ -450,8 +485,11 @@
       's9-p1': 'If you have any questions, please get in touch:',
       's9-ul': '<li><strong>Email:</strong> <a href="mailto:hello@ux-circles.com" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">hello@ux-circles.com</a></li><li><strong>Book a consultation:</strong> <a href="wedding.html#contact" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Free 25-minute consultation</a></li>',
       'footer-lang': '中文',
-      'footer-wedding': 'Digital Invitations',
-      'footer-main': 'Main Site',
+      'footer-home': 'Home',
+      'footer-work': 'Work',
+      'footer-websites': 'Websites',
+      'footer-wedding': 'Wedding',
+      'footer-contact': 'Contact',
     }
   };
 

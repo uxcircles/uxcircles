@@ -187,12 +187,36 @@
 
     footer {
       border-top: 0.5px solid var(--border);
-      padding: 2rem 3rem;
+      padding: 2.5rem 3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .footer-nav a {
       color: var(--text-muted);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .footer-nav a:hover { opacity: 1; }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      opacity: 0.5;
+      border-top: 0.5px solid var(--border);
+      padding-top: 1.25rem;
     }
 
     footer a:hover { color: var(--text); }
@@ -200,7 +224,9 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.25rem; }
       .page-wrap { padding: 7rem 1.25rem 4rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      footer { padding: 2rem 1.25rem; }
+      .footer-top { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      .footer-nav { flex-wrap: wrap; gap: 1rem; }
     }
   </style>
 </head>
@@ -209,7 +235,7 @@
 <nav>
   <a href="index.html" class="nav-logo">UX CIRCLES</a>
   <a href="index.html" class="nav-back">← Back to main site</a>
-</nav>
+</div>
 
 <div class="page-wrap">
   <p class="page-label">Legal</p>
@@ -328,12 +354,17 @@
 </div>
 
 <footer>
-  <span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</span>
-  <div style="display:flex; gap:1.5rem;">
-    <a href="index.html">Main Site</a>
-    <a href="wedding.html">Digital Invitations</a>
-    <a href="terms.html">T&amp;Cs</a>
+  <div class="footer-top">
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" style="height:20px;width:auto;display:block;opacity:0.5;">
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="web.html">Websites</a>
+      <a href="wedding.html">Wedding</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
   </div>
+  <p class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></p>
 </footer>
 
 </body>

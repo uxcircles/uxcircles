@@ -735,12 +735,37 @@
     /* FOOTER */
     footer {
       border-top: 0.5px solid var(--border);
-      padding: 2rem 3rem;
+      padding: 2.5rem 3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .footer-nav a {
       color: var(--text-muted);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .footer-nav a:hover { opacity: 1; }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      opacity: 0.5;
+      border-top: 0.5px solid var(--border);
+      padding-top: 1.25rem;
     }
 
     footer a:hover { color: var(--text); }
@@ -759,7 +784,9 @@
       .process-steps { grid-template-columns: 1fr; gap: 2rem; }
       .process-steps::before { display: none; }
       .demo-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+      footer { padding: 2rem 1.25rem; }
+      .footer-top { flex-direction: column; gap: 1rem; align-items: flex-start; }
+      .footer-nav { flex-wrap: wrap; gap: 1rem; }
     }
   </style>
 </head>
@@ -773,7 +800,7 @@
     <a href="#demo" data-i18n="nav-demo">作品範例</a>
     <a href="#contact" class="nav-cta" data-i18n="nav-cta">聯絡我們</a>
   </div>
-</nav>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1072,12 +1099,18 @@
 </section>
 
 <footer>
-  <span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</span>
-  <div style="display:flex; gap:1.5rem; align-items:center;">
-    <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:0.5px solid var(--border);border-radius:100px;padding:0.35rem 0.875rem;font-size:0.8rem;color:var(--text-muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color 0.2s,color 0.2s;" data-i18n="footer-lang">English</button>
-    <a href="index.html" data-i18n="footer-main">主網站</a>
-    <a href="web.html" data-i18n="footer-web">網頁設計</a>
+  <div class="footer-top">
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" style="height:20px;width:auto;display:block;opacity:0.6;">
+    <div class="footer-nav">
+      <a href="index.html" data-i18n="footer-home">Home</a>
+      <a href="work.html" data-i18n="footer-work">Work</a>
+      <a href="web.html" data-i18n="footer-web">Websites</a>
+      <a href="wedding.html" data-i18n="footer-wedding">Wedding</a>
+      <a href="index.html#contact" data-i18n="footer-contact">Contact</a>
+      <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:0.5px solid var(--border);border-radius:100px;padding:0.35rem 0.875rem;font-size:0.75rem;color:var(--text-muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color 0.2s,color 0.2s;" data-i18n="footer-lang">English</button>
+    </div>
   </div>
+  <p class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></p>
 </footer>
 
 <script>
@@ -1157,8 +1190,11 @@
       'compare-included': '含在方案內',
       'compare-digital-note': '即時傳送，隨時修改。地點臨時換了？更新連結，賓客馬上看到。',
       'footer-lang': 'English',
-      'footer-main': '主網站',
+      'footer-home': '首頁',
+      'footer-work': '作品集',
       'footer-web': '網頁設計',
+      'footer-wedding': '婚禮請帖',
+      'footer-contact': '聯絡我們',
     },
     en: {
       'nav-pricing': 'Pricing',
@@ -1234,8 +1270,11 @@
       'compare-included': 'Included',
       'compare-digital-note': 'Send instantly, update anytime. Venue changed last minute? Update the link — guests see it immediately.',
       'footer-lang': '中文',
-      'footer-main': 'Main Site',
-      'footer-web': 'Web Design',
+      'footer-home': 'Home',
+      'footer-work': 'Work',
+      'footer-web': 'Websites',
+      'footer-wedding': 'Wedding',
+      'footer-contact': 'Contact',
     }
   };
 
