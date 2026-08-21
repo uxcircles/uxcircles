@@ -225,6 +225,11 @@
     margin-top: 1.25rem;
       font-size: 0.72rem;
       opacity: 0.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
           }
 
     footer a:hover { color: var(--text); }
@@ -235,6 +240,7 @@
       footer { padding: 2rem 1.25rem; }
       .footer-top { flex-direction: column; gap: 1rem; align-items: flex-start; }
       .footer-nav { flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
     }
   </style>
 </head>
@@ -376,7 +382,7 @@
       <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:0.5px solid var(--border);border-radius:100px;padding:0.35rem 0.875rem;font-size:0.75rem;color:var(--text-muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color 0.2s,color 0.2s;line-height:1;" data-i18n="footer-lang">English</button>
     </div>
   </div>
-  <p class="footer-copy">© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></p>
+  <div class="footer-copy"><span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></span><a href="mailto:hello@ux-circles.com" style="color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">hello@ux-circles.com</a></div>
 </footer>
 
 <script>
