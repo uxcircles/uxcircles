@@ -242,13 +242,15 @@
       .footer-nav { flex-wrap: wrap; gap: 1rem; }
     .footer-copy { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
     }
-  </style>
+  
+  .icon-arrow { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; flex-shrink: 0; }
+</style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">UX CIRCLES</a>
-  <a href="wedding.html" class="nav-back" data-i18n="nav-back">← 返回電子喜帖</a>
+  <a href="wedding.html" class="nav-back" data-i18n="nav-back"><svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> 返回電子喜帖</a>
 </nav>
 
 <div class="page-wrap">
@@ -388,7 +390,7 @@
 <script>
   const translations = {
     zh: {
-      'nav-back': '← 返回電子喜帖',
+      'nav-back': '<svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> 返回電子喜帖',
       'page-label': '電子喜帖服務',
       'page-meta': '最後更新：2026 年 8 月 &nbsp;·&nbsp; 適用於所有電子喜帖設計專案',
       'toc-title': '目錄',
@@ -443,7 +445,7 @@
       'footer-contact': '聯絡我們',
     },
     en: {
-      'nav-back': '← Back to Digital Invitations',
+      'nav-back': '<svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Back to Digital Invitations',
       'page-label': 'Digital Wedding Invitations',
       'page-meta': 'Last updated: August 2026 &nbsp;·&nbsp; Applies to all digital wedding invitation projects',
       'toc-title': 'Contents',
