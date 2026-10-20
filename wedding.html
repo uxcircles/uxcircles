@@ -324,11 +324,22 @@
     }
 
     .feature-item::before {
-      content: '✦';
-      font-size: 0.55rem;
-      color: var(--gold);
-      margin-top: 0.35rem;
+      content: '';
+      width: 9px;
+      height: 9px;
+      background: var(--gold);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+      margin-top: 0.4rem;
       flex-shrink: 0;
+    }
+
+    .icon-heart {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.12em;
+      color: var(--gold);
     }
 
     /* ADD-ONS */
@@ -1072,7 +1083,7 @@
   <div style="max-width:640px; margin:0 auto;">
     <p class="label reveal" data-i18n="testimonial-label">客戶評價</p>
     <blockquote class="reveal reveal-delay-1" data-i18n="testimonial-quote" style="font-size:1.15rem; line-height:1.8; color:var(--text); margin-bottom:1.5rem; font-style:italic;">
-      「溝通很順暢，電子喜帖做好後，我們看到的當下真的好感動 ❤️ 成品比想像中還要好～我們都很喜歡你們的設計，真的很謝謝你們！」
+      「溝通很順暢，電子喜帖做好後，我們看到的當下真的好感動 <svg class="icon-heart" viewBox="0 0 24 24" fill="currentColor" aria-label="heart" role="img"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.4.2.3.6.3.8 0 .7-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg> 成品比想像中還要好～我們都很喜歡你們的設計，真的很謝謝你們！」
     </blockquote>
     <div class="reveal reveal-delay-2" style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
       <img src="testimonial-anthony-abigail.png" alt="Anthony & Abigail" style="width:72px; height:72px; border-radius:50%; object-fit:cover; object-position:center bottom; border:2px solid var(--border-bright);">
@@ -1171,7 +1182,7 @@
       'demo3-name': '手繪全客製喜帖',
       'demo-link': '查看 Demo',
       'testimonial-label': '客戶評價',
-      'testimonial-quote': '「溝通很順暢，電子喜帖做好後，我們看到的當下真的好感動 ❤️ 成品比想像中還要好～我們都很喜歡你們的設計，真的很謝謝你們！」',
+      'testimonial-quote': '「溝通很順暢，電子喜帖做好後，我們看到的當下真的好感動 <svg class="icon-heart" viewBox="0 0 24 24" fill="currentColor" aria-label="heart" role="img"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.4.2.3.6.3.8 0 .7-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg> 成品比想像中還要好～我們都很喜歡你們的設計，真的很謝謝你們！」',
       'contact-label': '開始吧',
       'contact-h2': '準備好打造你們的喜帖了嗎？',
       'contact-p': '告訴我們你們的故事和想法，我們一起把它變成賓客難忘的體驗。',
@@ -1251,7 +1262,7 @@
       'demo3-name': 'Custom Illustration',
       'demo-link': 'View Demo',
       'testimonial-label': 'Kind Words',
-      'testimonial-quote': '"The whole process was so smooth. When we first saw the finished invitation, we were genuinely moved ❤️ It exceeded everything we imagined — we absolutely love the design. Thank you so much!"',
+      'testimonial-quote': '"The whole process was so smooth. When we first saw the finished invitation, we were genuinely moved <svg class="icon-heart" viewBox="0 0 24 24" fill="currentColor" aria-label="heart" role="img"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.1 4.3 2.4.2.3.6.3.8 0 .7-1.3 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z"/></svg> It exceeded everything we imagined — we absolutely love the design. Thank you so much!"',
       'contact-label': 'Get Started',
       'contact-h2': 'Ready to create your invitation?',
       'contact-p': 'Tell us your story and vision — we\'ll turn it into an experience your guests will never forget.',
