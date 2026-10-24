@@ -747,6 +747,9 @@
     margin-top: 0.2rem;
   }
 
+  .service-card h3 + .service-price { margin-top: 0; }
+  .service-card .service-duration + p { margin-top: 1.25rem; }
+
   .service-featured-right {
     border-left: 0.5px solid var(--border);
     padding-left: 2rem;
@@ -1153,7 +1156,10 @@
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     section { padding: 5rem 1.25rem; }
-    #hero { padding: 7rem 1.25rem 4rem; }
+    #hero { padding: 6rem 1.25rem 3.5rem; }
+    h1 { font-size: clamp(2.2rem, 9.5vw, 2.8rem); margin-bottom: 1.1rem; }
+    .hero-tag { margin-bottom: 1.25rem; }
+    .hero-sub { font-size: 1rem; line-height: 1.65; margin-bottom: 1.75rem; }
     .work-grid { grid-template-columns: 1fr; }
     .testimonial-card { width: 260px; }
     .work-card.featured { grid-column: span 1; grid-template-columns: 1fr; display: flex; flex-direction: column; width: 100%; }
@@ -1405,17 +1411,17 @@
     <div class="service-card reveal">
       <p class="service-number">02</p>
       <h3>Design Audit & Roadmap</h3>
-      <p>You have a product. Something isn't working. We spend two weeks inside it, identify the real problems (not just the visible ones), and give you a prioritised roadmap.</p>
       <p class="service-price">£2,000 – £3,000</p>
       <p class="service-duration">2 weeks</p>
+      <p>You have a product. Something isn't working. We spend two weeks inside it, identify the real problems (not just the visible ones), and give you a prioritised roadmap.</p>
     </div>
 
     <div class="service-card reveal">
       <p class="service-number">03</p>
       <h3>Brand & Visual Design</h3>
-      <p>Led by Rita Hou, our graphic designer specialising in food, drink, and consumer packaging — plus marketing websites and landing pages for consumer brands. Distinct from app design — deliberately.</p>
       <p class="service-price">Enquire for pricing</p>
       <p class="service-duration">Scope-dependent</p>
+      <p>Led by Rita Hou, our graphic designer specialising in food, drink, and consumer packaging — plus marketing websites and landing pages for consumer brands. Distinct from app design — deliberately.</p>
     </div>
   </div>
 </section>
