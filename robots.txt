@@ -1,17 +1,13 @@
 User-agent: *
 Allow: /
 
-# AI search and assistant crawlers are welcome
-User-agent: GPTBot
-Allow: /
-
+# AI search and assistant crawlers are welcome. These fetch pages to answer
+# questions and cite sources in ChatGPT, Claude and Perplexity search.
+# (AI training crawlers are governed by Cloudflare's managed robots.txt.)
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-SearchBot
@@ -21,12 +17,6 @@ User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://ux-circles.com/sitemap.xml

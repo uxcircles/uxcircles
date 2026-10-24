@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "uxcircles",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": ".",
+    // Serve 404.html (with a 404 status) instead of an empty response
+    "not_found_handling": "404-page"
+  }
+}
