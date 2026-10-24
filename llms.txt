@@ -1,6 +1,6 @@
 # UX CIRCLES
 
-> UX CIRCLES Ltd is a London-based UX and web design studio (founded 2020, Company No. 15679514). We design complex digital products for fintech and B2B SaaS, websites for Taiwanese brands entering the UK market, restaurant websites, and bilingual Chinese–English wedding invitation websites. We work in English and Traditional Chinese (Mandarin).
+> UX CIRCLES Ltd is a London-based UX and web design studio (founded 2020, Company No. 15679514). We design complex digital products for fintech and B2B SaaS, websites for Taiwanese brands entering the UK market, and bilingual English–Chinese websites for professional services (accountants, immigration lawyers, estate agents), restaurants and weddings. We work in English, Traditional Chinese and Simplified Chinese, and serve Hong Kong and Taiwanese communities in the UK.
 
 - Location: London, United Kingdom. Clients in the UK, Taiwan and Europe.
 - Contact: hello@ux-circles.com · Free 25-minute call: https://cal.com/ux-circles/25-min-consultancy
@@ -10,6 +10,7 @@
 
 - [Product & UX design](https://ux-circles.com/): App Design Sprint (£6,000–£10,000), Design Audit & Roadmap (£2,000–£3,000). Fintech, wealth management, B2B SaaS, marketplaces, multi-role platforms.
 - [Websites for UK & Taiwanese brands](https://ux-circles.com/web): brand strategy, UX, web design and development for Taiwanese businesses entering the UK and UK brands ready to grow. Bilingual English–Chinese.
+- [Bilingual websites for accountants, immigration lawyers & estate agents](https://ux-circles.com/professionals): from £2,500 for up to 5 pages in English, Traditional Chinese and Simplified Chinese, with Hong Kong or Taiwan wording, a regulatory disclosure section (e.g. SRA/OISC, redress scheme, professional body) and schema markup for the firm and each adviser. Domain and hosting not included.
 - [Restaurant website design](https://ux-circles.com/restaurants): booking-first restaurant websites with HTML menus, private dining pages and multilingual versions. The page shows six self-initiated concept redesigns (not commissioned work) for restaurants in London and Birmingham.
 - [電子喜帖 / Digital wedding invitations](https://ux-circles.com/wedding): custom wedding invitation websites from £250 (Essential), £500 (Animated), £1,200 (Full Bespoke with hand-drawn illustration and RSVP system); Chinese–English bilingual add-on £140. For overseas Taiwanese couples and cross-cultural weddings.
 
