@@ -1,0 +1,27 @@
+# UX CIRCLES (設客思)
+
+> UX CIRCLES Ltd is a London-based UX and web design studio (founded 2024, Company No. 15679514). We design complex digital products for fintech and B2B SaaS, websites for Hong Kong and Taiwanese brands entering the UK market, and bilingual English–Chinese websites for professional services (accountants, immigration lawyers, estate agents), restaurants and weddings. We work in English, Traditional Chinese and Simplified Chinese, and serve Hong Kong and Taiwanese communities in the UK.
+
+- Location: London, United Kingdom. Clients in the UK, Taiwan and Europe.
+- Also known as: 設客思, UX Circles 設客思
+- Social: LinkedIn https://www.linkedin.com/company/ux-circles/ · Facebook https://www.facebook.com/UXcircles · Instagram https://www.instagram.com/uxcircles/ · Threads https://www.threads.com/@uxcircles
+- Contact: hello@ux-circles.com · Free 25-minute call: https://cal.com/ux-circles/25-min-consultancy
+- Team: Chun-Chuan Lin (https://www.linkedin.com/in/chun-chuan-lin/ — Founder, Product Design Lead — 14 years in product design; founding designer at a fintech platform from Series A to C overseeing £9B+ in assets; previously Synology and Acer). Rita Hou (https://www.linkedin.com/in/hou-chen-ju-95131910b/ — graphic, packaging and web design for food and drink brands).
+
+## Services
+
+- [Product & UX design](https://ux-circles.com/): App Design Sprint (£6,000–£10,000), Design Audit & Roadmap (£2,000–£3,000). Fintech, wealth management, B2B SaaS, marketplaces, multi-role platforms.
+- [Websites for UK & Taiwanese brands](https://ux-circles.com/web): brand strategy, UX, web design and development for Taiwanese businesses entering the UK and UK brands ready to grow. Bilingual English–Chinese.
+- [Bilingual websites for accountants, immigration lawyers & estate agents](https://ux-circles.com/professionals): from £2,500 for up to 5 pages in English, Traditional Chinese and Simplified Chinese, with Hong Kong or Taiwan wording, a regulatory disclosure section (e.g. SRA/OISC, redress scheme, professional body) and schema markup for the firm and each adviser. Optional Cantonese (廣東話) version in colloquial written Cantonese: +£300. The studio itself works in English and Mandarin/written Chinese. Domain and hosting not included. Fictional demo sites: [accountant](https://uxcircles.github.io/demo-accountant/), [immigration law firm](https://uxcircles.github.io/demo-immigration/), [estate agent](https://uxcircles.github.io/demo-estate-agent/).
+- [Restaurant website design](https://ux-circles.com/restaurants): booking-first restaurant websites with HTML menus, private dining pages and multilingual versions. The page shows six self-initiated concept redesigns (not commissioned work) for restaurants in London and Birmingham.
+- [電子喜帖 / Digital wedding invitations](https://ux-circles.com/wedding): custom wedding invitation websites from £250 (Essential), £500 (Animated), £1,200 (Full Bespoke with hand-drawn illustration and RSVP system); Chinese–English bilingual add-on £140. For overseas Taiwanese couples and cross-cultural weddings.
+
+## Work
+
+- [Selected work](https://ux-circles.com/work): multi-role platform redesign for UHNW wealth management; financial data app for iOS and Android; second-hand film camera marketplace; sports event management MVP; brand and packaging for consumer food brands.
+- [Call Me Taiwan case study](https://ux-circles.com/callmetaiwan): editorial website for a Taiwan identity advocacy NGO, with data visualisation.
+
+## Optional
+
+- [Privacy policy](https://ux-circles.com/privacy)
+- [Terms & conditions](https://ux-circles.com/terms)
