@@ -88,8 +88,11 @@
     var a = e.target.closest('a[href]');
     if (!a) return;
     var section = a.closest('section[id], section[class], footer, nav');
-    gtag('event', 'link_click', {
-      link_type: linkType(a),
+    // One event name per link type (click_book_call, click_email, click_free_offer...),
+    // so each shows up in GA's Events report without setting up custom dimensions.
+    var type = linkType(a);
+    gtag('event', 'click_' + type, {
+      link_type: type,
       link_text: (a.textContent || a.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim().slice(0, 80),
       link_url: a.href,
       page_section: section ? (section.id || section.className.split(' ')[0] || section.tagName.toLowerCase()) : ''
