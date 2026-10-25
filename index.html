@@ -721,6 +721,8 @@
 
   .service-free-link { display: inline-block; margin-top: 1.25rem; color: var(--purple-light); font-size: 0.875rem; text-decoration: none; border-bottom: 0.5px solid currentColor; padding-bottom: 2px; }
   .service-free-link:hover { color: var(--text); }
+  .service-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 0.25rem; }
+  .service-links .service-free-link { margin-top: 0; }
   .service-card p {
     color: var(--text-muted);
     font-size: 0.9rem;
@@ -1387,7 +1389,7 @@
 
 <section id="services">
   <p class="section-label reveal">Services</p>
-  <h2 class="reveal">Two ways to work<br>with us</h2>
+  <h2 class="reveal">Four ways to work<br>with us</h2>
   <p class="section-intro reveal">We keep it focused. No bloated retainers, no junior handoffs.</p>
 
   <div class="services-grid">
@@ -1418,7 +1420,18 @@
       <p class="service-price">Enquire for pricing</p>
       <p class="service-duration">Scope-dependent</p>
       <p>Led by Rita Hou, our graphic designer specialising in food, drink, and consumer packaging — plus marketing websites and landing pages for consumer brands. Distinct from app design — deliberately.</p>
-      <a href="/free" class="service-free-link">Try a free homepage redesign →</a>
+    </div>
+    <div class="service-card featured reveal">
+      <div>
+        <p class="service-number">04</p>
+        <h3>Multilingual Websites</h3>
+        <p class="service-price">From £2,500</p>
+        <p class="service-duration">4–6 weeks</p>
+      </div>
+      <div class="service-featured-right">
+        <p>Websites in English, Traditional and Simplified Chinese for UK accountants, immigration lawyers and estate agents serving Hong Kong and Taiwanese clients — with regulatory disclosures and AI search built in. Optional Cantonese version for £300.</p>
+        <p class="service-links"><a href="/professionals" class="service-free-link">See how it works →</a><a href="/free" class="service-free-link">Try a free homepage redesign →</a></p>
+      </div>
     </div>
   </div>
 </section>
