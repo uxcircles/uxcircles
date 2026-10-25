@@ -635,6 +635,9 @@
   .price-addon-name span { color: var(--purple); font-family: 'DM Sans', sans-serif; font-weight: 500; margin-left: 0.25rem; }
   .price-addon-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.3rem; }
   .price-addon-amount { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--purple); white-space: nowrap; }
+  .care-card { margin-top: 1.5rem; box-shadow: none; }
+  .price-amount .per { font-size: 1rem; margin-left: 0.2rem; margin-right: 0; letter-spacing: 0; }
+  .care-annual { font-size: 0.85rem; color: var(--purple); margin-bottom: 1.25rem; }
   .price-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 1.75rem; }
   .pricing .hero-cta { opacity: 1; animation: none; }
   .demo-disclaimer { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; }
@@ -725,7 +728,7 @@
             "minPrice": 2500,
             "priceCurrency": "GBP"
           },
-          "description": "Up to 5 pages in English, Traditional Chinese and Simplified Chinese, with regulatory disclosure section and schema markup. Domain and hosting not included."
+          "description": "Up to 5 pages in English, Traditional Chinese and Simplified Chinese, with regulatory disclosure section and schema markup. Domain not included; hosting comes with the optional care plan."
         },
         {
           "@type": "Offer",
@@ -734,6 +737,18 @@
           "price": "300",
           "priceCurrency": "GBP",
           "description": "A fourth website version in colloquial written Cantonese for Hong Kong clients."
+        },
+        {
+          "@type": "Offer",
+          "name": "Optional care plan (選購維護方案)",
+          "url": "https://ux-circles.com/professionals#pricing",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 99,
+            "priceCurrency": "GBP",
+            "unitText": "month"
+          },
+          "description": "Hosting, SSL and uptime monitoring, up to 1.5 hours of updates a month across all languages, and a quarterly Google and AI search check. £990 if paid yearly. Extra work £75/hour; unused hours don't roll over."
         }
       ]
     },
@@ -745,7 +760,15 @@
           "name": "How much does a multilingual website for an accountant, law firm or estate agent cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "UX CIRCLES builds multilingual professional services websites from £2,500. That covers up to five pages in English, Traditional Chinese and Simplified Chinese, a regulatory disclosure section and schema markup. Domain and hosting are not included."
+            "text": "UX CIRCLES builds multilingual professional services websites from £2,500. That covers up to five pages in English, Traditional Chinese and Simplified Chinese, a regulatory disclosure section and schema markup. The domain is not included; hosting is part of the optional £99/month care plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it cost to run the website after launch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nothing is required: the site is yours. If you'd like us to look after it, the optional care plan is £99 a month or £990 a year. It covers hosting, SSL and uptime monitoring, up to 1.5 hours of updates a month across all languages, and a quarterly Google and AI search check. Extra work is £75 an hour and unused hours don't roll over. Your domain and email stay in your name, and if you cancel we hand over all site files."
           }
         },
         {
@@ -1073,8 +1096,21 @@
       </div>
       <p class="price-addon-amount">+£300</p>
     </div>
-    <p class="price-note">Domain and hosting not included. Larger sites, listings integrations and ongoing content are quoted separately.</p>
+    <p class="price-note">Domain not included. Hosting comes with the optional care plan below. Larger sites and listings integrations are quoted separately.</p>
     <a href="https://cal.com/ux-circles/25-min-consultancy" class="hero-cta">Book a free call <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="price-card care-card">
+    <p class="price-name">Optional care plan</p>
+    <p class="price-name-zh" lang="zh-Hant">選購維護方案</p>
+    <p class="price-amount">£99<span class="per">/month</span></p>
+    <p class="care-annual">or £990/year (2 months free) · <span class="nw" lang="zh-Hant">年繳 £990 等於送兩個月</span></p>
+    <ul class="aud-list price-list">
+      <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Hosting, SSL and uptime monitoring</span></li>
+      <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Up to 1.5 hours of updates a month, across all languages</span></li>
+      <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Quarterly Google &amp; AI search check</span></li>
+      <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Your domain and email stay in your name</span></li>
+    </ul>
+    <p class="price-note">Extra work £75/hour. Unused hours don't roll over. Cancel with 30 days' notice and we hand over all site files.</p>
   </div>
 </section>
 
@@ -1086,7 +1122,11 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary>How much does a multilingual website for an accountant, law firm or estate agent cost?</summary>
-      <p>UX CIRCLES builds multilingual professional services websites from £2,500. That covers up to five pages in English, Traditional Chinese and Simplified Chinese, a regulatory disclosure section and schema markup. Domain and hosting are not included.</p>
+      <p>UX CIRCLES builds multilingual professional services websites from £2,500. That covers up to five pages in English, Traditional Chinese and Simplified Chinese, a regulatory disclosure section and schema markup. The domain is not included; hosting is part of the optional £99/month care plan.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What does it cost to run the website after launch?</summary>
+      <p>Nothing is required: the site is yours. If you'd like us to look after it, the optional care plan is £99 a month or £990 a year. It covers hosting, SSL and uptime monitoring, up to 1.5 hours of updates a month across all languages, and a quarterly Google and AI search check. Extra work is £75 an hour and unused hours don't roll over. Your domain and email stay in your name, and if you cancel we hand over all site files.</p>
     </details>
     <details class="faq-item">
       <summary>Do you write Hong Kong or Taiwanese Chinese?</summary>
