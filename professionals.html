@@ -1217,12 +1217,16 @@
       var site = form.website.value.trim();
       var id = form.getAttribute('data-tally');
       var source = form.getAttribute('data-source');
+      // Pass ad campaign tags (utm_*) through to the form, so each request shows which ad it came from.
+      var fields = { website: site, source: source };
+      var params = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { if (params.get(k)) fields[k] = params.get(k); });
       e.preventDefault();
       if (window.Tally && window.Tally.openPopup) {
-        window.Tally.openPopup(id, { width: 640, hideTitle: true, hiddenFields: { website: site, source: source } });
+        window.Tally.openPopup(id, { width: 640, hideTitle: true, hiddenFields: fields });
       } else {
         // Fallback: open the hosted form with the same values
-        window.open('https://tally.so/r/' + id + '?website=' + encodeURIComponent(site) + '&source=' + encodeURIComponent(source), '_blank', 'noopener');
+        window.open('https://tally.so/r/' + id + '?' + new URLSearchParams(fields).toString(), '_blank', 'noopener');
       }
       if (window.gtag) gtag('event', 'lead_start', { form: source });
     });
