@@ -672,6 +672,30 @@
   .free-lead { color: var(--text-muted); font-weight: 300; max-width: 560px; margin: 0 auto; line-height: 1.7; }
   .steps-grid { grid-template-columns: repeat(3, 1fr); }
   @media (max-width: 900px) { .steps-grid { grid-template-columns: 1fr; } .free-page { padding-top: 7rem; } }
+  .ex-tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.5rem; }
+  #examples .demo-disclaimer { max-width: 640px; margin: 0 auto; }
+  .receive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; }
+  .receive-card { background: #fff; border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem; }
+  .receive-visual { background: var(--bg); border-radius: 8px; height: 320px; margin-bottom: 1.5rem; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .receive-shots .shot-desktop { position: absolute; left: 6%; top: 14%; width: 74%; height: auto; border-radius: 6px; box-shadow: 0 16px 40px rgba(45, 31, 110, 0.18); }
+  .receive-shots .shot-mobile { position: absolute; right: 6%; top: 10%; width: 26%; height: auto; border-radius: 12px; border: 4px solid #1a1433; box-shadow: 0 16px 40px rgba(45, 31, 110, 0.25); }
+  .receive-list { margin-top: 1.25rem; }
+  .report { width: 84%; background: #fff; border-radius: 8px; padding: 0.9rem 1.1rem; box-shadow: 0 16px 40px rgba(45, 31, 110, 0.14); font-size: 0.74rem; color: var(--text); }
+  .report-head { display: flex; justify-content: space-between; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.85rem; }
+  .report-tag { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--purple); background: rgba(107, 92, 231, 0.1); padding: 0.15rem 0.45rem; border-radius: 4px; }
+  .report-site { color: var(--text-dim); margin: 0.15rem 0 0.6rem; }
+  .report-rows { list-style: none; border-top: 0.5px solid var(--border); }
+  .report-rows li { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.35rem 0; border-bottom: 0.5px solid var(--border); }
+  .report-rows b { font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem; }
+  .report-rows .ok { color: #1f8a5b; } .report-rows .bad { color: #c2410c; } .report-rows .warn { color: #a16207; }
+  .report-rows svg { width: 0.9em; height: 0.9em; color: inherit; margin: 0; }
+  .report-fix-title { font-weight: 600; margin-top: 0.6rem; }
+  .report-fixes { padding-left: 1.1rem; color: var(--text-muted); }
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; max-width: 900px; margin: 0 auto; }
+  .who-card { display: flex; gap: 1.25rem; align-items: flex-start; background: #fff; border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .who-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: center 0%; flex-shrink: 0; }
+  .who-role { color: var(--purple); font-size: 0.82rem; margin: 0.2rem 0 0.6rem; }
+  @media (max-width: 900px) { .receive-grid, .who-grid { grid-template-columns: 1fr; } .receive-visual { height: auto; min-height: 240px; padding: 1rem 0; } .receive-shots { height: 240px; } .report { width: 92%; } }
 </style>
 <script type="application/ld+json">
 {
@@ -709,6 +733,62 @@
 </script>
 <!-- Cookie consent, Google Analytics (after consent) and click tracking -->
 <script src="/consent.js?v=3" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We'd rather show you than pitch you. A finished homepage design says more about how we work than any proposal. If you like it, we can talk about building it. If not, keep the design. We won't chase you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to buy anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The design is yours to keep and use however you like. There's no contract and no obligation to work with us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you need from me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your web address and a few answers about your business, which takes about two minutes. We work from your site as your clients see it, so there are no logins to share."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you choose the 5 businesses each month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We pick businesses where a new homepage would make the biggest difference, and where we have room to do it properly. If you're not picked this month, we'll tell you and can hold your place for the next one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you show my redesign publicly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if you say so. The form asks whether you're happy for us to share it, with a credit and link to your site, or without your name and logo. The default is private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the AI search check look at?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whether Google, ChatGPT, Claude and Perplexity can find your business, describe it correctly and recommend it for the services you offer, plus the three fixes that would help most. You get it as a short report by email."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -752,6 +832,117 @@
   </div>
 </section>
 
+<!-- EXAMPLES -->
+<section class="services" id="examples">
+  <p class="services-label">Examples</p>
+  <h2 class="services-title">What a redesign looks like</h2>
+  <p class="services-title-zh" lang="zh-Hant">看看我們做過的網站</p>
+  <p class="demo-disclaimer">Demo sites are fictional firms we designed to show the approach. Restaurant concepts are unsolicited redesigns of real restaurants and aren't affiliated with them.</p>
+  <div class="demo-grid">
+    <a class="demo-card" href="https://uxcircles.github.io/demo-accountant/" target="_blank" rel="noopener">
+      <img src="demo-accountant.webp" alt="Harbour Lin Accountants website" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="ex-tag">Demo · Accountancy</p>
+        <p class="service-name">Harbour Lin Accountants</p>
+        <p class="service-desc">English, Traditional and Simplified Chinese, plus Cantonese</p>
+        <span class="demo-link">View site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="demo-card" href="https://uxcircles.github.io/demo-immigration/" target="_blank" rel="noopener">
+      <img src="demo-immigration.webp" alt="Laurelgate Immigration Law website" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="ex-tag">Demo · Immigration law</p>
+        <p class="service-name">Laurelgate Immigration Law</p>
+        <p class="service-desc">Regulatory details laid out clearly in every language</p>
+        <span class="demo-link">View site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="demo-card" href="https://uxcircles.github.io/demo-estate-agent/" target="_blank" rel="noopener">
+      <img src="demo-estate-agent.webp" alt="Alder &amp; Wren website" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="ex-tag">Demo · Estate agency</p>
+        <p class="service-name">Alder &amp; Wren</p>
+        <p class="service-desc">Listings and area guides for new arrivals</p>
+        <span class="demo-link">View site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="demo-card" href="https://uxcircles.github.io/theshellseafood/" target="_blank" rel="noopener">
+      <img src="concept-restaurant-theshell.webp" alt="The Shell, Holborn website" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="ex-tag">Concept redesign · Seafood restaurant</p>
+        <p class="service-name">The Shell, Holborn</p>
+        <p class="service-desc">Booking-first homepage and a menu you can read on a phone</p>
+        <span class="demo-link">View site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="demo-card" href="https://uxcircles.github.io/tigerbitespig/" target="_blank" rel="noopener">
+      <img src="concept-restaurant-tigerbitespig.webp" alt="Tiger Bites Pig, Birmingham website" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="ex-tag">Concept redesign · Taiwanese bao</p>
+        <p class="service-name">Tiger Bites Pig, Birmingham</p>
+        <p class="service-desc">Bold brand, clear menu, English and Chinese</p>
+        <span class="demo-link">View site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="demo-card" href="https://uxcircles.github.io/nostimo/" target="_blank" rel="noopener">
+      <img src="concept-restaurant-nostimo.webp" alt="Nostimo, Bloomsbury website" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="ex-tag">Concept redesign · Greek taverna</p>
+        <p class="service-name">Nostimo, Bloomsbury</p>
+        <p class="service-desc">Warm, photo-led and quick to book</p>
+        <span class="demo-link">View site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WHAT YOU RECEIVE -->
+<section class="services" id="receive">
+  <p class="services-label">What you receive</p>
+  <h2 class="services-title">Something you can actually use</h2>
+  <p class="services-title-zh" lang="zh-Hant">你會收到的內容</p>
+  <div class="receive-grid">
+    <div class="receive-card">
+      <div class="receive-visual receive-shots">
+        <img class="shot-desktop" src="demo-accountant.webp" alt="" width="1440" height="900" loading="lazy">
+        <img class="shot-mobile" src="demo-accountant-mobile.webp" alt="" width="390" height="780" loading="lazy">
+      </div>
+      <p class="service-name">Free homepage redesign</p>
+      <p class="service-name-zh" lang="zh-Hant">免費首頁改版</p>
+      <ul class="aud-list receive-list">
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A new homepage design for desktop and mobile</span></li>
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>In English and Chinese, written for your clients</span></li>
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A short note on what we changed and why</span></li>
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Sent to your inbox as a link and PDF</span></li>
+      </ul>
+    </div>
+    <div class="receive-card">
+      <div class="receive-visual">
+        <div class="report" aria-label="Sample AI search check report">
+          <div class="report-head"><span>AI search check</span><span class="report-tag">Sample</span></div>
+          <p class="report-site">yourbusiness.co.uk</p>
+          <ul class="report-rows">
+            <li><span>Google</span><b class="ok"><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> Found</b></li>
+            <li><span>ChatGPT</span><b class="bad"><svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg> Not recommended</b></li>
+            <li><span>Perplexity</span><b class="warn">Wrong opening hours</b></li>
+            <li><span>Chinese search terms</span><b class="bad"><svg class="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg> Not found</b></li>
+          </ul>
+          <p class="report-fix-title">Top 3 fixes</p>
+          <ol class="report-fixes"><li>Add your services and languages to your homepage</li><li>Match your details on Google Business Profile</li><li>Answer common client questions on your site</li></ol>
+        </div>
+      </div>
+      <p class="service-name">Free AI search check</p>
+      <p class="service-name-zh" lang="zh-Hant">免費 AI 搜尋健檢</p>
+      <ul class="aud-list receive-list">
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>How Google and AI assistants see your business</span></li>
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>What they get wrong, and what's missing</span></li>
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>The three fixes that would help most</span></li>
+        <li><svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A short report by email within 3 working days</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="services">
   <p class="services-label">How it works</p>
@@ -776,6 +967,64 @@
       <p class="service-name-zh" lang="zh-Hant">設計歸你</p>
       <p class="service-desc">We send the design to your inbox. Use it however you like. If you'd like us to build it, we'll quote, but there's no obligation.</p>
     </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="services" id="who">
+  <p class="services-label">Who you'll work with</p>
+  <h2 class="services-title">A small London studio</h2>
+  <p class="services-title-zh" lang="zh-Hant">倫敦的小型設計工作室</p>
+  <div class="who-grid">
+    <div class="who-card">
+      <img src="photo-chunchuan.webp" alt="Chun-Chuan Lin" class="who-photo" width="120" height="120" loading="lazy">
+      <div>
+        <p class="service-name">Chun-Chuan Lin</p>
+        <p class="who-role">Founder · Product design</p>
+        <p class="service-desc">14 years in product design, including founding designer at a fintech platform from Series A to C. In London since 2017. Works in English and Mandarin.</p>
+      </div>
+    </div>
+    <div class="who-card">
+      <img src="photo-rita.webp" alt="Rita Hou" class="who-photo" width="120" height="120" loading="lazy">
+      <div>
+        <p class="service-name">Rita Hou</p>
+        <p class="who-role">Graphic, packaging &amp; web design</p>
+        <p class="service-desc">Brand identity, packaging and marketing websites, especially for food and drink brands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <p class="services-label">FAQ</p>
+  <h2 class="services-title">Fair questions</h2>
+  <p class="services-title-zh" lang="zh-Hant">常見問題</p>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Why is it free?</summary>
+      <p>We'd rather show you than pitch you. A finished homepage design says more about how we work than any proposal. If you like it, we can talk about building it. If not, keep the design. We won't chase you.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I have to buy anything?</summary>
+      <p>No. The design is yours to keep and use however you like. There's no contract and no obligation to work with us.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What do you need from me?</summary>
+      <p>Your web address and a few answers about your business, which takes about two minutes. We work from your site as your clients see it, so there are no logins to share.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do you choose the 5 businesses each month?</summary>
+      <p>We pick businesses where a new homepage would make the biggest difference, and where we have room to do it properly. If you're not picked this month, we'll tell you and can hold your place for the next one.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Will you show my redesign publicly?</summary>
+      <p>Only if you say so. The form asks whether you're happy for us to share it, with a credit and link to your site, or without your name and logo. The default is private.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What does the AI search check look at?</summary>
+      <p>Whether Google, ChatGPT, Claude and Perplexity can find your business, describe it correctly and recommend it for the services you offer, plus the three fixes that would help most. You get it as a short report by email.</p>
+    </details>
   </div>
 </section>
 
@@ -818,12 +1067,16 @@
       var site = form.website.value.trim();
       var id = form.getAttribute('data-tally');
       var source = form.getAttribute('data-source');
+      // Pass ad campaign tags (utm_*) through to the form, so each request shows which ad it came from.
+      var fields = { website: site, source: source };
+      var params = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { if (params.get(k)) fields[k] = params.get(k); });
       e.preventDefault();
       if (window.Tally && window.Tally.openPopup) {
-        window.Tally.openPopup(id, { width: 640, hideTitle: true, hiddenFields: { website: site, source: source } });
+        window.Tally.openPopup(id, { width: 640, hideTitle: true, hiddenFields: fields });
       } else {
         // Fallback: open the hosted form with the same values
-        window.open('https://tally.so/r/' + id + '?website=' + encodeURIComponent(site) + '&source=' + encodeURIComponent(source), '_blank', 'noopener');
+        window.open('https://tally.so/r/' + id + '?' + new URLSearchParams(fields).toString(), '_blank', 'noopener');
       }
       if (window.gtag) gtag('event', 'lead_start', { form: source });
     });
