@@ -74,10 +74,11 @@
       font-size: 0.85rem;
       letter-spacing: 0.08em;
       color: var(--text);
-      opacity: 0.5;
+      opacity: 0.85;
       transition: opacity 0.2s;
     }
     .nav-logo:hover { opacity: 1; }
+    .nav-logo img { display: block; height: 28px; width: auto; filter: brightness(0); }
 
     .nav-right {
       display: flex;
@@ -882,7 +883,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">UX CIRCLES</a>
+  <a href="index.html" class="nav-logo"><img src="logo-landscape-transparent.webp" alt="UX CIRCLES"></a>
   <div class="nav-right">
     <a href="#pricing" data-i18n="nav-pricing">方案定價</a>
     <a href="#process" data-i18n="nav-process">製作流程</a>
