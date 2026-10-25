@@ -638,6 +638,21 @@
   .price-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 1.75rem; }
   .pricing .hero-cta { opacity: 1; animation: none; }
   .demo-disclaimer { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; }
+  .free { padding-top: 2rem; }
+  .free-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; margin-top: 3rem; }
+  .free-card { display: flex; flex-direction: column; background: #fff; border: 0.5px solid var(--border-bright); border-radius: 12px; padding: 2rem; }
+  .free-card.featured { box-shadow: 0 30px 80px rgba(45, 31, 110, 0.10); border-color: var(--purple); }
+  .free-kicker { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--purple); font-weight: 500; margin-bottom: 0.9rem; }
+  .free-card h3 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.35rem; color: var(--text); }
+  .free-zh { color: var(--purple); font-size: 0.92rem; margin-top: 0.2rem; }
+  .free-desc { color: var(--text-muted); font-size: 0.92rem; font-weight: 300; line-height: 1.7; margin: 0.9rem 0 1.4rem; }
+  .free-field input { width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--border-bright); border-radius: 8px; padding: 0.85rem 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+  .free-field input:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 4px rgba(107, 92, 231, 0.12); }
+  .free-card .hero-cta { opacity: 1; animation: none; margin-top: 0.75rem; justify-content: center; align-self: stretch; }
+  .free-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.9rem; line-height: 1.5; }
+  .free-note a { color: inherit; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 900px) { .free-grid { grid-template-columns: 1fr; } }
   .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left; margin-top: 3rem; }
   .demo-card { display: flex; flex-direction: column; background: #fff; border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
   .demo-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(45, 31, 110, 0.12); }
@@ -1001,6 +1016,33 @@
   </div>
 </section>
 
+<!-- FREE OFFERS (Tally) -->
+<section class="services free" id="free">
+  <p class="services-label">Free for your firm</p>
+  <h2 class="services-title">Start with your own website</h2>
+  <p class="services-title-zh" lang="zh-Hant">貼上你的網址 先免費看看成果</p>
+  <div class="free-grid">
+    <form class="free-card featured" data-tally="4a4ZWb" data-source="professionals-redesign" action="https://tally.so/r/4a4ZWb" target="_blank">
+      <p class="free-kicker">5 slots a month · 每月限 5 個名額</p>
+      <h3>Free multilingual homepage</h3>
+      <p class="free-zh" lang="zh-Hant">免費中英多語首頁改版</p>
+      <p class="free-desc">Paste your web address and we'll redesign your homepage in English and Chinese. No logins, nothing to write: we work from your site as your clients see it.</p>
+      <label class="free-field"><span class="sr-only">Your website</span><input name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourfirm.co.uk" required></label>
+      <button type="submit" class="hero-cta">Continue <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="free-note">Designs are sent only to you and never published without your permission.</p>
+    </form>
+    <form class="free-card" data-tally="NqpzKG" data-source="professionals-ai-check" action="https://tally.so/r/NqpzKG" target="_blank">
+      <p class="free-kicker">Report in 3 working days · 3 個工作天內寄出</p>
+      <h3>Free AI search check</h3>
+      <p class="free-zh" lang="zh-Hant">免費 AI 搜尋健檢</p>
+      <p class="free-desc">Find out whether Google, ChatGPT, Claude and Perplexity can find and recommend your firm, with a short list of the fixes that matter most.</p>
+      <label class="free-field"><span class="sr-only">Your website</span><input name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourfirm.co.uk" required></label>
+      <button type="submit" class="hero-cta">Check my site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="free-note">We only use your details to prepare the report. <a href="privacy.html">Privacy policy</a></p>
+    </form>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="services pricing" id="pricing">
   <p class="services-label">Pricing</p>
@@ -1103,5 +1145,24 @@
 </footer>
 
 
+<script src="https://tally.so/widgets/embed.js" async></script>
+<script>
+  // Step 1 lives on our site; Tally takes over with the URL pre-filled.
+  document.querySelectorAll('form[data-tally]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      var site = form.website.value.trim();
+      var id = form.getAttribute('data-tally');
+      var source = form.getAttribute('data-source');
+      e.preventDefault();
+      if (window.Tally && window.Tally.openPopup) {
+        window.Tally.openPopup(id, { width: 640, hideTitle: true, hiddenFields: { website: site, source: source } });
+      } else {
+        // Fallback: open the hosted form with the same values
+        window.open('https://tally.so/r/' + id + '?website=' + encodeURIComponent(site) + '&source=' + encodeURIComponent(source), '_blank', 'noopener');
+      }
+      if (window.gtag) gtag('event', 'lead_start', { form: source });
+    });
+  });
+</script>
 </body>
 </html>

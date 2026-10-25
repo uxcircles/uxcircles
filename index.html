@@ -403,6 +403,15 @@
     animation: fadeUp 0.6s ease forwards 0.55s;
   }
 
+  .free-band { padding-top: 0; padding-bottom: 0; }
+  .free-band-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: center; border: 0.5px solid var(--border-bright); border-radius: 12px; padding: 2.5rem; background: rgba(107, 125, 232, 0.06); }
+  .free-band h2 { margin-bottom: 1rem; }
+  .free-band .section-intro { margin-bottom: 0; }
+  .free-band-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .free-band-links a { text-align: center; }
+  .btn-ghost-band { color: var(--text); border: 0.5px solid var(--border-bright); padding: 0.8rem 1.75rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: border-color 0.2s; }
+  .btn-ghost-band:hover { border-color: var(--purple-light); }
+  @media (max-width: 900px) { .free-band-inner { grid-template-columns: 1fr; padding: 1.75rem; gap: 1.75rem; } }
   .btn-primary {
     background: var(--purple);
     color: #fff;
@@ -1472,6 +1481,20 @@
         </div>
         <p class="person-bio">Graphic designer specialising in food and drink brand identity, packaging, and marketing websites for consumer brands.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="free-band" id="free">
+  <div class="free-band-inner reveal">
+    <div>
+      <p class="section-label">Free for London firms</p>
+      <h2>See your own site, redesigned</h2>
+      <p class="section-intro">Paste your web address for a free multilingual homepage redesign (5 slots a month) or a free check on whether Google and AI search can find you.</p>
+    </div>
+    <div class="free-band-links">
+      <a href="/professionals#free" class="btn-primary">Free homepage redesign</a>
+      <a href="/professionals#free" class="btn-ghost-band">Free AI search check</a>
     </div>
   </div>
 </section>
