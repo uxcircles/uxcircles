@@ -38,7 +38,7 @@
   /* ---------- Banner ---------- */
   var css = '' +
     '.uxc-cookie{position:fixed;right:16px;bottom:16px;z-index:9999;max-width:380px;background:#fff;color:#1a1433;border:1px solid rgba(107,92,231,.35);border-radius:12px;padding:18px 18px 16px;box-shadow:0 20px 60px rgba(20,16,51,.18);font:14px/1.55 "DM Sans",system-ui,sans-serif}' +
-    '.uxc-cookie p{margin:0 0 4px}.uxc-cookie .zh{color:#6b5ce7;font-size:13px}' +
+    '.uxc-cookie p{margin:0}' +
     '.uxc-cookie a{color:#6b5ce7;text-decoration:underline;text-underline-offset:3px}' +
     '.uxc-cookie-btns{display:flex;gap:8px;margin-top:14px}' +
     '.uxc-cookie button{flex:1;font:500 14px/1 "DM Sans",system-ui,sans-serif;padding:11px 12px;border-radius:6px;cursor:pointer;border:1px solid #6b5ce7}' +
@@ -57,8 +57,7 @@
     box.setAttribute('aria-label', 'Cookie preferences');
     box.innerHTML =
       '<p>We use Google Analytics cookies to see which pages are useful. Nothing is set unless you accept. <a href="/privacy#s4">Privacy policy</a></p>' +
-      '<p class="zh" lang="zh-Hant">我們使用 Google Analytics Cookie 了解哪些頁面有幫助；你同意後才會啟用。</p>' +
-      '<div class="uxc-cookie-btns"><button type="button" class="rej">Reject · 拒絕</button><button type="button" class="acc">Accept · 接受</button></div>';
+      '<div class="uxc-cookie-btns"><button type="button" class="rej">Reject</button><button type="button" class="acc">Accept</button></div>';
     document.body.appendChild(box);
     box.querySelector('.acc').addEventListener('click', function () { setChoice('granted'); box.remove(); loadAnalytics(); });
     box.querySelector('.rej').addEventListener('click', function () {
