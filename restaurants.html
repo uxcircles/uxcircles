@@ -497,6 +497,15 @@
   }
 
   /* CTA SECTION */
+  .free-band { max-width: 1100px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .free-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; background: #fff; border: 1px solid var(--purple); border-radius: 12px; padding: 2.5rem; box-shadow: 0 30px 80px rgba(45, 31, 110, 0.08); }
+  .free-band-label { font-family: 'Outfit', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.9rem; }
+  .free-band-title { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; color: var(--text); }
+  .free-band-zh { color: var(--purple); margin-top: 0.3rem; }
+  .free-band-sub { color: var(--text-muted); font-weight: 300; line-height: 1.7; margin-top: 0.9rem; max-width: 560px; }
+  .free-band-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; background: var(--purple); color: #fff; text-decoration: none; font-weight: 500; padding: 0.95rem 1.75rem; border-radius: 6px; transition: transform 0.2s; }
+  .free-band-btn:hover { transform: translateY(-2px); }
+  @media (max-width: 768px) { .free-band { padding: 0 1.25rem 4rem; } .free-band-inner { flex-direction: column; align-items: stretch; padding: 1.75rem; gap: 1.5rem; } .free-band-btn { justify-content: center; } }
   .cta-section {
     background: var(--purple-dark);
     padding: 8rem 2rem;
@@ -1036,6 +1045,19 @@
   </div>
 </section>
 
+<!-- FREE OFFER BAND -->
+<section class="free-band">
+  <div class="free-band-inner">
+    <div>
+      <p class="free-band-label">Free for London businesses</p>
+      <h2 class="free-band-title">See your own site, redesigned</h2>
+      <p class="free-band-zh" lang="zh-Hant">貼上網址 免費看看你的新首頁</p>
+      <p class="free-band-sub">A free English and Chinese homepage redesign (5 slots a month), or a free check on whether Google and AI search can find you.</p>
+    </div>
+    <a href="/free" class="free-band-btn">Get yours free <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
@@ -1057,6 +1079,7 @@
       <a href="work.html">Work</a>
       <a href="web.html">Websites</a>
       <a href="professionals.html">Professionals</a>
+      <a href="free.html">Free redesign</a>
       <a href="restaurants.html">Restaurants</a>
       <a href="wedding.html">Wedding</a>
       <a href="index.html#contact">Contact</a>

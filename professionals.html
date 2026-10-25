@@ -649,6 +649,10 @@
   .free-field input { width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--border-bright); border-radius: 8px; padding: 0.85rem 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
   .free-field input:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 4px rgba(107, 92, 231, 0.12); }
   .free-card .hero-cta { opacity: 1; animation: none; margin-top: 0.75rem; justify-content: center; align-self: stretch; }
+  .free-card.lite { background: transparent; }
+  .free-card.lite .hero-cta { background: transparent; color: var(--purple); border: 1px solid var(--purple); }
+  .free-card.lite .hero-cta:hover { background: var(--purple); color: #fff; }
+  .nw { white-space: nowrap; }
   .free-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.9rem; line-height: 1.5; }
   .free-note a { color: inherit; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -1023,22 +1027,22 @@
   <p class="services-title-zh" lang="zh-Hant">貼上你的網址 先免費看看成果</p>
   <div class="free-grid">
     <form class="free-card featured" data-tally="4a4ZWb" data-source="professionals-redesign" action="https://tally.so/r/4a4ZWb" target="_blank">
-      <p class="free-kicker">5 slots a month · 每月限 5 個名額</p>
+      <p class="free-kicker">5 slots a month · <span class="nw" lang="zh-Hant">每月限 5 個名額</span></p>
       <h3>Free multilingual homepage</h3>
       <p class="free-zh" lang="zh-Hant">免費中英多語首頁改版</p>
-      <p class="free-desc">Paste your web address and we'll redesign your homepage in English and Chinese. No logins, nothing to write: we work from your site as your clients see it.</p>
+      <p class="free-desc">Paste your web address and we'll redesign your homepage in English and Chinese. No logins, nothing to write: we work from your site as your clients see it. Tick one box to add a free AI search check too.</p>
       <label class="free-field"><span class="sr-only">Your website</span><input name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourfirm.co.uk" required></label>
       <button type="submit" class="hero-cta">Continue <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <p class="free-note">The design is sent only to you. We only share it publicly with your permission.</p>
     </form>
-    <form class="free-card" data-tally="NqpzKG" data-source="professionals-ai-check" action="https://tally.so/r/NqpzKG" target="_blank">
-      <p class="free-kicker">Report in 3 working days · 3 個工作天內寄出</p>
-      <h3>Free AI search check</h3>
-      <p class="free-zh" lang="zh-Hant">免費 AI 搜尋健檢</p>
+    <form class="free-card lite" data-tally="NqpzKG" data-source="professionals-ai-check" action="https://tally.so/r/NqpzKG" target="_blank">
+      <p class="free-kicker">Not ready for a redesign? · <span class="nw" lang="zh-Hant">還沒打算改版？</span></p>
+      <h3>Just the AI search check</h3>
+      <p class="free-zh" lang="zh-Hant">只做免費 AI 搜尋健檢</p>
       <p class="free-desc">Find out whether Google, ChatGPT, Claude and Perplexity can find and recommend your firm, with a short list of the fixes that matter most.</p>
       <label class="free-field"><span class="sr-only">Your website</span><input name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourfirm.co.uk" required></label>
       <button type="submit" class="hero-cta">Check my site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-      <p class="free-note">We only use your details to prepare the report. <a href="privacy.html">Privacy policy</a></p>
+      <p class="free-note">Report in 3 working days. We only use your details to prepare it. <a href="privacy.html">Privacy policy</a></p>
     </form>
   </div>
 </section>
@@ -1136,6 +1140,7 @@
       <a href="work.html">Work</a>
       <a href="web.html">Websites</a>
       <a href="professionals.html">Professionals</a>
+      <a href="free.html">Free redesign</a>
       <a href="restaurants.html">Restaurants</a>
       <a href="wedding.html">Wedding</a>
       <a href="index.html#contact">Contact</a>
