@@ -4,3 +4,7 @@
 /about/   /#about    302
 /contact  /#contact  302
 /contact/ /#contact  302
+
+# Care plan terms moved into the combined website terms page.
+/care-terms    /website-terms  301
+/care-terms/   /website-terms  301
