@@ -696,6 +696,13 @@
   .who-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: center 0%; flex-shrink: 0; }
   .who-role { color: var(--purple); font-size: 0.82rem; margin: 0.2rem 0 0.6rem; }
   @media (max-width: 900px) { .receive-grid, .who-grid { grid-template-columns: 1fr; } .receive-visual { height: auto; min-height: 240px; padding: 1rem 0; } .receive-shots { height: 240px; } .report { width: 92%; } }
+  .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+  .cta-actions > a { min-width: 190px; justify-content: center; }
+  .wa-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.75rem; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.55); color: #fff; text-decoration: none; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 600; letter-spacing: 0.05em; transition: background 0.2s, border-color 0.2s; }
+  .wa-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: #fff; }
+  .icon-wa { width: 1.05em; height: 1.05em; flex-shrink: 0; }
+  .wa-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-left: 1.25rem; color: var(--purple); font-size: 0.85rem; text-decoration: none; }
+  .wa-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 </style>
 <script type="application/ld+json">
 {
@@ -732,7 +739,7 @@
 }
 </script>
 <!-- Cookie consent, Google Analytics (after consent) and click tracking -->
-<script src="/consent.js?v=3" defer></script>
+<script src="/consent.js?v=4" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1034,7 +1041,10 @@
     <h2 class="cta-title">Rather talk it through?</h2>
     <p class="cta-title-zh" lang="zh-Hant">想先聊聊嗎？</p>
     <p class="cta-sub">Book a free 25-minute call. No pitch, no deck.</p>
-    <a href="https://cal.com/ux-circles/25-min-consultancy" class="cta-btn">Book a call <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="cta-actions">
+      <a href="https://cal.com/ux-circles/25-min-consultancy" class="cta-btn">Book a call <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://wa.me/447343132461?text=Hi%20UX%20CIRCLES%2C%20I%27d%20like%20to%20ask%20about%20" class="wa-btn" target="_blank" rel="noopener"><svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42"/></svg> WhatsApp us</a>
+    </div>
   </div>
 </section>
 
@@ -1055,7 +1065,7 @@
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
-  <div class="footer-copy"><span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></span><a href="mailto:hello@ux-circles.com" style="color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">hello@ux-circles.com</a></div>
+  <div class="footer-copy"><span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></span><a href="mailto:hello@ux-circles.com" style="color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">hello@ux-circles.com</a> · <a href="https://wa.me/447343132461?text=Hi%20UX%20CIRCLES%2C%20I%27d%20like%20to%20ask%20about%20" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">WhatsApp</a></div>
 </footer>
 
 
