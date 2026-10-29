@@ -111,12 +111,16 @@
 
   // Small "Cookie settings" link in the footer, so the choice can be changed later.
   function addFooterLink() {
-    var copy = document.querySelector('.footer-copy span, footer .footer-copy');
-    if (!copy || document.querySelector('[data-cookie-settings]')) return;
+    if (document.querySelector('[data-cookie-settings]')) return;
     var link = document.createElement('a');
     link.href = '#';
     link.setAttribute('data-cookie-settings', '');
     link.textContent = 'Cookie settings';
+    // Sits with the email and WhatsApp links when the page has them
+    var group = document.querySelector('.footer-contact');
+    if (group) { group.appendChild(link); return; }
+    var copy = document.querySelector('.footer-copy span, footer .footer-copy');
+    if (!copy) return;
     link.style.cssText = 'color:inherit;text-decoration:underline;text-underline-offset:3px;';
     copy.appendChild(document.createTextNode(' · '));
     copy.appendChild(link);
