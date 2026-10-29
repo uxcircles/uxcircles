@@ -73,6 +73,7 @@
     if (/cal\.com/.test(href)) return 'book_call';
     if (/^mailto:/.test(href)) return 'email';
     if (/^tel:/.test(href)) return 'phone';
+    if (a.classList.contains('wa-float')) return 'whatsapp_float';
     if (/wa\.me|whatsapp\.com/.test(href)) return 'whatsapp';
     if (/(^|\/)free(\.html)?([#?]|$)/.test(href)) return 'free_offer';
     if (/uxcircles\.github\.io/.test(href)) return 'demo_site';
