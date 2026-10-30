@@ -653,7 +653,7 @@
   .free-note a { color: inherit; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   @media (max-width: 900px) { .free-grid { grid-template-columns: 1fr; } }
-  .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left; margin-top: 3rem; }
+  .demo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; text-align: left; margin-top: 3rem; }
   .demo-card { display: flex; flex-direction: column; background: #fff; border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
   .demo-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(45, 31, 110, 0.12); }
   .demo-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 0.5px solid var(--border); }
@@ -912,6 +912,26 @@
             ]
           }
         }
+        ,{
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Kelvin Chan, Solicitor (fictional demo)",
+            "url": "https://uxcircles.github.io/law-firm-demo/",
+            "image": "https://ux-circles.com/demo-lawyer.webp",
+            "description": "Cantonese-speaking solicitor in London for Hong Kong families — fixed-fee BN(O) packages, a solicitor profile and WhatsApp booking.",
+            "creator": {
+              "@id": "https://ux-circles.com/#organization"
+            },
+            "inLanguage": [
+              "en",
+              "zh-Hant",
+              "yue-Hant-HK",
+              "zh-Hans"
+            ]
+          }
+        }
       ]
     }
   ]
@@ -1032,7 +1052,7 @@
 <section class="services" id="demos">
   <p class="services-label">Demo sites</p>
   <h2 class="services-title">See it working</h2>
-  <p class="services-title-zh" lang="zh-Hant">三個示範網站，英文、繁中、廣東話、簡中四語完整呈現</p>
+  <p class="services-title-zh" lang="zh-Hant">四個示範網站，英文、繁中、廣東話、簡中四語完整呈現</p>
   <p class="demo-disclaimer">These are fictional firms designed by UX CIRCLES to show the approach. Names, people, fees and regulatory numbers are invented.</p>
   <div class="demo-grid">
     <a class="demo-card" href="https://uxcircles.github.io/demo-accountant/" target="_blank" rel="noopener">
@@ -1059,6 +1079,15 @@
         <p class="service-name">Alder & Wren</p>
         <p class="service-name-zh" lang="zh-Hant">雅德地產</p>
         <p class="service-desc">London estate agent — listings with tenure, council tax and EPC up front, area guides and a buying guide.</p>
+        <span class="demo-link">View demo · EN / 繁 / 粵 / 简 <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+      </div>
+    </a>
+    <a class="demo-card" href="https://uxcircles.github.io/law-firm-demo/en/" target="_blank" rel="noopener">
+      <img src="demo-lawyer.webp" alt="Kelvin Chan, Solicitor demo website homepage" width="1440" height="900" loading="lazy">
+      <div class="demo-body">
+        <p class="service-name">Kelvin Chan, Solicitor</p>
+        <p class="service-name-zh" lang="zh-Hant">陳嘉信律師</p>
+        <p class="service-desc">Cantonese-speaking solicitor in London for Hong Kong families — fixed-fee BN(O) packages, a solicitor profile and WhatsApp booking.</p>
         <span class="demo-link">View demo · EN / 繁 / 粵 / 简 <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
       </div>
     </a>
