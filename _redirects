@@ -1,9 +1,7 @@
-# Common URLs people type, pointed at the matching homepage sections.
-# 302 keeps the option of adding real /about or /contact pages later.
+# Common URLs people type, pointed at the matching homepage section.
+# 302 keeps the option of adding a real /about page later.
 /about    /#about    302
 /about/   /#about    302
-/contact  /#contact  302
-/contact/ /#contact  302
 
 # Care plan terms moved into the combined website terms page.
 /care-terms    /website-terms  301

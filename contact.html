@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact UX CIRCLES — Web & App Design Studio, London</title>
+<meta name="description" content="Get in touch with UX CIRCLES, a London design studio. Tell us about your app, brand, restaurant or professional firm website, book a free 25-minute call, or message us on WhatsApp. 聯絡我們。">
+<link rel="canonical" href="https://ux-circles.com/contact">
+<meta property="og:title" content="Contact UX CIRCLES — Web & App Design Studio, London">
+<meta property="og:description" content="Get in touch with UX CIRCLES, a London design studio. Tell us about your app, brand, restaurant or professional firm website, book a free 25-minute call, or message us on WhatsApp. 聯絡我們。">
+<meta property="og:url" content="https://ux-circles.com/contact">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ux-circles.com/logo-landscape-transparent.webp">
+<link rel="icon" type="image/webp" href="logo-dark.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { max-width: 100%; }
+
+  :root {
+    --bg: #f7f5f2;
+    --bg2: #f0ecf7;
+    --purple: #6b5ce7;
+    --purple-light: #9b8ef5;
+    --purple-dark: #2d1f6e;
+    --text: #1a1433;
+    --text-muted: #6b6585;
+    --text-dim: #a09cba;
+    --border: rgba(107, 92, 231, 0.12);
+    --border-bright: rgba(107, 92, 231, 0.3);
+  }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(247, 245, 242, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark { height: 28px; width: auto; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--purple) !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--purple-dark) !important; color: #fff !important; }
+
+  /* HERO */
+  .hero-wrap {
+    background: radial-gradient(ellipse at 95% 40%, rgba(107, 92, 231, 0.1) 0%, transparent 55%);
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-text { display: flex; flex-direction: column; }
+
+  .hero-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-title .line-wrap {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.06em;
+  }
+
+  .hero-title .line-inner {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: lineReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-title .line-wrap:nth-child(1) .line-inner { animation-delay: 0.15s; }
+  .hero-title .line-wrap:nth-child(2) .line-inner { animation-delay: 0.3s; }
+
+  @keyframes lineReveal {
+    from { opacity: 1; transform: translateY(100%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-title .zh {
+    display: block;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-weight: 400;
+    color: var(--purple);
+    letter-spacing: 0;
+    margin-top: 0.8rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.5s;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 460px;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    margin-top: 1.25rem;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.5s;
+  }
+
+  .hero-sub .zh-sub {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-top: 0.4rem;
+  }
+
+  .hero-cta {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.65s;
+  }
+
+  /* Hero right: preview image */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+  }
+
+  .hero-mockup {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 30px 80px rgba(45, 31, 110, 0.15);
+    transform: rotateY(-8deg) rotateX(3deg);
+    transition: transform 0.5s ease;
+  }
+
+  .hero-visual:hover .hero-mockup {
+    transform: rotateY(-4deg) rotateX(1deg);
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--purple);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.15s;
+    align-self: flex-start;
+  }
+
+  .hero-cta:hover { background: var(--purple-dark); transform: translateY(-2px); }
+
+  .hero-bg { display: none; }
+
+  /* CASES */
+  .cases {
+    position: relative;
+  }
+
+  /* Dot nav */
+  .dot-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+
+  .dot-nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .dot-nav button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--text-dim);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .dot-nav button.active {
+    background: var(--purple);
+    transform: scale(1.4);
+  }
+
+  .case-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: inset(0);
+  }
+
+  .case-section:nth-child(even) { background: var(--bg2); }
+
+  .case-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 5vw;
+    gap: 0;
+  }
+
+  /* Text block — left side, narrow */
+  .case-content {
+    position: relative;
+    z-index: 2;
+    width: 360px;
+    flex-shrink: 0;
+  }
+
+  .case-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .case-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .case-title-zh {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--purple);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .case-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 0.6rem;
+  }
+
+  .case-desc-zh {
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .case-tag {
+    font-size: 0.7rem;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.08em;
+    color: var(--purple);
+    border: 0.5px solid var(--border-bright);
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    background: rgba(107, 92, 231, 0.05);
+  }
+
+  /* Image — large, right side, perspective tilt */
+  .case-img-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    padding-left: 4vw;
+    height: 80vh;
+  }
+
+  .case-img {
+    width: 100%;
+    max-height: 75vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 40px 100px rgba(45, 31, 110, 0.18), 0 10px 30px rgba(45, 31, 110, 0.1);
+    will-change: transform, opacity;
+    transform: rotateY(-15deg) rotateX(5deg) scale(0.75) translateZ(-200px);
+    opacity: 0;
+    transition: box-shadow 0.3s;
+  }
+
+  .case-section:nth-child(even) .case-img {
+    transform: rotateY(15deg) rotateX(5deg) scale(0.75) translateZ(-200px);
+  }
+
+  .case-section:nth-child(even) .case-inner {
+    flex-direction: row-reverse;
+  }
+
+  .case-section:nth-child(even) .case-img-wrap {
+    padding-left: 0;
+    padding-right: 4vw;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 8rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .services-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .services-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .services-title-zh {
+    font-size: 1.1rem;
+    color: var(--purple);
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .service-card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem 1.5rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-3px);
+  }
+
+  .service-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+
+  .service-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+
+  .service-name-zh {
+    font-size: 0.85rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--purple-dark);
+    padding: 8rem 2rem;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-title-zh {
+    font-size: 1.1rem;
+    color: var(--purple-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    color: var(--purple-dark);
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .cta-btn:hover { background: var(--bg2); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-logo-img { display: block; height: 22px; width: auto; filter: brightness(0); }
+
+  .footer-nav {
+    display: flex;
+    gap: 1.75rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .footer-nav a:hover { opacity: 1; }
+
+  .footer-copy {
+    margin-top: 1.25rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    opacity: 0.65;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+      }
+
+  @media (max-width: 768px) {
+    .footer-top { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .footer-nav { flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-title { font-size: clamp(2.25rem, 10vw, 3.5rem); }
+    .hero-visual { display: none; }
+    .case-section { height: auto; min-height: 100vh; padding: 7rem 1.5rem 4rem; }
+    .case-inner { flex-direction: column !important; padding: 0; gap: 2.5rem; }
+    .case-content { width: 100%; }
+    .case-img-wrap { width: 100%; height: auto; padding: 0 !important; }
+    .case-img { max-height: 50vh; transform: rotateY(-5deg) rotateX(2deg) scale(1) !important; opacity: 1 !important; }
+    .dot-nav { display: none; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  .icon-arrow { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; flex-shrink: 0; }
+
+  .services + .services { padding-top: 0; }
+  .aud-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left; }
+  .aud-card { background: #fff; border: 0.5px solid var(--border); border-radius: 10px; padding: 2rem; }
+  .aud-list { list-style: none; margin-top: 1.25rem; display: grid; gap: 0.6rem; }
+  .aud-list li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+  .icon-check { width: 1rem; height: 1rem; flex-shrink: 0; color: var(--purple); margin-top: 0.1rem; }
+  .price-card { max-width: 520px; margin: 3rem auto 0; text-align: left; background: #fff; border: 0.5px solid var(--border-bright); border-radius: 12px; padding: 2.5rem; box-shadow: 0 30px 80px rgba(45, 31, 110, 0.08); }
+  .price-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); }
+  .price-name-zh { color: var(--purple); font-size: 0.9rem; margin-top: 0.2rem; }
+  .price-amount { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 3rem; color: var(--text); margin: 1.25rem 0 0.5rem; letter-spacing: -0.02em; }
+  .price-amount span { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.05em; margin-right: 0.3rem; }
+  .price-list { margin-bottom: 1.5rem; }
+  .price-addon { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; border: 0.5px dashed var(--border-bright); background: rgba(107, 92, 231, 0.04); border-radius: 8px; padding: 1rem 1.1rem; margin-bottom: 1.25rem; }
+  .price-addon-name { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.88rem; color: var(--text); }
+  .price-addon-name span { color: var(--purple); font-family: 'DM Sans', sans-serif; font-weight: 500; margin-left: 0.25rem; }
+  .price-addon-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.3rem; }
+  .price-addon-amount { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--purple); white-space: nowrap; }
+  .care-card { margin-top: 1.5rem; box-shadow: none; }
+  .price-amount .per { font-size: 1rem; margin-left: 0.2rem; margin-right: 0; letter-spacing: 0; }
+  .care-annual { font-size: 0.85rem; color: var(--purple); margin-bottom: 1.25rem; }
+  .price-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 1.75rem; }
+  .price-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .pricing .hero-cta { opacity: 1; animation: none; }
+  .demo-disclaimer { font-size: 0.8rem; color: var(--text-dim); margin-top: 1rem; }
+  .free { padding-top: 2rem; }
+  .free-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; margin-top: 3rem; }
+  .free-card { display: flex; flex-direction: column; background: #fff; border: 0.5px solid var(--border-bright); border-radius: 12px; padding: 2rem; }
+  .free-card.featured { box-shadow: 0 30px 80px rgba(45, 31, 110, 0.10); border-color: var(--purple); }
+  .free-kicker { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--purple); font-weight: 500; margin-bottom: 0.9rem; }
+  .free-card h3 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.35rem; color: var(--text); }
+  .free-zh { color: var(--purple); font-size: 0.92rem; margin-top: 0.2rem; }
+  .free-desc { color: var(--text-muted); font-size: 0.92rem; font-weight: 300; line-height: 1.7; margin: 0.9rem 0 1.4rem; }
+  .free-field input { width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--border-bright); border-radius: 8px; padding: 0.85rem 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+  .free-field input:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 4px rgba(107, 92, 231, 0.12); }
+  .free-card .hero-cta { opacity: 1; animation: none; margin-top: 0.75rem; justify-content: center; align-self: stretch; border: 1px solid transparent; cursor: pointer; }
+  .free-card.lite { background: transparent; }
+  .free-card.lite .hero-cta { background: transparent; color: var(--purple); border: 1px solid var(--purple); }
+  .free-card.lite .hero-cta:hover { background: var(--purple); color: #fff; }
+  .nw { white-space: nowrap; }
+  .free-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.9rem; line-height: 1.5; }
+  .free-note a { color: inherit; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 900px) { .free-grid { grid-template-columns: 1fr; } }
+  .demo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; text-align: left; margin-top: 3rem; }
+  .demo-card { display: flex; flex-direction: column; background: #fff; border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+  .demo-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(45, 31, 110, 0.12); }
+  .demo-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 0.5px solid var(--border); }
+  .demo-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+  .demo-link { margin-top: auto; padding-top: 1rem; display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Outfit', sans-serif; font-size: 0.8rem; letter-spacing: 0.06em; color: var(--purple); }
+  @media (max-width: 900px) { .demo-grid { grid-template-columns: 1fr; } }
+  .faq { padding: 2rem 2rem 8rem; max-width: 820px; margin: 0 auto; text-align: center; }
+  .faq-list { margin-top: 3rem; text-align: left; border-top: 0.5px solid var(--border-bright); }
+  .faq-item { border-bottom: 0.5px solid var(--border-bright); padding: 1.25rem 0; }
+  .faq-item summary { cursor: pointer; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; color: var(--text); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+  .faq-item[lang] summary { font-family: 'DM Sans', sans-serif; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; color: var(--purple); font-weight: 400; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { margin-top: 0.75rem; color: var(--text-muted); font-size: 0.92rem; font-weight: 300; line-height: 1.8; }
+  @media (max-width: 900px) { .aud-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .price-card { padding: 1.75rem; } .price-amount { font-size: 2.4rem; } .price-addon { flex-direction: column; gap: 0.5rem; } }
+  .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+  .cta-actions > a { min-width: 190px; justify-content: center; }
+  .wa-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.75rem; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.55); color: #fff; text-decoration: none; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 600; letter-spacing: 0.05em; transition: background 0.2s, border-color 0.2s; }
+  .wa-btn:hover { background: rgba(255, 255, 255, 0.1); border-color: #fff; }
+  .icon-wa { width: 1.05em; height: 1.05em; flex-shrink: 0; }
+  .wa-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-left: 1.25rem; color: var(--purple); font-size: 0.85rem; text-decoration: none; }
+  .wa-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .footer-contact { display: inline-flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+  .footer-contact a { color: inherit; text-decoration: none; white-space: nowrap; }
+  .footer-contact a:hover { text-decoration: underline; text-underline-offset: 3px; }
+</style>
+<link rel="stylesheet" href="/smb.css?v=1">
+<!-- Cookie consent, Google Analytics (after consent) and click tracking -->
+<script src="/consent.js?v=6" defer></script>
+<script src="/wa-float.js?v=1" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact UX CIRCLES",
+  "url": "https://ux-circles.com/contact",
+  "about": { "@id": "https://ux-circles.com/#organization" }
+}
+</script>
+<style>
+  .contact-page { padding: 9rem 2rem 6rem; text-align: center; }
+  .contact-page .section-label { font-family: 'Outfit', sans-serif; font-size: 0.7rem; letter-spacing: 0.18em; color: var(--purple); margin-bottom: 1rem; text-transform: uppercase; }
+  .contact-page h1 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.08; letter-spacing: -0.02em; color: var(--text); }
+  .contact-page .zh { color: var(--purple); font-size: 1.05rem; margin: 0.6rem 0 1.25rem; }
+  .contact-page .intro { color: var(--text-muted); font-weight: 300; max-width: 540px; margin: 0 auto 2.5rem; }
+  .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 3rem; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--purple); color: #fff; padding: 0.8rem 1.75rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--purple-light); transform: translateY(-1px); }
+  .btn-wa { display: inline-flex; align-items: center; gap: 8px; color: var(--text); border: 0.5px solid var(--border-bright); padding: 0.8rem 1.75rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em; transition: border-color 0.2s; }
+  .btn-wa:hover { border-color: var(--purple-light); }
+  .icon-wa { width: 1.05em; height: 1.05em; flex-shrink: 0; }
+  .contact-divider { display: flex; align-items: center; gap: 1rem; max-width: 560px; margin: 0 auto 1.5rem; }
+  .contact-divider::before, .contact-divider::after { content: ''; flex: 1; height: 0.5px; background: var(--border); }
+  .contact-divider span { font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.05em; white-space: nowrap; }
+  .contact-form { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; text-align: left; }
+  .contact-form fieldset { border: 0; margin: 0 0 0.5rem; }
+  .contact-form legend { font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .type-opt { position: relative; }
+  .type-opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .type-opt span { display: block; padding: 0.75rem 0.9rem; border: 0.5px solid var(--border-bright); border-radius: 6px; font-size: 0.88rem; color: var(--text-muted); background: #fff; transition: border-color 0.2s, background 0.2s, color 0.2s; }
+  .type-opt span small { display: block; font-size: 0.75rem; color: var(--text-dim); }
+  .type-opt input:checked + span { border-color: var(--purple); background: var(--bg2); color: var(--text); box-shadow: inset 0 0 0 1px var(--purple); }
+  .type-opt input:focus-visible + span { outline: 2px solid var(--purple); outline-offset: 2px; }
+  .contact-form input[type=text], .contact-form input[type=email], .contact-form textarea { width: 100%; background: var(--bg2); border: 0.5px solid var(--border); border-radius: 4px; padding: 0.85rem 1rem; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; outline: none; transition: border-color 0.2s; resize: none; }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--text-dim); }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--border-bright); }
+  .contact-form textarea { height: 140px; }
+  .contact-form button { background: var(--purple); color: #fff; border: none; border-radius: 4px; padding: 0.9rem 1.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.15s; width: 100%; }
+  .contact-form button:hover { background: var(--purple-light); transform: translateY(-1px); }
+  .contact-form button[disabled] { opacity: 0.6; cursor: wait; }
+  .form-success { display: none; text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.95rem; border: 0.5px solid var(--border); border-radius: 6px; max-width: 560px; margin: 0 auto; }
+  .form-success strong { display: block; font-family: 'Outfit', sans-serif; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+  .contact-fallback { margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-dim); }
+  .contact-fallback a { color: var(--text-muted); text-decoration: none; border-bottom: 0.5px solid var(--border); }
+  .contact-details { max-width: 560px; margin: 3.5rem auto 0; padding-top: 2rem; border-top: 0.5px solid var(--border); font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; }
+  @media (max-width: 600px) { .contact-page { padding: 7.5rem 1.25rem 4rem; } .type-grid { grid-template-columns: 1fr; } .contact-actions { flex-direction: column; align-items: stretch; max-width: 360px; margin-left: auto; margin-right: auto; } .contact-actions a { justify-content: center; } }
+</style>
+<link rel="stylesheet" href="/smb.css?v=1">
+</head>
+<body>
+
+<nav class="smb-nav">
+  <a href="/web" class="nav-logo">
+    <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" class="logo-mark" style="height:28px;width:auto;filter:brightness(0);">
+  </a>
+  <button class="smb-toggle" type="button" aria-expanded="false" aria-controls="smb-menu" aria-label="Menu"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <ul class="nav-links" id="smb-menu">
+    <li><a href="/web">Websites</a></li>
+    <li><a href="/professionals">Professionals</a></li>
+    <li><a href="/restaurants">Restaurants</a></li>
+    <li><a href="/free">Free redesign</a></li>
+    <li><a href="/contact" class="nav-cta" aria-current="page">Get in touch</a></li>
+  </ul>
+</nav>
+
+<main class="contact-page">
+  <p class="section-label">Contact</p>
+  <h1>Let’s talk about your project</h1>
+  <p class="zh" lang="zh-Hant">聊聊你的專案</p>
+  <p class="intro">Tell us what you need and we’ll reply within one working day. Rather talk? Book a free 25-minute call or message us on WhatsApp.</p>
+
+  <div class="contact-actions">
+    <a href="https://cal.com/ux-circles/25-min-consultancy" target="_blank" rel="noopener" class="btn-primary">Book a free call <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a id="waLink" href="https://wa.me/447343132461?text=Hi%20UX%20CIRCLES%2C%20I%27d%20like%20to%20ask%20about%20" target="_blank" rel="noopener" class="btn-wa"><svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42"/></svg> WhatsApp us</a>
+  </div>
+
+  <div class="contact-divider"><span>or send a message</span></div>
+
+  <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="842f1eb6-d651-4407-a5fd-d947b273acf4">
+    <input type="hidden" name="subject" id="formSubject" value="New enquiry from UX CIRCLES website">
+    <input type="hidden" name="page" id="formPage" value="">
+    <input type="checkbox" name="botcheck" style="display:none">
+    <fieldset>
+      <legend>What do you need? <span lang="zh-Hant" style="font-weight:400;color:var(--text-dim)">你需要什麼？</span></legend>
+      <div class="type-grid">
+        <label class="type-opt"><input type="radio" name="enquiry_type" value="App or product design" data-type="product" data-topic="an app or product design project"><span>App or product design<small lang="zh-Hant">App／產品設計</small></span></label>
+        <label class="type-opt"><input type="radio" name="enquiry_type" value="Brand &amp; website" data-type="brand" data-topic="a brand and website project"><span>Brand &amp; website<small lang="zh-Hant">品牌與網站</small></span></label>
+        <label class="type-opt"><input type="radio" name="enquiry_type" value="Professional firm website" data-type="professional" data-topic="a website for my firm"><span>Professional firm website<small lang="zh-Hant">專業事務所網站</small></span></label>
+        <label class="type-opt"><input type="radio" name="enquiry_type" value="Restaurant website" data-type="restaurant" data-topic="a restaurant website"><span>Restaurant website<small lang="zh-Hant">餐廳網站</small></span></label>
+        <label class="type-opt"><input type="radio" name="enquiry_type" value="Free homepage redesign" data-type="free" data-topic="the free homepage redesign"><span>Free homepage redesign<small lang="zh-Hant">免費首頁改版</small></span></label>
+        <label class="type-opt"><input type="radio" name="enquiry_type" value="Something else" data-type="other" data-topic="" checked><span>Something else<small lang="zh-Hant">其他</small></span></label>
+      </div>
+    </fieldset>
+    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+    <input type="email" name="email" placeholder="Your email" autocomplete="email" required>
+    <input type="text" name="website" placeholder="Your current website (optional)" autocomplete="url">
+    <textarea name="message" placeholder="Tell us a little about your business and what you’d like to do." required></textarea>
+    <button type="submit">Send message</button>
+  </form>
+  <div class="form-success" id="formSuccess" role="status">
+    <strong>Message sent.</strong>
+    We’ll be in touch within one working day.
+  </div>
+  <p class="contact-fallback">Prefer email? <a href="mailto:hello@ux-circles.com">hello@ux-circles.com</a></p>
+
+  <p class="contact-details">UX CIRCLES Ltd · London<br>Registered in England &amp; Wales · Company No. 15679514<br>We work in English and Mandarin / written Chinese.</p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <a href="index.html">
+      <img src="logo-landscape-transparent.webp" alt="UX CIRCLES" class="footer-logo-img">
+    </a>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="web.html">Websites</a>
+      <a href="professionals.html">Professionals</a>
+      <a href="free.html">Free redesign</a>
+      <a href="restaurants.html">Restaurants</a>
+      <a href="wedding.html">Wedding</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy"><span>© 2026 UX CIRCLES Ltd · Company No. 15679514 · Registered in England &amp; Wales · 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ · <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></span><span class="footer-contact"><a href="mailto:hello@ux-circles.com">hello@ux-circles.com</a><a href="https://wa.me/447343132461?text=Hi%20UX%20CIRCLES%2C%20I%27d%20like%20to%20ask%20about%20" target="_blank" rel="noopener">WhatsApp</a></span></div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById('contactForm');
+    var subject = document.getElementById('formSubject');
+    var wa = document.getElementById('waLink');
+    var radios = form.querySelectorAll('input[name=enquiry_type]');
+    var base = "Hi UX CIRCLES, I'd like to ask about ";
+
+    function update() {
+      var r = form.querySelector('input[name=enquiry_type]:checked');
+      subject.value = r && r.dataset.type !== 'other'
+        ? 'New enquiry (' + r.value + ') from UX CIRCLES website'
+        : 'New enquiry from UX CIRCLES website';
+      wa.href = 'https://wa.me/447343132461?text=' + encodeURIComponent(base + (r ? r.dataset.topic : ''));
+    }
+
+    // Preselect from ?type= (set by the "Get in touch" links on each page)
+    var t = new URLSearchParams(location.search).get('type');
+    radios.forEach(function (r) {
+      if (r.dataset.type === t) r.checked = true;
+      r.addEventListener('change', update);
+    });
+    document.getElementById('formPage').value = t || 'direct';
+    update();
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button');
+      btn.disabled = true;
+      try {
+        var res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+        var json = await res.json();
+        if (!json.success) throw new Error();
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } catch (err) {
+        btn.disabled = false;
+        alert('Something went wrong. Please email us at hello@ux-circles.com');
+      }
+    });
+  })();
+</script>
+<!-- Cookie consent, Google Analytics (after consent) and click tracking -->
+<script src="/consent.js?v=6" defer></script>
+<script src="/smb.js?v=1" defer></script>
+</body>
+</html>
