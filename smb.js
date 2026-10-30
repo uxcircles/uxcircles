@@ -37,7 +37,8 @@
     '.cta-inner > *',
     '.contact-divider', '.contact-form', '.contact-fallback', '.contact-details'
   ];
-  if (window.matchMedia('(max-width: 900px)').matches) selectors.push('.case-img-wrap');
+  var phone = window.matchMedia('(max-width: 900px)').matches;
+  if (phone) selectors.push('.case-img-wrap');
 
   var found = Array.prototype.slice.call(document.querySelectorAll(selectors.join(',')));
   // Outermost matches only, and never inside the hero
@@ -69,9 +70,10 @@
         el.removeEventListener('transitionend', end);
         done();
       });
-      setTimeout(done, 1200);
+      setTimeout(done, 1600);
     });
-  }, { rootMargin: '0px 0px -8% 0px' });
+  // Phones scroll in quick flicks, so start the fade once a block is well into view
+  }, { rootMargin: phone ? '0px 0px -18% 0px' : '0px 0px -8% 0px' });
 
   document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
 })();

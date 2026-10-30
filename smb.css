@@ -143,6 +143,10 @@ nav.smb-nav .nav-links a[aria-current="page"]:not(.nav-cta) {
   transition-delay: var(--rv-delay, 0s);
 }
 .rv.rv-in { opacity: 1; transform: none; }
+@media (max-width: 900px) {
+  /* a little slower and further on small screens, where 16px barely shows */
+  .rv { transform: translateY(24px); transition-duration: 0.8s; }
+}
 
 /* Visitors who ask for less motion: no fades, no hero animation */
 @media (prefers-reduced-motion: reduce) {
