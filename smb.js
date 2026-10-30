@@ -35,7 +35,7 @@
     '.receive-card', '.who-card', '.report', '.faq-item', '.free-band-inner',
     '.smb-more-label', '.smb-more-title', '.smb-more-card', '.smb-more-studio',
     '.cta-inner > *',
-    '.contact-divider', '.contact-form', '.contact-fallback', '.contact-details'
+    '.contact-divider', '.contact-form', '.contact-fallback'
   ];
   var phone = window.matchMedia('(max-width: 900px)').matches;
   if (phone) selectors.push('.case-img-wrap');
