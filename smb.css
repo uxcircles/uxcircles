@@ -119,3 +119,18 @@ nav.smb-nav .nav-links a[aria-current="page"]:not(.nav-cta) {
   .smb-more { padding: 4rem 1.5rem; }
   .smb-more-grid { grid-template-columns: 1fr; }
 }
+
+/* Primary WhatsApp button + "or book a free call" text link */
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; }
+.hero-cta .icon-wa, .cta-btn .icon-wa { width: 1.1em; height: 1.1em; }
+.hero-alt {
+  color: var(--purple);
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-bright);
+  padding-bottom: 1px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.75s; /* fades in with the hero button */
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-alt:hover { color: var(--purple-dark); border-color: var(--purple-dark); }
