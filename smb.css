@@ -43,7 +43,8 @@ nav.smb-nav .nav-links a[aria-current="page"]:not(.nav-cta) {
   nav.smb-nav .nav-links li { border-bottom: 0.5px solid var(--border); }
   nav.smb-nav .nav-links li:last-child { border-bottom: 0; padding-top: 1rem; }
   nav.smb-nav .nav-links a { display: block; padding: 0.9rem 0; font-size: 1rem; }
-  nav.smb-nav .nav-links a[aria-current="page"]:not(.nav-cta) { box-shadow: none; color: var(--purple); }
+  /* same padding as the other rows (the desktop underline rule trims the bottom) */
+  nav.smb-nav .nav-links a[aria-current="page"]:not(.nav-cta) { box-shadow: none; color: var(--purple); padding-bottom: 0.9rem; }
   nav.smb-nav .nav-links .nav-cta { text-align: center; padding: 0.85rem 1rem; }
 }
 
