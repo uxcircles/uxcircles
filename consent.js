@@ -56,7 +56,7 @@
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-label', 'Cookie preferences');
     box.innerHTML =
-      '<p class="uxc-cookie-title">Help us improve this site</p>' +
+      '<p class="uxc-cookie-title">Help us improve your experience</p>' +
       '<p>Analytics cookies show us which pages help most. No ads, and nothing is set unless you accept. <a href="/privacy#s4">Privacy policy</a></p>' +
       '<div class="uxc-cookie-btns"><button type="button" class="rej">No thanks</button><button type="button" class="acc">Accept</button></div>';
     document.body.appendChild(box);
