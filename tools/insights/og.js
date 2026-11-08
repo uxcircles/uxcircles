@@ -1,5 +1,5 @@
 // Social preview images for the Insights articles: /og/<slug>-<lang>.png, 1200×630.
-// Navy #14172E background, #9EA2FF accent, Outfit + Noto Sans TC, logo bottom left.
+// Same look as the WhatsApp catalog images: navy-to-purple gradient, lavender kicker, white Outfit title, logo top left.
 //   node tools/insights/og.js            # every article in insights-src/ without an image yet
 //   node tools/insights/og.js --force    # redo them all
 const { chromium } = require('playwright');
@@ -27,16 +27,15 @@ function page(lang, title, tag) {
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Noto+Sans+TC:wght@500;700&display=block" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1200px;height:630px;background:#14172E;color:#fff;font-family:'Outfit','Noto Sans TC',sans-serif;position:relative;overflow:hidden}
-body::before{content:'';position:absolute;right:-180px;top:-220px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(158,162,255,.32),rgba(158,162,255,0) 70%)}
-.k{position:absolute;left:80px;top:78px;font:600 22px/1 'Outfit','Noto Sans TC';letter-spacing:${zh ? '.12em' : '.2em'};text-transform:uppercase;color:#9EA2FF}
-.bar{position:absolute;left:80px;top:122px;width:56px;height:4px;border-radius:2px;background:#9EA2FF}
-h1{position:absolute;left:80px;right:110px;top:168px;font-weight:${zh ? 700 : 600};font-size:${zh ? 66 : 70}px;line-height:${zh ? 1.3 : 1.08};letter-spacing:${zh ? '.01em' : '-.02em'};text-wrap:balance}
-img{position:absolute;left:80px;bottom:64px;height:34px;filter:brightness(0) invert(1)}
-.u{position:absolute;right:80px;bottom:70px;font:500 22px/1 'Outfit';color:rgba(255,255,255,.55)}
+body{width:1200px;height:630px;color:#fff;font-family:'Outfit','Noto Sans TC',sans-serif;position:relative;overflow:hidden;
+ background:radial-gradient(800px 560px at 88% 10%,#3b2f8f 0%,rgba(59,47,143,0) 60%),linear-gradient(160deg,#1a1640 0%,#0f1021 70%)}
+img{position:absolute;left:72px;top:60px;height:32px;filter:brightness(1.6)}
+.k{position:absolute;left:72px;top:140px;font:600 20px/1 'Outfit','Noto Sans TC';letter-spacing:${zh ? '.12em' : '.2em'};text-transform:uppercase;color:#a99cff}
+h1{position:absolute;left:72px;right:100px;top:182px;font-weight:700;font-size:${zh ? 62 : 66}px;line-height:${zh ? 1.28 : 1.04};letter-spacing:${zh ? '.01em' : '-.02em'};text-wrap:balance}
+.u{position:absolute;left:72px;bottom:60px;border:2px solid rgba(255,255,255,.3);border-radius:12px;padding:12px 18px;font:500 20px/1 'Outfit';color:#e6e2ff}
 </style></head><body>
-<div class="k">${esc(tag)}</div><div class="bar"></div><h1>${esc(title)}</h1>
-<img src="${logo}" alt=""><div class="u">ux-circles.com${zh ? '/zh' : ''}/insights</div>
+<img src="${logo}" alt=""><div class="k">${esc(tag)}</div><h1>${esc(title)}</h1>
+<div class="u">ux-circles.com${zh ? '/zh' : ''}/insights</div>
 </body></html>`;
 }
 
