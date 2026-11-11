@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Restaurant Website Design, London — Concept Redesigns | UX CIRCLES</title>
-<meta name="description" content="Restaurant website design by UX CIRCLES, a London studio. Six concept redesigns for independent restaurants in London and Birmingham — online booking, menus, private dining and multilingual pages (English, 中文, Français).">
+<meta name="description" content="Restaurant website design by UX CIRCLES, a London studio. Ten concept redesigns for independent restaurants in London, Birmingham and Sheffield — online booking, menus, private dining and multilingual pages (English, 中文, Français).">
 <link rel="canonical" href="https://ux-circles.com/restaurants">
 <meta property="og:title" content="Restaurant Website Design, London — UX CIRCLES">
-<meta property="og:description" content="Six concept redesigns for independent restaurants: booking-first homepages, readable menus, private dining and multilingual pages.">
+<meta property="og:description" content="Ten concept redesigns for independent restaurants: booking-first homepages, readable menus, private dining and multilingual pages.">
 <meta property="og:url" content="https://ux-circles.com/restaurants">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ux-circles.com/concept-restaurant-theshell.webp">
@@ -240,171 +240,30 @@
   .hero-bg { display: none; }
 
   /* CASES */
-  .cases {
-    position: relative;
-  }
-
-  /* Dot nav */
-  .dot-nav {
-    position: fixed;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s;
-  }
-
-  .dot-nav.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .dot-nav button {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: var(--text-dim);
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.3s, transform 0.3s;
-  }
-
-  .dot-nav button.active {
-    background: var(--purple);
-    transform: scale(1.4);
-  }
-
-  .case-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    clip-path: inset(0);
-  }
-
-  .case-section:nth-child(even) { background: var(--bg2); }
-
-  .case-inner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0 5vw;
-    gap: 0;
-  }
-
-  /* Text block — left side, narrow */
-  .case-content {
-    position: relative;
-    z-index: 2;
-    width: 360px;
-    flex-shrink: 0;
-  }
-
-  .case-label {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--purple);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  .case-title {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    font-size: clamp(2rem, 3vw, 3rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-  }
-
-  .case-title-zh {
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: var(--purple);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .case-desc {
-    color: var(--text-muted);
-    font-size: 0.92rem;
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 0.6rem;
-  }
-
-  .case-desc-zh {
-    color: var(--text-dim);
-    font-size: 0.82rem;
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-
-  .case-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .case-tag {
-    font-size: 0.7rem;
-    font-family: 'Outfit', sans-serif;
-    letter-spacing: 0.08em;
-    color: var(--purple);
-    border: 0.5px solid var(--border-bright);
-    padding: 0.25rem 0.65rem;
-    border-radius: 3px;
-    background: rgba(107, 92, 231, 0.05);
-  }
-
-  /* Image — large, right side, perspective tilt */
-  .case-img-wrap {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 1200px;
-    perspective-origin: 50% 50%;
-    padding-left: 4vw;
-    height: 80vh;
-  }
-
-  .case-img {
-    width: 100%;
-    max-height: 75vh;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 40px 100px rgba(45, 31, 110, 0.18), 0 10px 30px rgba(45, 31, 110, 0.1);
-    will-change: transform, opacity;
-    transform: rotateY(-15deg) rotateX(5deg) scale(0.75) translateZ(-200px);
-    opacity: 0;
-    transition: box-shadow 0.3s;
-  }
-
-  .case-section:nth-child(even) .case-img {
-    transform: rotateY(15deg) rotateX(5deg) scale(0.75) translateZ(-200px);
-  }
-
-  .case-section:nth-child(even) .case-inner {
-    flex-direction: row-reverse;
-  }
-
-  .case-section:nth-child(even) .case-img-wrap {
-    padding-left: 0;
-    padding-right: 4vw;
-  }
+  /* CASES — one featured concept, then a 3-column grid */
+  .cases { max-width: 1240px; margin: 0 auto; padding: 6rem 2rem 2rem; }
+  .cases-head { text-align: center; margin-bottom: 3rem; }
+  .case-card { display: flex; flex-direction: column; background: #fff; border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+  .case-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(45, 31, 110, 0.12); }
+  .case-shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg2); }
+  .case-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.6s; }
+  .case-card:hover .case-shot img { transform: scale(1.03); }
+  .case-body { display: flex; flex-direction: column; flex: 1; padding: 1.5rem 1.5rem 1.6rem; }
+  .case-label { font-family: 'Outfit', sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; color: var(--purple); text-transform: uppercase; margin-bottom: 0.6rem; }
+  .case-title { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.35rem; line-height: 1.15; letter-spacing: -0.01em; color: var(--text); margin-bottom: 0.3rem; }
+  .case-title-zh { font-size: 0.85rem; color: var(--purple); margin-bottom: 0.9rem; line-height: 1.6; }
+  .case-desc { color: var(--text-muted); font-size: 0.88rem; font-weight: 300; line-height: 1.7; margin-bottom: 1rem; }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+  .case-tag { font-size: 0.68rem; font-family: 'Outfit', sans-serif; letter-spacing: 0.06em; color: var(--purple); border: 0.5px solid var(--border-bright); padding: 0.2rem 0.6rem; border-radius: 3px; background: rgba(107, 92, 231, 0.05); }
+  .case-body .case-link { align-self: flex-start; margin-top: 1.1rem; }
+  .case-feature { display: grid; grid-template-columns: 1.55fr 1fr; margin-bottom: 1.5rem; }
+  .case-feature .case-shot { aspect-ratio: auto; height: 100%; min-height: 360px; }
+  .case-feature .case-body { justify-content: center; padding: 2.5rem; }
+  .case-feature .case-title { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+  .case-feature .case-desc { font-size: 0.95rem; }
+  .case-feature .case-tags { margin-top: 0.2rem; }
+  .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .js-reveal .case-card { opacity: 0; transform: translateY(24px); }
 
   /* SERVICES */
   .services {
@@ -605,14 +464,17 @@
     .hero { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-title { font-size: clamp(2.25rem, 10vw, 3.5rem); }
     .hero-visual { display: none; }
-    .case-section { height: auto; min-height: 100vh; padding: 7rem 1.5rem 4rem; }
-    .case-inner { flex-direction: column !important; padding: 0; gap: 2.5rem; }
-    .case-content { width: 100%; }
-    .case-img-wrap { width: 100%; height: auto; padding: 0 !important; }
-    .case-img { width: 100%; height: auto; max-height: none; object-fit: contain; transform: none !important; opacity: 1 !important; box-shadow: 0 20px 50px rgba(45, 31, 110, 0.15); }
-    .dot-nav { display: none; }
     .services-grid { grid-template-columns: 1fr 1fr; }
+    .case-grid { grid-template-columns: 1fr 1fr; }
+    .case-feature { grid-template-columns: 1fr; }
+    .case-feature .case-shot { aspect-ratio: 16 / 10; min-height: 0; }
+    .case-feature .case-body { padding: 1.5rem; }
+    .cases { padding: 4rem 1.25rem 1rem; }
     .nav-links { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .case-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 480px) {
@@ -666,10 +528,43 @@
       "hasPart": [
         {
           "@type": "CreativeWork",
+          "name": "Ciao Bella website redesign (concept)",
+          "url": "https://uxcircles.github.io/ciaobella/",
+          "image": "https://ux-circles.com/concept-restaurant-ciaobella.webp",
+          "description": "Built from the restaurant’s own details since 1983: the royal-blue awning, the wall of film-star photos, a piano you can play on the page, and a wine rack that jumps to each region of the list. In English and Italian.",
+          "creator": {
+            "@id": "https://ux-circles.com/#organization"
+          },
+          "genre": "Concept website redesign"
+        },
+        {
+          "@type": "CreativeWork",
           "name": "The Shell website redesign (concept)",
           "url": "https://uxcircles.github.io/theshellseafood/",
           "image": "https://ux-circles.com/concept-restaurant-theshell.webp",
-          "description": "A trilingual redesign for a seafood and steak restaurant on Southampton Row. The hero turns the signature platter into a labelled menu, and private dining gets its own enquiry page for group bookings.",
+          "description": "A trilingual redesign for a seafood and steak restaurant on Southampton Row. The hero turns the signature platter into a labelled menu, and private dining gets its own enquiry page.",
+          "creator": {
+            "@id": "https://ux-circles.com/#organization"
+          },
+          "genre": "Concept website redesign"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Prix Fixe website redesign (concept)",
+          "url": "https://uxcircles.github.io/prixfixe/",
+          "image": "https://ux-circles.com/concept-restaurant-prixfixe.webp",
+          "description": "Soho at night in oxblood and neon. The set-lunch price sits up front, the full menus are readable text, and group bookings get their own enquiry, in English, French and Chinese.",
+          "creator": {
+            "@id": "https://ux-circles.com/#organization"
+          },
+          "genre": "Concept website redesign"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Da Mario website redesign (concept)",
+          "url": "https://uxcircles.github.io/da-mario/",
+          "image": "https://ux-circles.com/concept-restaurant-damario.webp",
+          "description": "A theatre-curtain redesign for a family-run Italian on Endell Street, with a pre-theatre dinner planner, a walking map to the West End theatres and a searchable menu.",
           "creator": {
             "@id": "https://ux-circles.com/#organization"
           },
@@ -680,7 +575,7 @@
           "name": "Isolabella website redesign (concept)",
           "url": "https://uxcircles.github.io/Isolabella/",
           "image": "https://ux-circles.com/concept-restaurant-isolabella.webp",
-          "description": "A warm, editorial redesign for an Italian restaurant on Red Lion Street. Set menu, wine list and opening hours sit one tap from the homepage, with booking as the primary action on every page.",
+          "description": "A warm, editorial redesign for an Italian restaurant on Red Lion Street. Set menu, wine list and opening hours sit one tap from the homepage, with booking on every page.",
           "creator": {
             "@id": "https://ux-circles.com/#organization"
           },
@@ -691,7 +586,7 @@
           "name": "Nostimo website redesign (concept)",
           "url": "https://uxcircles.github.io/nostimo/",
           "image": "https://ux-circles.com/concept-restaurant-nostimo.webp",
-          "description": "A redesign for a Greek taverna near Russell Square. Booking, takeaway and delivery links are combined into one clear decision, so guests never hunt for the right button. Includes a Chinese-language version for tourists.",
+          "description": "A redesign for a Greek taverna near Russell Square. Booking, takeaway and delivery are combined into one clear choice, with a Chinese version for tourists.",
           "creator": {
             "@id": "https://ux-circles.com/#organization"
           },
@@ -702,7 +597,7 @@
           "name": "Tiger Bites Pig website redesign (concept)",
           "url": "https://uxcircles.github.io/tigerbitespig/",
           "image": "https://ux-circles.com/concept-restaurant-tigerbitespig.webp",
-          "description": "A bold redesign for a Taiwanese-inspired bao kitchen on Church Street. Built for a growing brand: multiple locations, catering enquiries, live opening hours and a Traditional Chinese version.",
+          "description": "A bold redesign for a Taiwanese-inspired bao kitchen on Church Street, built for a growing brand: multiple locations, catering enquiries and live opening hours.",
           "creator": {
             "@id": "https://ux-circles.com/#organization"
           },
@@ -713,7 +608,7 @@
           "name": "S'MORE Taste of Asia website redesign (concept)",
           "url": "https://uxcircles.github.io/smore/",
           "image": "https://ux-circles.com/concept-restaurant-smore.webp",
-          "description": "A redesign for a Taiwanese kitchen and teahouse in the Royal Docks. Tells the story behind braised pork rice and night-market snacks, with ordering, booking and today's hours visible above the fold.",
+          "description": "Tells the story behind braised pork rice and night-market snacks, with ordering, booking and today’s hours visible above the fold.",
           "creator": {
             "@id": "https://ux-circles.com/#organization"
           },
@@ -724,7 +619,18 @@
           "name": "BAOBAO website redesign (concept)",
           "url": "https://uxcircles.github.io/baobao-redesign/",
           "image": "https://ux-circles.com/concept-restaurant-baobao.webp",
-          "description": "An image-led redesign for a Taiwanese street food stall at Boxpark Croydon, designed in Figma and built as a fast static site. Menu, reservations and the restaurant's story are each one tap away.",
+          "description": "An image-led redesign for a street food stall, designed in Figma and built as a fast static site. Menu, reservations and the story are each one tap away.",
+          "creator": {
+            "@id": "https://ux-circles.com/#organization"
+          },
+          "genre": "Concept website redesign"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Yum Yum Bites 甲奔 website redesign (concept)",
+          "url": "https://uxcircles.github.io/yumyumbites/",
+          "image": "https://ux-circles.com/concept-restaurant-yumyumbites.webp",
+          "description": "A bright night-market redesign for a Taiwanese kitchen at New Era Square: a bilingual menu with a vegan filter, live opening status and one-tap ordering.",
           "creator": {
             "@id": "https://ux-circles.com/#organization"
           },
@@ -756,7 +662,7 @@
           "name": "Are these real client websites?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. All six are self-initiated concept redesigns by UX CIRCLES, built to show how independent restaurants could present themselves online. Each concept site is clearly labelled as a concept and links to the restaurant's official website. We are not affiliated with these restaurants. If you own one of them and would like your concept removed, email hello@ux-circles.com and we'll take it down within 2 working days, no questions asked."
+            "text": "No. All ten are self-initiated concept redesigns by UX CIRCLES, built to show how independent restaurants could present themselves online. Each concept site is clearly labelled as a concept and links to the restaurant's official website. We are not affiliated with these restaurants. If you own one of them and would like your concept removed, email hello@ux-circles.com and we'll take it down within 2 working days, no questions asked."
           }
         },
         {
@@ -780,7 +686,7 @@
           "name": "Do you work with Taiwanese and Asian restaurants in the UK?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We are a London studio with Taiwanese roots, and half of these concepts are Taiwanese restaurants in London and Birmingham. We can brief and present in Mandarin."
+            "text": "Yes. We are a London studio with Taiwanese roots, and four of these concepts are Taiwanese restaurants, in London, Birmingham and Sheffield. We can brief and present in Mandarin."
           }
         },
         {
@@ -845,162 +751,136 @@
       <span class="zh" lang="zh-TW">讓客人一眼就想訂位的餐廳網站</span>
     </h1>
     <p class="hero-sub">
-      Six concept redesigns for independent restaurants in London and Birmingham —
+      Ten concept redesigns for independent restaurants in London, Birmingham and Sheffield —
       showing how booking, menus and multilingual pages can work harder for a small restaurant.
-      <span class="zh-sub" lang="zh-TW">六個倫敦與伯明罕獨立餐廳的網站改版概念提案，含線上訂位、菜單與多語版本。</span>
+      <span class="zh-sub" lang="zh-TW">十個倫敦、伯明罕與謝菲爾德獨立餐廳的網站改版概念提案，含線上訂位、菜單與多語版本。</span>
     </p>
-    <p class="hero-note">All six are unsolicited <a href="#concept-notice">concept redesigns</a>, not client work.<br><span lang="zh-TW">以下六個皆為主動提案的<a href="#concept-notice">概念設計</a>，並非客戶委託作品。</span></p>
+    <p class="hero-note">All ten are unsolicited <a href="#concept-notice">concept redesigns</a>, not client work.<br><span lang="zh-TW">以下十個皆為主動提案的<a href="#concept-notice">概念設計</a>，並非客戶委託作品。</span></p>
     <div class="hero-actions"><a href="https://wa.me/447343132461?text=Hi%20UX%20CIRCLES%2C%20I%27d%20like%20to%20ask%20about%20a%20restaurant%20website" class="hero-cta" target="_blank" rel="noopener"><svg class="icon-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42"/></svg> WhatsApp us</a><a href="https://cal.com/ux-circles/25-min-consultancy" class="hero-alt" target="_blank" rel="noopener">or book a free call</a></div>
   </div>
 </section>
 </div>
 
-<!-- Dot Nav -->
-<div class="dot-nav" aria-label="Case navigation">
-  <button class="active" data-index="0" aria-label="The Shell"></button>
-  <button data-index="1" aria-label="Isolabella"></button>
-  <button data-index="2" aria-label="Nostimo"></button>
-  <button data-index="3" aria-label="Tiger Bites Pig"></button>
-  <button data-index="4" aria-label="S'MORE Taste of Asia"></button>
-  <button data-index="5" aria-label="BAOBAO"></button>
-</div>
-
 <!-- CASES -->
-<div class="cases">
-
-  <!-- The Shell -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-content">
-        <p class="case-label">Seafood & steak · Holborn, London</p>
-        <h2 class="case-title">The Shell</h2>
-        <p class="case-title-zh" lang="zh-TW">海鮮餐廳改版提案 — 英／中／法三語網站</p>
-        <p class="case-desc">A trilingual redesign for a seafood and steak restaurant on Southampton Row. The hero turns the signature platter into a labelled menu, and private dining gets its own enquiry page for group bookings.</p>
-        <div class="case-tags">
-          <span class="case-tag">Multilingual EN · 中文 · FR</span>
-          <span class="case-tag">Private Dining</span>
-          <span class="case-tag">Online Booking</span>
-          <span class="case-tag">Concept</span>
-        </div>
-        <a href="https://uxcircles.github.io/theshellseafood/" target="_blank" rel="noopener" class="case-link">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="case-img-wrap">
-        <img class="case-img" data-tilt src="concept-restaurant-theshell.webp" alt="The Shell seafood restaurant website concept, Holborn" width="1440" height="900" loading="lazy">
-      </div>
+<section class="cases" aria-labelledby="cases-title">
+  <div class="cases-head">
+    <p class="services-label">Concept redesigns</p>
+    <h2 class="services-title" id="cases-title">Ten restaurants, ten different sites</h2>
+    <p class="services-title-zh" lang="zh-TW">十家餐廳，十種不同的網站</p>
+  </div>
+  <article class="case-card case-feature">
+    <a class="case-shot" href="https://uxcircles.github.io/ciaobella/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-ciaobella.webp" alt="" width="1440" height="900" loading="eager"></a>
+    <div class="case-body">
+      <p class="case-label">Italian restaurant &amp; piano bar · Bloomsbury, London</p>
+      <h2 class="case-title">Ciao Bella</h2>
+      <p class="case-title-zh" lang="zh-TW">義大利餐廳改版提案 — 鋼琴吧、酒架與老照片牆</p>
+      <p class="case-desc">Built from the restaurant’s own details since 1983: the royal-blue awning, the wall of film-star photos, a piano you can play on the page, and a wine rack that jumps to each region of the list. In English and Italian.</p>
+      <div class="case-tags"><span class="case-tag">Wine list filter</span><span class="case-tag">Piano bar</span><span class="case-tag">EN · IT</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/ciaobella/" target="_blank" rel="noopener" class="case-link" aria-label="View the Ciao Bella concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-  </section>
-
-  <!-- Isolabella -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-content">
-        <p class="case-label">Italian restaurant · Holborn, London</p>
-        <h2 class="case-title">Isolabella</h2>
-        <p class="case-title-zh" lang="zh-TW">義大利餐廳改版提案 — 套餐、酒單與訂位</p>
-        <p class="case-desc">A warm, editorial redesign for an Italian restaurant on Red Lion Street. Set menu, wine list and opening hours sit one tap from the homepage, with booking as the primary action on every page.</p>
-        <div class="case-tags">
-          <span class="case-tag">Menu & Wine List</span>
-          <span class="case-tag">Online Booking</span>
-          <span class="case-tag">Local SEO</span>
-          <span class="case-tag">Concept</span>
-        </div>
-        <a href="https://uxcircles.github.io/Isolabella/" target="_blank" rel="noopener" class="case-link">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="case-img-wrap">
-        <img class="case-img" data-tilt src="concept-restaurant-isolabella.webp" alt="Isolabella Italian restaurant website concept, Holborn" width="1440" height="900" loading="lazy">
-      </div>
+  </article>
+  <div class="case-grid">
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/theshellseafood/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-theshell.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Seafood &amp; steak · Holborn, London</p>
+      <h3 class="case-title">The Shell</h3>
+      <p class="case-title-zh" lang="zh-TW">海鮮餐廳改版提案 — 英／中／法三語網站</p>
+      <p class="case-desc">A trilingual redesign for a seafood and steak restaurant on Southampton Row. The hero turns the signature platter into a labelled menu, and private dining gets its own enquiry page.</p>
+      <div class="case-tags"><span class="case-tag">EN · 中文 · FR</span><span class="case-tag">Private dining</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/theshellseafood/" target="_blank" rel="noopener" class="case-link" aria-label="View the The Shell concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-  </section>
-
-  <!-- Nostimo -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-content">
-        <p class="case-label">Greek grill & taverna · Bloomsbury, London</p>
-        <h2 class="case-title">Nostimo</h2>
-        <p class="case-title-zh" lang="zh-TW">希臘餐廳改版提案 — 訂位、外帶與外送一次整合</p>
-        <p class="case-desc">A redesign for a Greek taverna near Russell Square. Booking, takeaway and delivery links are combined into one clear decision, so guests never hunt for the right button. Includes a Chinese-language version for tourists.</p>
-        <div class="case-tags">
-          <span class="case-tag">Booking & Takeaway</span>
-          <span class="case-tag">Bilingual EN · 中文</span>
-          <span class="case-tag">Mobile First</span>
-          <span class="case-tag">Concept</span>
-        </div>
-        <a href="https://uxcircles.github.io/nostimo/" target="_blank" rel="noopener" class="case-link">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="case-img-wrap">
-        <img class="case-img" data-tilt src="concept-restaurant-nostimo.webp" alt="Nostimo Greek taverna website concept, Bloomsbury" width="1440" height="900" loading="lazy">
-      </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/prixfixe/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-prixfixe.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">French brasserie · Soho, London</p>
+      <h3 class="case-title">Prix Fixe</h3>
+      <p class="case-title-zh" lang="zh-TW">法式餐酒館改版提案 — 霓虹夜色與三語菜單</p>
+      <p class="case-desc">Soho at night in oxblood and neon. The set-lunch price sits up front, the full menus are readable text, and group bookings get their own enquiry, in English, French and Chinese.</p>
+      <div class="case-tags"><span class="case-tag">Menus as text</span><span class="case-tag">EN · FR · 中文</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/prixfixe/" target="_blank" rel="noopener" class="case-link" aria-label="View the Prix Fixe concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-  </section>
-
-  <!-- Tiger Bites Pig -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-content">
-        <p class="case-label">Taiwanese bao & rice bowls · Birmingham</p>
-        <h2 class="case-title">Tiger Bites Pig</h2>
-        <p class="case-title-zh" lang="zh-TW">台式刈包餐廳改版提案 — 多分店、外燴與中文版</p>
-        <p class="case-desc">A bold redesign for a Taiwanese-inspired bao kitchen on Church Street. Built for a growing brand: multiple locations, catering enquiries, live opening hours and a Traditional Chinese version.</p>
-        <div class="case-tags">
-          <span class="case-tag">Multi-location</span>
-          <span class="case-tag">Catering</span>
-          <span class="case-tag">Bilingual EN · 中文</span>
-          <span class="case-tag">Concept</span>
-        </div>
-        <a href="https://uxcircles.github.io/tigerbitespig/" target="_blank" rel="noopener" class="case-link">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="case-img-wrap">
-        <img class="case-img" data-tilt src="concept-restaurant-tigerbitespig.webp" alt="Tiger Bites Pig Taiwanese bao restaurant website concept, Birmingham" width="1440" height="900" loading="lazy">
-      </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/da-mario/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-damario.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Italian restaurant · Covent Garden, London</p>
+      <h3 class="case-title">Da Mario</h3>
+      <p class="case-title-zh" lang="zh-TW">義大利餐廳改版提案 — 看戲前用餐與三語網站</p>
+      <p class="case-desc">A theatre-curtain redesign for a family-run Italian on Endell Street, with a pre-theatre dinner planner, a walking map to the West End theatres and a searchable menu.</p>
+      <div class="case-tags"><span class="case-tag">Pre-theatre planner</span><span class="case-tag">EN · IT · 中文</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/da-mario/" target="_blank" rel="noopener" class="case-link" aria-label="View the Da Mario concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-  </section>
-
-  <!-- S'MORE Taste of Asia -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-content">
-        <p class="case-label">Taiwanese kitchen & teahouse · Royal Docks, London</p>
-        <h2 class="case-title">S'MORE Taste of Asia</h2>
-        <p class="case-title-zh" lang="zh-TW">台灣小吃餐廳改版提案 — 品牌故事與訂位</p>
-        <p class="case-desc">A redesign for a Taiwanese kitchen and teahouse in the Royal Docks. Tells the story behind braised pork rice and night-market snacks, with ordering, booking and today's hours visible above the fold.</p>
-        <div class="case-tags">
-          <span class="case-tag">Brand Story</span>
-          <span class="case-tag">Order & Book</span>
-          <span class="case-tag">Taiwanese Food</span>
-          <span class="case-tag">Concept</span>
-        </div>
-        <a href="https://uxcircles.github.io/smore/" target="_blank" rel="noopener" class="case-link">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="case-img-wrap">
-        <img class="case-img" data-tilt src="concept-restaurant-smore.webp" alt="S'MORE Taiwanese restaurant website concept, Royal Docks" width="1440" height="900" loading="lazy">
-      </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/Isolabella/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-isolabella.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Italian restaurant · Holborn, London</p>
+      <h3 class="case-title">Isolabella</h3>
+      <p class="case-title-zh" lang="zh-TW">義大利餐廳改版提案 — 套餐、酒單與訂位</p>
+      <p class="case-desc">A warm, editorial redesign for an Italian restaurant on Red Lion Street. Set menu, wine list and opening hours sit one tap from the homepage, with booking on every page.</p>
+      <div class="case-tags"><span class="case-tag">Menu &amp; wine list</span><span class="case-tag">Online booking</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/Isolabella/" target="_blank" rel="noopener" class="case-link" aria-label="View the Isolabella concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-  </section>
-
-  <!-- BAOBAO -->
-  <section class="case-section">
-    <div class="case-inner">
-      <div class="case-content">
-        <p class="case-label">Taiwanese street food · Boxpark Croydon</p>
-        <h2 class="case-title">BAOBAO</h2>
-        <p class="case-title-zh" lang="zh-TW">台灣街頭小吃改版提案 — 從 Figma 到上線</p>
-        <p class="case-desc">An image-led redesign for a Taiwanese street food stall at Boxpark Croydon, designed in Figma and built as a fast static site. Menu, reservations and the restaurant's story are each one tap away.</p>
-        <div class="case-tags">
-          <span class="case-tag">Figma to Code</span>
-          <span class="case-tag">Street Food</span>
-          <span class="case-tag">Fast Static Site</span>
-          <span class="case-tag">Concept</span>
-        </div>
-        <a href="https://uxcircles.github.io/baobao-redesign/" target="_blank" rel="noopener" class="case-link">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="case-img-wrap">
-        <img class="case-img" data-tilt src="concept-restaurant-baobao.webp" alt="BAOBAO Taiwanese street food website concept, Croydon" width="1440" height="900" loading="lazy">
-      </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/nostimo/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-nostimo.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Greek grill &amp; taverna · Bloomsbury, London</p>
+      <h3 class="case-title">Nostimo</h3>
+      <p class="case-title-zh" lang="zh-TW">希臘餐廳改版提案 — 訂位、外帶與外送一次整合</p>
+      <p class="case-desc">A redesign for a Greek taverna near Russell Square. Booking, takeaway and delivery are combined into one clear choice, with a Chinese version for tourists.</p>
+      <div class="case-tags"><span class="case-tag">Booking &amp; takeaway</span><span class="case-tag">EN · 中文</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/nostimo/" target="_blank" rel="noopener" class="case-link" aria-label="View the Nostimo concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-  </section>
-
-</div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/tigerbitespig/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-tigerbitespig.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Taiwanese bao &amp; rice bowls · Birmingham</p>
+      <h3 class="case-title">Tiger Bites Pig</h3>
+      <p class="case-title-zh" lang="zh-TW">台式刈包餐廳改版提案 — 多分店、外燴與中文版</p>
+      <p class="case-desc">A bold redesign for a Taiwanese-inspired bao kitchen on Church Street, built for a growing brand: multiple locations, catering enquiries and live opening hours.</p>
+      <div class="case-tags"><span class="case-tag">Multi-location</span><span class="case-tag">Catering</span><span class="case-tag">EN · 中文</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/tigerbitespig/" target="_blank" rel="noopener" class="case-link" aria-label="View the Tiger Bites Pig concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/smore/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-smore.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Taiwanese kitchen &amp; teahouse · Royal Docks, London</p>
+      <h3 class="case-title">S'MORE Taste of Asia</h3>
+      <p class="case-title-zh" lang="zh-TW">台灣小吃餐廳改版提案 — 品牌故事與訂位</p>
+      <p class="case-desc">Tells the story behind braised pork rice and night-market snacks, with ordering, booking and today’s hours visible above the fold.</p>
+      <div class="case-tags"><span class="case-tag">Brand story</span><span class="case-tag">Order &amp; book</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/smore/" target="_blank" rel="noopener" class="case-link" aria-label="View the S'MORE Taste of Asia concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/baobao-redesign/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-baobao.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Taiwanese street food · Boxpark Croydon</p>
+      <h3 class="case-title">BAOBAO</h3>
+      <p class="case-title-zh" lang="zh-TW">台灣街頭小吃改版提案 — 從 Figma 到上線</p>
+      <p class="case-desc">An image-led redesign for a street food stall, designed in Figma and built as a fast static site. Menu, reservations and the story are each one tap away.</p>
+      <div class="case-tags"><span class="case-tag">Figma to code</span><span class="case-tag">Fast static site</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/baobao-redesign/" target="_blank" rel="noopener" class="case-link" aria-label="View the BAOBAO concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+  </article>
+  <article class="case-card">
+    <a class="case-shot" href="https://uxcircles.github.io/yumyumbites/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="concept-restaurant-yumyumbites.webp" alt="" width="1440" height="900" loading="lazy"></a>
+    <div class="case-body">
+      <p class="case-label">Taiwanese street food · Sheffield</p>
+      <h3 class="case-title">Yum Yum Bites 甲奔</h3>
+      <p class="case-title-zh" lang="zh-TW">台灣小吃改版提案 — 雙語菜單與純素篩選</p>
+      <p class="case-desc">A bright night-market redesign for a Taiwanese kitchen at New Era Square: a bilingual menu with a vegan filter, live opening status and one-tap ordering.</p>
+      <div class="case-tags"><span class="case-tag">Vegan filter</span><span class="case-tag">EN · 中文</span><span class="case-tag">Concept</span></div>
+      <a href="https://uxcircles.github.io/yumyumbites/" target="_blank" rel="noopener" class="case-link" aria-label="View the Yum Yum Bites 甲奔 concept site (opens in a new tab)">View concept site <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+  </article>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section class="services">
@@ -1042,7 +922,7 @@
   <div class="faq-list">
     <details class="faq-item">
       <summary>Are these real client websites?</summary>
-      <p>No. All six are self-initiated concept redesigns by UX CIRCLES, built to show how independent restaurants could present themselves online. Each concept site is clearly labelled as a concept and links to the restaurant's official website. We are not affiliated with these restaurants. If you own one of them and would like your concept removed, email <a href="mailto:hello@ux-circles.com">hello@ux-circles.com</a> and we'll take it down within 2 working days, no questions asked.</p>
+      <p>No. All ten are self-initiated concept redesigns by UX CIRCLES, built to show how independent restaurants could present themselves online. Each concept site is clearly labelled as a concept and links to the restaurant's official website. We are not affiliated with these restaurants. If you own one of them and would like your concept removed, email <a href="mailto:hello@ux-circles.com">hello@ux-circles.com</a> and we'll take it down within 2 working days, no questions asked.</p>
     </details>
     <details class="faq-item">
       <summary>What does a UX CIRCLES restaurant website include?</summary>
@@ -1054,7 +934,7 @@
     </details>
     <details class="faq-item">
       <summary>Do you work with Taiwanese and Asian restaurants in the UK?</summary>
-      <p>Yes. We are a London studio with Taiwanese roots, and half of these concepts are Taiwanese restaurants in London and Birmingham. We can brief and present in Mandarin.</p>
+      <p>Yes. We are a London studio with Taiwanese roots, and four of these concepts are Taiwanese restaurants, in London, Birmingham and Sheffield. We can brief and present in Mandarin.</p>
     </details>
     <details class="faq-item">
       <summary>Can my restaurant keep its existing booking system?</summary>
@@ -1157,110 +1037,16 @@
 
   // Hero uses CSS animations (lineReveal + fadeUp)
 
-  // Case images: fly in from far (scale + translateZ)
-  // Skipped when the visitor asks for reduced motion (cases are then simply shown)
+  // Case cards: fade up in small batches (skipped for reduced motion)
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const cases = document.querySelectorAll('.case-section');
-  const dots = document.querySelectorAll('.dot-nav button');
-  const dotNav = document.querySelector('.dot-nav');
-
-  // Show dot nav when in cases
-  ScrollTrigger.create({
-    trigger: '.cases',
-    start: 'top center',
-    end: 'bottom center',
-    onEnter: () => dotNav.classList.add('visible'),
-    onLeave: () => dotNav.classList.remove('visible'),
-    onEnterBack: () => dotNav.classList.add('visible'),
-    onLeaveBack: () => dotNav.classList.remove('visible'),
-  });
-
-  cases.forEach((section, i) => {
-    const img = section.querySelector('.case-img');
-    const content = section.querySelector('.case-content');
-    const isEven = i % 2 === 1;
-    const endRotY = isEven ? 6 : -6;
-
-    if (!reduceMotion) {
-      gsap.set(img, { opacity: 0, scale: 0.92 });
-      gsap.set(content, { opacity: 0, x: isEven ? 30 : -30 });
-
-      // Fly-in on scroll
-      ScrollTrigger.create({
-        trigger: section,
-        start: 'top 75%',
-        onEnter: () => {
-          gsap.to(img, { opacity: 1, rotateY: endRotY, rotateX: 2, scale: 1, duration: 1.0, ease: 'power3.out' });
-          gsap.to(content, { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
-        }
-      });
-
-      // Parallax: image drifts up as you scroll through
-      gsap.to(img, {
-        y: -50,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        }
-      });
-
-    } else {
-      // Reduced motion: show the case at its final position, no animation
-      gsap.set(img, { opacity: 1, rotateY: endRotY, rotateX: 2, scale: 1, z: 0 });
-    }
-
-    // Dot nav
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top 50%',
-      end: 'bottom 50%',
-      onEnter: () => updateDot(i),
-      onEnterBack: () => updateDot(i),
+  if (!reduceMotion) {
+    document.documentElement.classList.add('js-reveal');
+    ScrollTrigger.batch('.case-card', {
+      start: 'top 88%',
+      once: true,
+      onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.08 }),
     });
-  });
-
-  function updateDot(index) {
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
   }
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      cases[i].scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Mouse tilt — use GSAP to avoid conflicting with scrub
-  if (!reduceMotion) document.querySelectorAll('.case-img-wrap').forEach((wrap, i) => {
-    const img = wrap.querySelector('.case-img');
-    const isEven = i % 2 === 1;
-    const baseRotY = isEven ? 6 : -6;
-
-    wrap.addEventListener('mousemove', (e) => {
-      const rect = wrap.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      gsap.to(img, {
-        rotateY: baseRotY + x * 8,
-        rotateX: 2 - y * 6,
-        duration: 0.4,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-
-    wrap.addEventListener('mouseleave', () => {
-      gsap.to(img, {
-        rotateY: baseRotY,
-        rotateX: 2,
-        duration: 0.6,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-  });
 
   // Play videos only when scrolled into view
   const videoObserver = new IntersectionObserver((entries) => {
