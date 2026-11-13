@@ -27,3 +27,10 @@
 - [Contact](https://ux-circles.com/contact): enquiry form (choose app/product, brand & website, professional firm, restaurant or free redesign), free 25-minute call booking, WhatsApp +44 7343 132461 and hello@ux-circles.com.
 - [Privacy policy](https://ux-circles.com/privacy)
 - [Terms & conditions](https://ux-circles.com/terms)
+
+<!-- insights:start -->
+## Insights
+
+- [收費表為什麼不要用圖片](https://ux-circles.com/zh/insights/fee-table-image): 很多事務所把收費表做成圖片放上網站。客人用手機看不清楚、搜尋不到，一個下午就能改好。
+- [Why your fee table shouldn't be an image](https://ux-circles.com/insights/fee-table-image): Many firms post their fees as an image. Here is why clients on a phone can't use it, and how to fix it in an afternoon.
+<!-- insights:end -->

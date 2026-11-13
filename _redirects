@@ -6,3 +6,7 @@
 # Care plan terms moved into the combined website terms page.
 /care-terms    /website-terms  301
 /care-terms/   /website-terms  301
+
+# /zh only holds the Chinese blog for now; point it at the blog index until there is a Chinese homepage.
+/zh    /zh/insights  302
+/zh/   /zh/insights  302
