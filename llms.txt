@@ -31,6 +31,8 @@
 <!-- insights:start -->
 ## Insights
 
+- [雙語網站：翻譯外掛還是真正的中文頁？](https://ux-circles.com/zh/insights/translation-plugin-vs-chinese-pages): 加一個翻譯按鈕，看起來就能服務華語客人。它會漏掉什麼，什麼時候值得做真正的中文頁。
+- [Translation plugin or real Chinese pages?](https://ux-circles.com/insights/translation-plugin-vs-chinese-pages): A translation button looks like a quick way to serve Chinese-speaking clients. Here is what it misses, and when real Chinese pages are worth it.
 - [你的電話號碼能一按就撥嗎？](https://ux-circles.com/zh/insights/phone-one-tap): 客人沒辦法一按就打電話或傳 WhatsApp，很多人就不會再試。用手機檢查聯絡資訊的簡單方法。
 - [Is your phone number one tap away?](https://ux-circles.com/insights/phone-one-tap): If a client can't call or WhatsApp you with one tap, many won't try again. A simple check of your contact details on a phone.
 - [收費表為什麼不要用圖片](https://ux-circles.com/zh/insights/fee-table-image): 很多事務所把收費表做成圖片放上網站。客人用手機看不清楚、搜尋不到，一個下午就能改好。
