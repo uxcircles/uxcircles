@@ -57,7 +57,7 @@
   <!-- insights:start -->
   <url>
     <loc>https://ux-circles.com/insights</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -74,6 +74,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://ux-circles.com/insights/traditional-vs-simplified-chinese</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ux-circles.com/insights/translation-plugin-vs-chinese-pages</loc>
     <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -81,7 +87,7 @@
   </url>
   <url>
     <loc>https://ux-circles.com/zh/insights</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -94,6 +100,12 @@
   <url>
     <loc>https://ux-circles.com/zh/insights/phone-one-tap</loc>
     <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ux-circles.com/zh/insights/traditional-vs-simplified-chinese</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

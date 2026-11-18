@@ -31,6 +31,8 @@
 <!-- insights:start -->
 ## Insights
 
+- [繁體還是簡體：你的客人讀哪一種？](https://ux-circles.com/zh/insights/traditional-vs-simplified-chinese): 香港、台灣和中國大陸的客人，讀中文的方式不一樣。怎麼選，為什麼不能只靠繁簡轉換。
+- [Traditional or Simplified Chinese: which do your clients read?](https://ux-circles.com/insights/traditional-vs-simplified-chinese): Hong Kong, Taiwanese and mainland Chinese clients read Chinese differently. How to choose, and why converting one into the other isn't enough.
 - [雙語網站：翻譯外掛還是真正的中文頁？](https://ux-circles.com/zh/insights/translation-plugin-vs-chinese-pages): 加一個翻譯按鈕，看起來就能服務華語客人。它會漏掉什麼，什麼時候值得做真正的中文頁。
 - [Translation plugin or real Chinese pages?](https://ux-circles.com/insights/translation-plugin-vs-chinese-pages): A translation button looks like a quick way to serve Chinese-speaking clients. Here is what it misses, and when real Chinese pages are worth it.
 - [你的電話號碼能一按就撥嗎？](https://ux-circles.com/zh/insights/phone-one-tap): 客人沒辦法一按就打電話或傳 WhatsApp，很多人就不會再試。用手機檢查聯絡資訊的簡單方法。
